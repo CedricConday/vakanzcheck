@@ -1,0 +1,684 @@
+[
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 30485,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4303,
+  "entgeltQ25": 3717,
+  "entgeltQ75": 4922,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -100,
+  "branche": {
+   "id": 2,
+   "bezeichnung": "Land- und Forstwirtschaft, Fischerei"
+  },
+  "entgelt": -100,
+  "entgeltQ25": -100,
+  "entgeltQ75": -100,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 28474,
+  "branche": {
+   "id": 3,
+   "bezeichnung": "produzierendes Gewerbe ohne Bau"
+  },
+  "entgelt": 4333,
+  "entgeltQ25": 3756,
+  "entgeltQ75": 4945,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 4,
+   "bezeichnung": "Baugewerbe"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 888,
+  "branche": {
+   "id": 5,
+   "bezeichnung": "Handel, Verkehr, Lagerei und Gastgewerbe"
+  },
+  "entgelt": 3867,
+  "entgeltQ25": 3417,
+  "entgeltQ75": 4404,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 6,
+   "bezeichnung": "Information und Kommunikation"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 7,
+   "bezeichnung": "Finanz- und Versicherungsgewerbe"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 8,
+   "bezeichnung": "Grundstücks- und Wohnungswesen"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 693,
+  "branche": {
+   "id": 9,
+   "bezeichnung": "Erbringung wirtschaftl. Dienstleistungen"
+  },
+  "entgelt": 3470,
+  "entgeltQ25": 3020,
+  "entgeltQ75": 4323,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 10,
+   "bezeichnung": "Öff. Verw., Schul-, Gesundh.-, Soz.wesen"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 11,
+   "bezeichnung": "Sonstige Dienstleistungen"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 2,
+   "bezeichnung": "unter 25"
+  },
+  "besetzung": 1693,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 3831,
+  "entgeltQ25": 3358,
+  "entgeltQ75": 4303,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 3,
+   "bezeichnung": "25 bis unter 55"
+  },
+  "besetzung": 20395,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4345,
+  "entgeltQ25": 3761,
+  "entgeltQ75": 4950,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 4,
+   "bezeichnung": "ab 55"
+  },
+  "besetzung": 8397,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4313,
+  "entgeltQ25": 3717,
+  "entgeltQ75": 4972,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 29938,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4312,
+  "entgeltQ25": 3729,
+  "entgeltQ75": 4930,
+  "gender": {
+   "id": 2,
+   "bezeichnung": "Männer"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 2,
+   "bezeichnung": "unter 25"
+  },
+  "besetzung": 1641,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 3833,
+  "entgeltQ25": 3360,
+  "entgeltQ75": 4305,
+  "gender": {
+   "id": 2,
+   "bezeichnung": "Männer"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 3,
+   "bezeichnung": "25 bis unter 55"
+  },
+  "besetzung": 20020,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4354,
+  "entgeltQ25": 3773,
+  "entgeltQ75": 4957,
+  "gender": {
+   "id": 2,
+   "bezeichnung": "Männer"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 4,
+   "bezeichnung": "ab 55"
+  },
+  "besetzung": 8277,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4325,
+  "entgeltQ25": 3731,
+  "entgeltQ75": 4979,
+  "gender": {
+   "id": 2,
+   "bezeichnung": "Männer"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 547,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 3689,
+  "entgeltQ25": 3102,
+  "entgeltQ75": 4324,
+  "gender": {
+   "id": 3,
+   "bezeichnung": "Frauen"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 2,
+   "bezeichnung": "unter 25"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 3,
+   "bezeichnung": "Frauen"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 3,
+   "bezeichnung": "25 bis unter 55"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 3,
+   "bezeichnung": "Frauen"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 4,
+   "bezeichnung": "ab 55"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 3,
+   "bezeichnung": "Frauen"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Nordrhein-Westfalen",
+   "id": 8,
+   "oberRegionBezeichnung": "Westdeutschland",
+   "oberRegionId": 3,
+   "schluessel": "05"
+  }
+ }
+]

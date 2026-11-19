@@ -1,0 +1,684 @@
+[
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 128960,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4195,
+  "entgeltQ25": 3509,
+  "entgeltQ75": 4952,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -3,
+  "branche": {
+   "id": 2,
+   "bezeichnung": "Land- und Forstwirtschaft, Fischerei"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 121788,
+  "branche": {
+   "id": 3,
+   "bezeichnung": "produzierendes Gewerbe ohne Bau"
+  },
+  "entgelt": 4222,
+  "entgeltQ25": 3537,
+  "entgeltQ75": 4978,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 861,
+  "branche": {
+   "id": 4,
+   "bezeichnung": "Baugewerbe"
+  },
+  "entgelt": 3933,
+  "entgeltQ25": 3357,
+  "entgeltQ75": 4550,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 2408,
+  "branche": {
+   "id": 5,
+   "bezeichnung": "Handel, Verkehr, Lagerei und Gastgewerbe"
+  },
+  "entgelt": 3848,
+  "entgeltQ25": 3331,
+  "entgeltQ75": 4464,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 6,
+   "bezeichnung": "Information und Kommunikation"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 7,
+   "bezeichnung": "Finanz- und Versicherungsgewerbe"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 8,
+   "bezeichnung": "Grundstücks- und Wohnungswesen"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 3105,
+  "branche": {
+   "id": 9,
+   "bezeichnung": "Erbringung wirtschaftl. Dienstleistungen"
+  },
+  "entgelt": 3477,
+  "entgeltQ25": 2919,
+  "entgeltQ75": 4258,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 10,
+   "bezeichnung": "Öff. Verw., Schul-, Gesundh.-, Soz.wesen"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 11,
+   "bezeichnung": "Sonstige Dienstleistungen"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 2,
+   "bezeichnung": "unter 25"
+  },
+  "besetzung": 8901,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 3683,
+  "entgeltQ25": 3186,
+  "entgeltQ75": 4255,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 3,
+   "bezeichnung": "25 bis unter 55"
+  },
+  "besetzung": 87983,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4249,
+  "entgeltQ25": 3567,
+  "entgeltQ75": 5000,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 4,
+   "bezeichnung": "ab 55"
+  },
+  "besetzung": 32076,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4211,
+  "entgeltQ25": 3484,
+  "entgeltQ75": 5010,
+  "gender": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 125465,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4211,
+  "entgeltQ25": 3529,
+  "entgeltQ75": 4966,
+  "gender": {
+   "id": 2,
+   "bezeichnung": "Männer"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 2,
+   "bezeichnung": "unter 25"
+  },
+  "besetzung": 8478,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 3683,
+  "entgeltQ25": 3190,
+  "entgeltQ75": 4251,
+  "gender": {
+   "id": 2,
+   "bezeichnung": "Männer"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 3,
+   "bezeichnung": "25 bis unter 55"
+  },
+  "besetzung": 85660,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4264,
+  "entgeltQ25": 3585,
+  "entgeltQ75": 5012,
+  "gender": {
+   "id": 2,
+   "bezeichnung": "Männer"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 4,
+   "bezeichnung": "ab 55"
+  },
+  "besetzung": 31327,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 4233,
+  "entgeltQ25": 3514,
+  "entgeltQ75": 5027,
+  "gender": {
+   "id": 2,
+   "bezeichnung": "Männer"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "besetzung": 3495,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 3516,
+  "entgeltQ25": 2926,
+  "entgeltQ75": 4282,
+  "gender": {
+   "id": 3,
+   "bezeichnung": "Frauen"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 2,
+   "bezeichnung": "unter 25"
+  },
+  "besetzung": -42,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": -1,
+  "entgeltQ25": -1,
+  "entgeltQ75": -1,
+  "gender": {
+   "id": 3,
+   "bezeichnung": "Frauen"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 3,
+   "bezeichnung": "25 bis unter 55"
+  },
+  "besetzung": 2323,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 3617,
+  "entgeltQ25": 2988,
+  "entgeltQ75": 4401,
+  "gender": {
+   "id": 3,
+   "bezeichnung": "Frauen"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ },
+ {
+  "ageCategory": {
+   "id": 4,
+   "bezeichnung": "ab 55"
+  },
+  "besetzung": 749,
+  "branche": {
+   "id": 1,
+   "bezeichnung": "Gesamt"
+  },
+  "entgelt": 3149,
+  "entgeltQ25": 2731,
+  "entgeltQ75": 3853,
+  "gender": {
+   "id": 3,
+   "bezeichnung": "Frauen"
+  },
+  "kldb": "24232",
+  "performanceLevel": {
+   "id": 2,
+   "bezeichnung": "Fachkraft"
+  },
+  "region": {
+   "beitragsBemessungsGrenze": 8050,
+   "bezeichnung": "Deutschland",
+   "id": 1,
+   "oberRegionBezeichnung": null,
+   "oberRegionId": null,
+   "schluessel": "D"
+  }
+ }
+]

@@ -1,0 +1,16 @@
+{
+ "_embedded": {
+  "berufSucheList": [
+   {
+    "id": 29053,
+    "kurzBezeichnungNeutral": "Zerspanungsmechaniker/in"
+   }
+  ]
+ },
+ "page": {
+  "number": 0,
+  "size": 20,
+  "totalElements": 1,
+  "totalPages": 1
+ }
+}

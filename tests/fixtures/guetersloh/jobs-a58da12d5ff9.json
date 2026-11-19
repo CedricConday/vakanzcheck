@@ -1,0 +1,868 @@
+{
+ "maxErgebnisse": 40,
+ "page": 1,
+ "size": 100,
+ "woOutput": {
+  "bereinigterOrt": "Gütersloh",
+  "suchmodus": "UMKREISSUCHE",
+  "koordinaten": [
+   {
+    "lat": 51.90352715,
+    "lon": 8.4139648
+   }
+  ]
+ },
+ "facetten": {
+  "topberuf": {
+   "counts": {
+    "Zerspanungsmechaniker/in - Drehtechnik": 13,
+    "Zerspanungsmechaniker/in - Frästechnik": 12,
+    "Zerspanungsmechaniker/in": 22,
+    "CNC-Fräser/in": 11,
+    "CNC-Dreher/in": 9,
+    "Dreher/in": 3
+   }
+  }
+ },
+ "ergebnisliste": [
+  {
+   "referenznummer": "14751-373A138548-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in"
+   ],
+   "firma": "Arbeitgeber 001 GmbH",
+   "entfernung": 1,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 18.45,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1003448031-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "CNC-Fräser/in",
+    "CNC-Dreher/in"
+   ],
+   "firma": "Arbeitgeber 002 GmbH",
+   "entfernung": 1,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "14751-217A160-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in"
+   ],
+   "firma": "Arbeitgeber 003 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 18.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10000-1203355876-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in"
+   ],
+   "firma": "Arbeitgeber 004 GmbH",
+   "entfernung": 5,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "14751-11A30812-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Drehtechnik"
+   ],
+   "firma": "Arbeitgeber 005 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 18.5,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "19155-8e340239_JB4714748-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in"
+   ],
+   "firma": "Arbeitgeber 006 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 19.5,
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "15005-ec0ec63e4301a9f1-S",
+   "hauptberuf": "Zerspanungsmechaniker/in - Drehtechnik",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Drehtechnik"
+   ],
+   "firma": "Arbeitgeber 007 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1002408666-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "Zerspanungsmechaniker/in - Automaten-Drehtechnik"
+   ],
+   "firma": "Arbeitgeber 008 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 20.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "14751-11A30790-S",
+   "hauptberuf": "Zerspanungsmechaniker/in - Drehtechnik",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "CNC-Dreher/in"
+   ],
+   "firma": "Arbeitgeber 005 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 18.5,
+   "gehaltsspanneBis": 21.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "19155-58e36007_JB4837009-S",
+   "hauptberuf": "Zerspanungsmechaniker/in - Frästechnik",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Frästechnik"
+   ],
+   "firma": "Arbeitgeber 006 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 20.0,
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "19155-ba802c36_JB4794199-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in"
+   ],
+   "firma": "Arbeitgeber 006 GmbH",
+   "entfernung": 1,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 21.0,
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1002880382-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Frästechnik",
+    "Zerspanungsmechaniker/in - Drehtechnik"
+   ],
+   "firma": "Arbeitgeber 009 GmbH",
+   "entfernung": 2,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1002852645-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "Zerspanungsmechaniker/in - Frästechnik"
+   ],
+   "firma": "Arbeitgeber 009 GmbH",
+   "entfernung": 2,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1003750599-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "Zerspanungsmechaniker/in - Frästechnik"
+   ],
+   "firma": "Arbeitgeber 010 GmbH",
+   "entfernung": 3,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 21.0,
+   "gehaltsspanneBis": 25.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1003979459-S",
+   "hauptberuf": "CNC-Fräser/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Frästechnik",
+    "CNC-Fräser/in",
+    "CNC-Fachkraft/NC-Anwendungsfachmann/-frau"
+   ],
+   "firma": "Arbeitgeber 011 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "14751-373A138638-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in"
+   ],
+   "firma": "Arbeitgeber 012 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 18.09,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "13356-109596A45695C2-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Frästechnik",
+    "Fachkraft - Metalltechnik - Zerspanungstechnik"
+   ],
+   "firma": "Arbeitgeber 013 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10000-1206949599-S",
+   "hauptberuf": "CNC-Fräser/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Frästechnik",
+    "CNC-Fräser/in"
+   ],
+   "firma": "Arbeitgeber 014 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "16590-UA4TD5S78963CWKL-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Maschineneinrichter/in (Zerspanungstechnik)",
+    "Fachkraft - Metalltechnik - Zerspanungstechnik"
+   ],
+   "firma": "Arbeitgeber 015 GmbH",
+   "entfernung": 3,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1003896573-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "Zerspanungsmechaniker/in - Frästechnik"
+   ],
+   "firma": "Arbeitgeber 016 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 19.0,
+   "gehaltsspanneBis": 23.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1002325610-S",
+   "hauptberuf": "Zerspanungsmechaniker/in - Drehtechnik",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Drehtechnik"
+   ],
+   "firma": "Arbeitgeber 017 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 19.0,
+   "gehaltsspanneBis": 22.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "19155-6c13723a_JB4759468-S",
+   "hauptberuf": "Maschinen- und Anlagenführer/in - Metall-, Kunststofftechnik",
+   "alleBerufe": [
+    "Maschinen- und Anlagenführer/in - Metall-, Kunststofftechnik"
+   ],
+   "firma": "Arbeitgeber 006 GmbH",
+   "entfernung": 3,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 19.5,
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1002325571-S",
+   "hauptberuf": "Zerspanungsmechaniker/in - Automaten-Drehtechnik",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Automaten-Drehtechnik"
+   ],
+   "firma": "Arbeitgeber 017 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 19.0,
+   "gehaltsspanneBis": 22.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1003680811-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "CNC-Fräser/in",
+    "CNC-Dreher/in"
+   ],
+   "firma": "Arbeitgeber 018 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10000-1207851629-S",
+   "hauptberuf": "CNC-Fräser/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Frästechnik",
+    "CNC-Fräser/in"
+   ],
+   "firma": "Arbeitgeber 019 GmbH",
+   "entfernung": 10,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1002386989-S",
+   "hauptberuf": "Zerspanungsmechaniker/in - Drehtechnik",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "Maschinen- und Anlagenführer/in - Metall-, Kunststofftechnik"
+   ],
+   "firma": "Arbeitgeber 020 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "14751-373A138633-S",
+   "hauptberuf": "CNC-Dreher/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "CNC-Dreher/in"
+   ],
+   "firma": "Arbeitgeber 001 GmbH",
+   "entfernung": 1,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 18.45,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1002397423-S",
+   "hauptberuf": "CNC-Fräser/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Frästechnik",
+    "CNC-Fräser/in"
+   ],
+   "firma": "Arbeitgeber 021 GmbH",
+   "entfernung": 1,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1003942305-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Werkzeugmechaniker/in",
+    "Metallbauer/in - Konstruktionstechnik"
+   ],
+   "firma": "Arbeitgeber 011 GmbH",
+   "entfernung": 3,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "14751-11A30709-S",
+   "hauptberuf": "Dreher/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "Dreher/in"
+   ],
+   "firma": "Arbeitgeber 005 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 18.5,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1001475161-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "Zerspanungsmechaniker/in - Frästechnik"
+   ],
+   "firma": "Arbeitgeber 022 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1003180732-S",
+   "hauptberuf": "CNC-Dreher/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "CNC-Dreher/in",
+    "Dreher/in"
+   ],
+   "firma": "Arbeitgeber 023 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "13356-709216A046565C28-S",
+   "hauptberuf": "Zerspanungsmechaniker/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in",
+    "CNC-Dreher/in",
+    "CNC-Fräser/in"
+   ],
+   "firma": "Arbeitgeber 024 GmbH",
+   "entfernung": 8,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 20.0,
+   "gehaltsspanneBis": 23.0,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1001558531-S",
+   "hauptberuf": "CNC-Dreher/in",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Drehtechnik",
+    "CNC-Dreher/in"
+   ],
+   "firma": "Arbeitgeber 025 GmbH",
+   "entfernung": 10,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10001-1002277428-S",
+   "hauptberuf": "Zerspanungsmechaniker/in - Frästechnik",
+   "alleBerufe": [
+    "Zerspanungsmechaniker/in - Frästechnik",
+    "CNC-Fräser/in"
+   ],
+   "firma": "Arbeitgeber 026 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 19.0,
+   "gehaltsspanneBis": 20.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "12826-SA0143603_JB5212321-S",
+   "hauptberuf": "CNC-Fräser/in",
+   "alleBerufe": [
+    "CNC-Fräser/in",
+    "CNC-Dreher/in"
+   ],
+   "firma": "Arbeitgeber 027 GmbH",
+   "entfernung": 3,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "12826-SA0143604_JB5212309-S",
+   "hauptberuf": "Dreher/in",
+   "alleBerufe": [
+    "Dreher/in"
+   ],
+   "firma": "Arbeitgeber 027 GmbH",
+   "entfernung": 3,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "FESTGEHALT",
+   "festgehalt": 17.0,
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "15005-248231d84ab6b8d8-S",
+   "hauptberuf": "CNC-Fräser/in",
+   "alleBerufe": [
+    "CNC-Fräser/in"
+   ],
+   "firma": "Arbeitgeber 007 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "STUNDENLOHN",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 18.5,
+   "gehaltsspanneBis": 20.5,
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "15005-54ab230e8a1669c0-S",
+   "hauptberuf": "CNC-Fräser/in",
+   "alleBerufe": [
+    "CNC-Fräser/in"
+   ],
+   "firma": "Arbeitgeber 007 GmbH",
+   "entfernung": 9,
+   "verguetungsangabe": "KEINE_ANGABEN",
+   "arbeitszeitVollzeit": true,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  },
+  {
+   "referenznummer": "10000-1207713111-S",
+   "hauptberuf": "Werkzeugmechaniker/in",
+   "alleBerufe": [
+    "Werkzeugmechaniker/in",
+    "Erodierer/in",
+    "CNC-Dreher/in"
+   ],
+   "firma": "Arbeitgeber 028 GmbH",
+   "entfernung": 10,
+   "verguetungsangabe": "JAHRESGEHALT",
+   "artDerVerguetung": "GEHALTSSPANNE",
+   "gehaltsspanneVon": 42000.0,
+   "gehaltsspanneBis": 45000.0,
+   "arbeitszeitVollzeit": true,
+   "arbeitszeitSchichtNachtWochenende": false,
+   "stellenlokationen": [
+    {
+     "adresse": {
+      "region": "NORDRHEIN_WESTFALEN"
+     }
+    }
+   ]
+  }
+ ]
+}

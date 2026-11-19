@@ -7,14 +7,14 @@ Elektroniker/in - Energie- und Gebäudetechnik · Paderborn + 30 km · Angebot 3
 | Regel | Ergebnis | Begründung |
 |---|---|---|
 | S1 Gehalt vs. Region | rot | Angebot 3.300 € liegt unter dem unteren Quartil (Nordrhein-Westfalen: Q25 3.457 €, Median 4.050 €) |
-| S2 Gehalt vs. Konkurrenzanzeigen | rot | Grundgehalt 3.300 € liegt unter dem unteren Quartil der 14 Anzeigen ohne Zeitarbeit mit Gehaltsangabe (Q25 3.540 €, Median 3.913 €) |
+| S2 Gehalt vs. Konkurrenzanzeigen | rot | 13 von 14 Anzeigen ohne Zeitarbeit mit Gehaltsangabe zahlen mehr als das Angebot (93 %; Stundenlöhne gegen Grundgehalt 3.300 €, Jahresgehälter gegen Gesamtbezüge 3.300 €/Monat) |
 | W1 Wettbewerb | rot | 119 offene Stellen im selben Beruf im Umkreis von 30 km (gelb ab 30, rot ab 100) |
 
 Die Regeln und ihre Schwellen stehen im README; sie sind gesetzt, nicht gemessen.
 
 ## Gehalt
 
-Angebot umgerechnet: 3.300 €/Monat inkl. Sonderzahlungen (Vergleich mit dem Entgeltatlas), 3.300 €/Monat Grundgehalt (Vergleich mit Anzeigen).
+Angebot umgerechnet: 3.300 €/Monat inkl. Sonderzahlungen (Vergleich mit dem Entgeltatlas), 3.300 €/Monat Grundgehalt (Vergleich mit Stundenlöhnen in Anzeigen).
 
 KldB 26212: Berufe in der Bauelektrik - fachlich ausgerichtete Tätigkeiten (Niveau Fachkraft; Zuordnung: BERUFENET id 15636).
 
@@ -32,11 +32,20 @@ Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversiche
 
 ## Wettbewerb um Bewerber
 
-- **119** offene Stellen im selben Beruf im Umkreis, davon 46 von Zeitarbeitsfirmen (39 %).
+- **119** offene Stellen im selben Beruf im Umkreis, davon 46 von Zeitarbeitsfirmen (39 %, laut Zeitarbeit-Filter der Jobsuche; gezählt: Einzelabruf aller Anzeigen).
 - 138 Treffer für die Suche insgesamt, einschließlich verwandter Berufe.
-- 42 von 119 Anzeigen im selben Beruf nennen ein Gehalt (35 %); 5 nennen Schicht-, Nacht- oder Wochenendarbeit.
-- Genannte Gehälter, auf Monat umgerechnet (Stundenlöhne mit 40 Std./Woche, Spannen als Mitte): Q25 3.413 €, Median 3.652 €, Q75 3.913 € (n = 42).
-- Davon ohne Zeitarbeit: 14 Anzeigen, Median 3.913 €.
+- 42 von 119 Anzeigen im selben Beruf nennen ein Gehalt (35 %), davon 14 ohne Zeitarbeit.
+- 5 von 119 sind in der Jobsuche mit dem Arbeitszeitmerkmal Schicht/Nacht/Wochenende gekennzeichnet (Strukturfeld, nicht aus dem Anzeigentext).
+
+Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):
+
+| Einheit | Arbeitgeber | Anzeigen | Median | Spanne |
+|---|---|---|---|---|
+| €/Stunde | direkt | 7 | 22,50 | 17,48 – 25,50 |
+| €/Stunde | Zeitarbeit | 28 | 21,00 | 18,00 – 26,00 |
+| €/Jahr | direkt | 7 | 44.500 | 40.000 – 63.570 |
+
+S2 vergleicht Stundenlöhne (mit 40 Std./Woche) mit dem Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. Sonderzahlungen, weil Jahresgehälter diese meist enthalten.
 
 | Meiste Anzeigen | Stellen | Zeitarbeit |
 |---|---|---|
@@ -59,14 +68,14 @@ Quelle: BA Jobsuche, abgerufen 2026-11-19, nur Arbeitsstellen (keine Ausbildung)
 | Gehalt oder Stundenlohn als Betrag oder Spanne genannt | fehlt | Eine attraktive Vergütung *(Es steht kein Betrag und keine Spanne in der Anzeige.)* |
 | Tarifbindung oder Tarifvertrag genannt | fehlt |  |
 | Wochenarbeitszeit in Stunden genannt | fehlt |  |
-| Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein) | fehlt | *Zu Schicht-, Nacht- oder Wochenendarbeit steht nichts, nur zur Rufbereitschaft.* |
-| Rufbereitschaft oder Notdienst geklärt (ja oder nein) | genannt | Teilnahme an der Rufbereitschaft *(Wie oft und wie die Rufbereitschaft vergütet wird, steht nicht in der Anzeige.)* |
-| Einsatzort, Montageanteil oder Reisetätigkeit genannt | genannt | betreuen Gewerbe- und Privatkunden in ganz Ostwestfalen-Lippe *(Der Standort ist Paderborn, die Einsätze sind beim Kunden vor Ort in OWL.)* |
+| Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein) | fehlt |  |
+| Rufbereitschaft oder Notdienst geklärt (ja oder nein) | genannt | Teilnahme an der Rufbereitschaft *(Es steht nicht da, wie oft Rufbereitschaft anfällt und ob sie vergütet wird.)* |
+| Einsatzort, Montageanteil oder Reisetätigkeit genannt | genannt | betreuen Gewerbe- und Privatkunden in ganz Ostwestfalen-Lippe *(Der Standort ist Paderborn, die Einsätze sind beim Kunden in der Region OWL.)* |
 | Firmen- oder Servicefahrzeug geklärt | genannt | Ein modernes Servicefahrzeug, auch zur privaten Nutzung |
 | Urlaubstage genannt | fehlt |  |
 | Befristet oder unbefristet genannt | genannt | Einen unbefristeten Arbeitsvertrag |
-| Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp) | fehlt | sende uns deine vollständigen Bewerbungsunterlagen mit Anschreiben, Lebenslauf und Zeugnissen per E-Mail *(Ein Anschreiben wird verlangt, und es gibt keinen Weg per Telefon oder WhatsApp.)* |
-| Muss- und Kann-Anforderungen unterscheidbar | genannt | Erfahrung mit Gefahrenmeldeanlagen wünschenswert *(Die Kann-Anforderung ist mit „wünschenswert“ gekennzeichnet, die übrigen Punkte sind Muss-Anforderungen.)* |
+| Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp) | fehlt | sende uns deine vollständigen Bewerbungsunterlagen mit Anschreiben, Lebenslauf und Zeugnissen per E-Mail *(Ein Anschreiben wird verlangt, und es gibt keine Bewerbung per Telefon oder WhatsApp.)* |
+| Muss- und Kann-Anforderungen unterscheidbar | genannt | Erfahrung mit Gefahrenmeldeanlagen wünschenswert *(Das Wort „wünschenswert“ zeigt, was optional ist, die übrigen Punkte sind Pflicht.)* |
 
 Die Prüffragen sind eine eigene Liste der Angaben, nach denen Bewerber in diesem Beruf sonst fragen müssen, keine Studie.
 Modell: claude-opus-5-5. Jedes Zitat wurde gegen den Anzeigentext geprüft.

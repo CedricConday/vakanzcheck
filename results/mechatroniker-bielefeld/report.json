@@ -16,7 +16,7 @@
    "monthly_base": 3576,
    "monthly_total": 3785
   },
-  "ad_text": "Mechatroniker (m/w/d) Instandhaltung – Bielefeld\n\nFür unser Werk in Bielefeld suchen wir eine Verstärkung für das Instandhaltungsteam. Wir fertigen mit 180 Beschäftigten Antriebskomponenten für den Maschinenbau.\n\nDas erwartet dich:\n- Wartung und Instandsetzung unserer Fertigungsanlagen, mechanisch und elektrisch\n- Fehlersuche an SPS-gesteuerten Anlagen (Siemens S7)\n- Mitarbeit an Umbauten und Verbesserungen\n\nDas bringst du mit:\n- Muss: abgeschlossene Ausbildung als Mechatroniker, Elektroniker für Betriebstechnik oder Industriemechaniker\n- Muss: Bereitschaft zur Arbeit im 2-Schicht-System (Früh/Spät, Montag bis Freitag)\n- Kann: erste Erfahrung mit TIA Portal\n\nDas bieten wir:\n- 21,50 € pro Stunde, dazu Urlaubs- und Weihnachtsgeld\n- 35-Stunden-Woche, 30 Tage Urlaub\n- Unbefristete Festanstellung\n- Rufbereitschaft am Wochenende nur nach Absprache und gesondert vergütet\n\nBewerben geht schnell: Lebenslauf genügt, gern auch per WhatsApp an die Nummer auf unserer Karriereseite.\n"
+  "ad_text": "Mechatroniker (m/w/d) Instandhaltung – Bielefeld\n\nFür unser Werk in Bielefeld suchen wir eine Verstärkung für das Instandhaltungsteam. Wir fertigen mit 180 Beschäftigten Antriebskomponenten für den Maschinenbau.\n\nDas erwartet dich:\n- Wartung und Instandsetzung unserer Fertigungsanlagen, mechanisch und elektrisch\n- Fehlersuche an SPS-gesteuerten Anlagen (Siemens S7)\n- Mitarbeit an Umbauten und Verbesserungen\n\nDas bringst du mit:\n- Muss: abgeschlossene Ausbildung als Mechatroniker, Elektroniker für Betriebstechnik oder Industriemechaniker\n- Muss: Bereitschaft zur Arbeit im 2-Schicht-System (Früh/Spät, Montag bis Freitag)\n- Kann: erste Erfahrung mit TIA Portal\n\nDas bieten wir:\n- 23,50 € pro Stunde, dazu 2.500 € Urlaubs- und Weihnachtsgeld im Jahr\n- 35-Stunden-Woche, 30 Tage Urlaub\n- Unbefristete Festanstellung\n- Rufbereitschaft am Wochenende nur nach Absprache und gesondert vergütet\n\nBewerben geht schnell: Lebenslauf genügt, gern auch per WhatsApp an die Nummer auf unserer Karriereseite.\n"
  },
  "occupation": {
   "kldb": "26112",
@@ -28,6 +28,9 @@
   "region_id": 8,
   "region": "Nordrhein-Westfalen",
   "region_inferred": true,
+  "stichtag": "31.12.2025",
+  "ceiling": 8050,
+  "stichtag_confirmed": true,
   "regional": {
    "overall": {
     "region_id": 8,
@@ -37,7 +40,8 @@
     "q25": 3483,
     "q75": 4951,
     "employees": 9520,
-    "ceiling": 8050
+    "ceiling": 8050,
+    "censored": []
    },
    "branches": [
     {
@@ -48,7 +52,8 @@
      "q25": 3882,
      "q75": 5258,
      "employees": 5478,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 8,
@@ -58,7 +63,8 @@
      "q25": 2999,
      "q75": 4224,
      "employees": 2927,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 8,
@@ -68,7 +74,8 @@
      "q25": 3383,
      "q75": 4838,
      "employees": 679,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     }
    ]
   },
@@ -81,7 +88,8 @@
     "q25": 3407,
     "q75": 4922,
     "employees": 47700,
-    "ceiling": 8050
+    "ceiling": 8050,
+    "censored": []
    },
    "branches": [
     {
@@ -92,7 +100,8 @@
      "q25": 3775,
      "q75": 5213,
      "employees": 28703,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 1,
@@ -102,7 +111,8 @@
      "q25": 3378,
      "q75": 4628,
      "employees": 1277,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 1,
@@ -112,7 +122,8 @@
      "q25": 2919,
      "q75": 4087,
      "employees": 13187,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 1,
@@ -122,7 +133,8 @@
      "q25": 3300,
      "q75": 4805,
      "employees": 3129,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 1,
@@ -132,7 +144,8 @@
      "q25": 3892,
      "q75": 4788,
      "employees": 651,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     }
    ]
   }
@@ -141,8 +154,13 @@
   "same_beruf": 222,
   "same_beruf_direct": 132,
   "same_beruf_zeitarbeit": 90,
+  "count_source": "Einzelabruf aller Anzeigen",
+  "sample": {
+   "truncated": false,
+   "items_read": 438,
+   "query_total": 438
+  },
   "query_total": 438,
-  "truncated": false,
   "related": [
    {
     "beruf": "Elektroniker/in - Betriebstechnik",
@@ -195,21 +213,35 @@
   "stated_pay": {
    "ads": 222,
    "stating": 73,
-   "monthly": {
-    "n": 73,
-    "q25": 2955.4812500000003,
-    "median": 3081.796875,
-    "q75": 3576.40625
-   },
    "stating_direct": 23,
-   "monthly_direct": {
-    "n": 23,
-    "q25": 3482.942708333333,
-    "median": 3750.0,
-    "q75": 4272.25
-   }
+   "by_unit": [
+    {
+     "unit": "hour",
+     "direct": true,
+     "n": 6,
+     "median": 21.6625,
+     "min": 20.0,
+     "max": 24.0
+    },
+    {
+     "unit": "hour",
+     "direct": false,
+     "n": 50,
+     "median": 20.0,
+     "min": 11.755,
+     "max": 25.26
+    },
+    {
+     "unit": "year",
+     "direct": true,
+     "n": 17,
+     "median": 48018.0,
+     "min": 39000.0,
+     "max": 62048.5
+    }
+   ]
   },
-  "shift_ads": 34
+  "shift_flagged": 34
  },
  "verdict": {
   "label": "schwer besetzbar",
@@ -217,17 +249,20 @@
    {
     "rule": "S1",
     "grade": "gelb",
-    "reason": "Angebot 3.785 € liegt zwischen unterem Quartil und Median (Nordrhein-Westfalen: Q25 3.483 €, Median 4.171 €)"
+    "reason": "Angebot 3.785 € liegt zwischen unterem Quartil und Median (Nordrhein-Westfalen: Q25 3.483 €, Median 4.171 €)",
+    "caveat": ""
    },
    {
     "rule": "S2",
     "grade": "gelb",
-    "reason": "Grundgehalt 3.576 € liegt unter dem Median der 23 Anzeigen ohne Zeitarbeit mit Gehaltsangabe (Q25 3.483 €, Median 3.750 €)"
+    "reason": "12 von 23 Anzeigen ohne Zeitarbeit mit Gehaltsangabe zahlen mehr als das Angebot (52 %; Stundenlöhne gegen Grundgehalt 3.576 €, Jahresgehälter gegen Gesamtbezüge 3.785 €/Monat)",
+    "caveat": ""
    },
    {
     "rule": "W1",
     "grade": "rot",
-    "reason": "222 offene Stellen im selben Beruf im Umkreis von 25 km (gelb ab 30, rot ab 100)"
+    "reason": "222 offene Stellen im selben Beruf im Umkreis von 25 km (gelb ab 30, rot ab 100)",
+    "caveat": ""
    }
   ]
  },
@@ -239,14 +274,14 @@
    "served_by": [
     "claude-opus-5-5"
    ],
-   "cost_usd": 0.0356058
+   "cost_usd": 0.0396362
   },
   "checks": [
    {
     "id": "gehalt",
     "frage": "Gehalt oder Stundenlohn als Betrag oder Spanne genannt",
     "status": "genannt",
-    "zitat": "21,50 € pro Stunde, dazu Urlaubs- und Weihnachtsgeld",
+    "zitat": "23,50 € pro Stunde, dazu 2.500 € Urlaubs- und Weihnachtsgeld im Jahr",
     "hinweis": "",
     "quote_verified": true
    },
@@ -255,7 +290,7 @@
     "frage": "Tarifbindung oder Tarifvertrag genannt",
     "status": "fehlt",
     "zitat": "",
-    "hinweis": "Tarifbindung oder Tarifvertrag wird nicht erwähnt.",
+    "hinweis": "Die Anzeige sagt nichts zu Tarifbindung oder Tarifvertrag.",
     "quote_verified": null
    },
    {
@@ -271,7 +306,7 @@
     "frage": "Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein)",
     "status": "genannt",
     "zitat": "Bereitschaft zur Arbeit im 2-Schicht-System (Früh/Spät, Montag bis Freitag)",
-    "hinweis": "Zwei Schichten ohne Nacht- und Wochenendschicht.",
+    "hinweis": "Zwei Schichten an Werktagen, keine Nachtschicht und kein Wochenende im Schichtplan.",
     "quote_verified": true
    },
    {
@@ -279,7 +314,7 @@
     "frage": "Rufbereitschaft oder Notdienst geklärt (ja oder nein)",
     "status": "unklar",
     "zitat": "Rufbereitschaft am Wochenende nur nach Absprache und gesondert vergütet",
-    "hinweis": "Offen, ob und wie oft Rufbereitschaft tatsächlich anfällt.",
+    "hinweis": "Unklar bleibt, ob die Rufbereitschaft freiwillig ist oder nur abgesprochen eingeteilt wird.",
     "quote_verified": true
    },
    {
@@ -295,7 +330,7 @@
     "frage": "Firmen- oder Servicefahrzeug geklärt",
     "status": "fehlt",
     "zitat": "",
-    "hinweis": "Zum Fahrzeug steht nichts, bei einer Stelle im Werk ist das aber wohl nicht wichtig.",
+    "hinweis": "Zu Firmen- oder Servicefahrzeug steht nichts.",
     "quote_verified": null
    },
    {
@@ -319,15 +354,15 @@
     "frage": "Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp)",
     "status": "genannt",
     "zitat": "Lebenslauf genügt, gern auch per WhatsApp an die Nummer auf unserer Karriereseite.",
-    "hinweis": "Die WhatsApp-Nummer steht nicht in der Anzeige selbst.",
+    "hinweis": "Die WhatsApp-Nummer steht nicht in der Anzeige, sondern nur auf der Karriereseite.",
     "quote_verified": true
    },
    {
     "id": "anforderungen",
     "frage": "Muss- und Kann-Anforderungen unterscheidbar",
     "status": "genannt",
-    "zitat": "Muss: abgeschlossene Ausbildung als Mechatroniker, Elektroniker für Betriebstechnik oder Industriemechaniker",
-    "hinweis": "Muss- und Kann-Anforderungen sind ausdrücklich gekennzeichnet.",
+    "zitat": "Muss: abgeschlossene Ausbildung als Mechatroniker, ... Kann: erste Erfahrung mit TIA Portal",
+    "hinweis": "",
     "quote_verified": true
    }
   ]

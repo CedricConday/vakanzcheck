@@ -7,14 +7,14 @@ CNC-Fräser/in · Gütersloh + 25 km · Angebot 4.100,00 €/Monat, 13 Gehälter
 | Regel | Ergebnis | Begründung |
 |---|---|---|
 | S1 Gehalt vs. Region | grün | Angebot 4.442 € liegt auf oder über dem Median (Nordrhein-Westfalen: Q25 3.717 €, Median 4.303 €) |
-| S2 Gehalt vs. Konkurrenzanzeigen | grün | Grundgehalt 4.100 € liegt auf oder über dem Median der 31 Anzeigen (inkl. Zeitarbeit) mit Gehaltsangabe (Q25 3.309 €, Median 3.522 €) |
+| S2 Gehalt vs. Konkurrenzanzeigen | grün (unsicher) | 5 von 31 Anzeigen (inkl. Zeitarbeit) mit Gehaltsangabe zahlen mehr als das Angebot (16 %; Stundenlöhne gegen Grundgehalt 4.100 €, Jahresgehälter gegen Gesamtbezüge 4.442 €/Monat). **unsicher: 28 von 31 Vergleichsanzeigen sind Zeitarbeit; fließt nicht in die Einschätzung ein** |
 | W1 Wettbewerb | gelb | 72 offene Stellen im selben Beruf im Umkreis von 25 km (gelb ab 30, rot ab 100) |
 
 Die Regeln und ihre Schwellen stehen im README; sie sind gesetzt, nicht gemessen.
 
 ## Gehalt
 
-Angebot umgerechnet: 4.442 €/Monat inkl. Sonderzahlungen (Vergleich mit dem Entgeltatlas), 4.100 €/Monat Grundgehalt (Vergleich mit Anzeigen).
+Angebot umgerechnet: 4.442 €/Monat inkl. Sonderzahlungen (Vergleich mit dem Entgeltatlas), 4.100 €/Monat Grundgehalt (Vergleich mit Stundenlöhnen in Anzeigen).
 
 KldB 24232: Berufe in der spanenden Metallbearbeitung - fachlich ausgerichtete Tätigkeiten (Niveau Fachkraft; Zuordnung: given).
 
@@ -30,11 +30,20 @@ Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversiche
 
 ## Wettbewerb um Bewerber
 
-- **72** offene Stellen im selben Beruf im Umkreis, davon 53 von Zeitarbeitsfirmen (74 %).
+- **72** offene Stellen im selben Beruf im Umkreis, davon 53 von Zeitarbeitsfirmen (74 %, laut Zeitarbeit-Filter der Jobsuche; gezählt: Einzelabruf aller Anzeigen).
 - 82 Treffer für die Suche insgesamt, einschließlich verwandter Berufe.
-- 31 von 72 Anzeigen im selben Beruf nennen ein Gehalt (43 %); 15 nennen Schicht-, Nacht- oder Wochenendarbeit.
-- Genannte Gehälter, auf Monat umgerechnet (Stundenlöhne mit 40 Std./Woche, Spannen als Mitte): Q25 3.309 €, Median 3.522 €, Q75 3.787 € (n = 31).
-- Davon ohne Zeitarbeit: 3 Anzeigen.
+- 31 von 72 Anzeigen im selben Beruf nennen ein Gehalt (43 %), davon 3 ohne Zeitarbeit.
+- 15 von 72 sind in der Jobsuche mit dem Arbeitszeitmerkmal Schicht/Nacht/Wochenende gekennzeichnet (Strukturfeld, nicht aus dem Anzeigentext).
+
+Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):
+
+| Einheit | Arbeitgeber | Anzeigen | Median | Spanne |
+|---|---|---|---|---|
+| €/Stunde | direkt | 2 | 20,75 | 19,50 – 22,00 |
+| €/Stunde | Zeitarbeit | 28 | 20,27 | 17,11 – 24,50 |
+| €/Jahr | direkt | 1 | 37.346 | 37.346 – 37.346 |
+
+S2 vergleicht Stundenlöhne (mit 40 Std./Woche) mit dem Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. Sonderzahlungen, weil Jahresgehälter diese meist enthalten.
 
 | Meiste Anzeigen | Stellen | Zeitarbeit |
 |---|---|---|
@@ -54,17 +63,17 @@ Quelle: BA Jobsuche, abgerufen 2026-11-19, nur Arbeitsstellen (keine Ausbildung)
 
 | Prüffrage | Ergebnis | Fundstelle |
 |---|---|---|
-| Gehalt oder Stundenlohn als Betrag oder Spanne genannt | fehlt | Leistungsgerechte Bezahlung *(Es steht kein Betrag und keine Spanne in der Anzeige.)* |
+| Gehalt oder Stundenlohn als Betrag oder Spanne genannt | fehlt | Leistungsgerechte Bezahlung *(Es steht weder ein Betrag noch eine Spanne in der Anzeige.)* |
 | Tarifbindung oder Tarifvertrag genannt | fehlt |  |
 | Wochenarbeitszeit in Stunden genannt | fehlt |  |
-| Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein) | unklar | Bereitschaft zur Schichtarbeit *(Offen ist, ob wirklich in Schichten gearbeitet wird und ob Nacht- oder Wochenendarbeit dazugehört.)* |
+| Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein) | unklar | Bereitschaft zur Schichtarbeit *(Es bleibt offen, welches Schichtmodell gilt und ob Nacht- oder Wochenendarbeit dazugehört.)* |
 | Rufbereitschaft oder Notdienst geklärt (ja oder nein) | fehlt |  |
 | Einsatzort, Montageanteil oder Reisetätigkeit genannt | genannt | CNC-Fräser (m/w/d) – Gütersloh |
 | Firmen- oder Servicefahrzeug geklärt | fehlt |  |
 | Urlaubstage genannt | fehlt |  |
 | Befristet oder unbefristet genannt | unklar | Sicheren Arbeitsplatz *(Die Anzeige sagt nicht ausdrücklich, ob die Stelle befristet oder unbefristet ist.)* |
-| Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp) | fehlt | Bitte senden Sie Ihre Bewerbung an unsere Personalabteilung. *(Es gibt weder Kontaktdaten noch einen vereinfachten Bewerbungsweg.)* |
-| Muss- und Kann-Anforderungen unterscheidbar | fehlt | Ausbildung als Zerspanungsmechaniker Fachrichtung Frästechnik oder vergleichbar *(Alle Anforderungen stehen ohne Unterscheidung zwischen Muss und Kann nebeneinander.)* |
+| Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp) | fehlt | Bitte senden Sie Ihre Bewerbung an unsere Personalabteilung. *(Es fehlen ein Kontakt und ein einfacher Bewerbungsweg.)* |
+| Muss- und Kann-Anforderungen unterscheidbar | fehlt | Ausbildung als Zerspanungsmechaniker Fachrichtung Frästechnik oder vergleichbar *(Alle Anforderungen stehen ohne Unterscheidung zwischen Muss und Kann da.)* |
 
 Die Prüffragen sind eine eigene Liste der Angaben, nach denen Bewerber in diesem Beruf sonst fragen müssen, keine Studie.
 Modell: claude-opus-5-5. Jedes Zitat wurde gegen den Anzeigentext geprüft.

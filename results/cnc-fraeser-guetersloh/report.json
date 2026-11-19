@@ -28,6 +28,9 @@
   "region_id": 8,
   "region": "Nordrhein-Westfalen",
   "region_inferred": true,
+  "stichtag": "31.12.2025",
+  "ceiling": 8050,
+  "stichtag_confirmed": true,
   "regional": {
    "overall": {
     "region_id": 8,
@@ -37,7 +40,8 @@
     "q25": 3717,
     "q75": 4922,
     "employees": 30485,
-    "ceiling": 8050
+    "ceiling": 8050,
+    "censored": []
    },
    "branches": [
     {
@@ -48,7 +52,8 @@
      "q25": 3756,
      "q75": 4945,
      "employees": 28474,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 8,
@@ -58,7 +63,8 @@
      "q25": 3417,
      "q75": 4404,
      "employees": 888,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 8,
@@ -68,7 +74,8 @@
      "q25": 3020,
      "q75": 4323,
      "employees": 693,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     }
    ]
   },
@@ -81,7 +88,8 @@
     "q25": 3509,
     "q75": 4952,
     "employees": 128960,
-    "ceiling": 8050
+    "ceiling": 8050,
+    "censored": []
    },
    "branches": [
     {
@@ -92,7 +100,8 @@
      "q25": 3537,
      "q75": 4978,
      "employees": 121788,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 1,
@@ -102,7 +111,8 @@
      "q25": 3357,
      "q75": 4550,
      "employees": 861,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 1,
@@ -112,7 +122,8 @@
      "q25": 3331,
      "q75": 4464,
      "employees": 2408,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     },
     {
      "region_id": 1,
@@ -122,7 +133,8 @@
      "q25": 2919,
      "q75": 4258,
      "employees": 3105,
-     "ceiling": 8050
+     "ceiling": 8050,
+     "censored": []
     }
    ]
   }
@@ -131,8 +143,13 @@
   "same_beruf": 72,
   "same_beruf_direct": 19,
   "same_beruf_zeitarbeit": 53,
+  "count_source": "Einzelabruf aller Anzeigen",
+  "sample": {
+   "truncated": false,
+   "items_read": 82,
+   "query_total": 82
+  },
   "query_total": 82,
-  "truncated": false,
   "related": [
    {
     "beruf": "Zerspanungsmechaniker/in - Frästechnik",
@@ -185,16 +202,35 @@
   "stated_pay": {
    "ads": 72,
    "stating": 31,
-   "monthly": {
-    "n": 31,
-    "q25": 3308.5562499999996,
-    "median": 3522.053571428571,
-    "q75": 3786.859821428571
-   },
    "stating_direct": 3,
-   "monthly_direct": null
+   "by_unit": [
+    {
+     "unit": "hour",
+     "direct": true,
+     "n": 2,
+     "median": 20.75,
+     "min": 19.5,
+     "max": 22.0
+    },
+    {
+     "unit": "hour",
+     "direct": false,
+     "n": 28,
+     "median": 20.275,
+     "min": 17.11,
+     "max": 24.5
+    },
+    {
+     "unit": "year",
+     "direct": true,
+     "n": 1,
+     "median": 37346.5,
+     "min": 37346.5,
+     "max": 37346.5
+    }
+   ]
   },
-  "shift_ads": 15
+  "shift_flagged": 15
  },
  "verdict": {
   "label": "besetzbar mit Aufwand",
@@ -202,17 +238,20 @@
    {
     "rule": "S1",
     "grade": "gruen",
-    "reason": "Angebot 4.442 € liegt auf oder über dem Median (Nordrhein-Westfalen: Q25 3.717 €, Median 4.303 €)"
+    "reason": "Angebot 4.442 € liegt auf oder über dem Median (Nordrhein-Westfalen: Q25 3.717 €, Median 4.303 €)",
+    "caveat": ""
    },
    {
     "rule": "S2",
     "grade": "gruen",
-    "reason": "Grundgehalt 4.100 € liegt auf oder über dem Median der 31 Anzeigen (inkl. Zeitarbeit) mit Gehaltsangabe (Q25 3.309 €, Median 3.522 €)"
+    "reason": "5 von 31 Anzeigen (inkl. Zeitarbeit) mit Gehaltsangabe zahlen mehr als das Angebot (16 %; Stundenlöhne gegen Grundgehalt 4.100 €, Jahresgehälter gegen Gesamtbezüge 4.442 €/Monat)",
+    "caveat": "unsicher: 28 von 31 Vergleichsanzeigen sind Zeitarbeit; fließt nicht in die Einschätzung ein"
    },
    {
     "rule": "W1",
     "grade": "gelb",
-    "reason": "72 offene Stellen im selben Beruf im Umkreis von 25 km (gelb ab 30, rot ab 100)"
+    "reason": "72 offene Stellen im selben Beruf im Umkreis von 25 km (gelb ab 30, rot ab 100)",
+    "caveat": ""
    }
   ]
  },
@@ -224,7 +263,7 @@
    "served_by": [
     "claude-opus-5-5"
    ],
-   "cost_usd": 0.0263586
+   "cost_usd": 0.0218986
   },
   "checks": [
    {
@@ -232,7 +271,7 @@
     "frage": "Gehalt oder Stundenlohn als Betrag oder Spanne genannt",
     "status": "fehlt",
     "zitat": "Leistungsgerechte Bezahlung",
-    "hinweis": "Es steht kein Betrag und keine Spanne in der Anzeige.",
+    "hinweis": "Es steht weder ein Betrag noch eine Spanne in der Anzeige.",
     "quote_verified": true
    },
    {
@@ -256,7 +295,7 @@
     "frage": "Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein)",
     "status": "unklar",
     "zitat": "Bereitschaft zur Schichtarbeit",
-    "hinweis": "Offen ist, ob wirklich in Schichten gearbeitet wird und ob Nacht- oder Wochenendarbeit dazugehört.",
+    "hinweis": "Es bleibt offen, welches Schichtmodell gilt und ob Nacht- oder Wochenendarbeit dazugehört.",
     "quote_verified": true
    },
    {
@@ -304,7 +343,7 @@
     "frage": "Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp)",
     "status": "fehlt",
     "zitat": "Bitte senden Sie Ihre Bewerbung an unsere Personalabteilung.",
-    "hinweis": "Es gibt weder Kontaktdaten noch einen vereinfachten Bewerbungsweg.",
+    "hinweis": "Es fehlen ein Kontakt und ein einfacher Bewerbungsweg.",
     "quote_verified": true
    },
    {
@@ -312,7 +351,7 @@
     "frage": "Muss- und Kann-Anforderungen unterscheidbar",
     "status": "fehlt",
     "zitat": "Ausbildung als Zerspanungsmechaniker Fachrichtung Frästechnik oder vergleichbar",
-    "hinweis": "Alle Anforderungen stehen ohne Unterscheidung zwischen Muss und Kann nebeneinander.",
+    "hinweis": "Alle Anforderungen stehen ohne Unterscheidung zwischen Muss und Kann da.",
     "quote_verified": true
    }
   ]

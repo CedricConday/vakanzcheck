@@ -30,6 +30,7 @@ Verdict (a rule carrying a caveat counts as keine Daten here)
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+from decimal import ROUND_HALF_UP, Decimal
 
 from .salary import AdPay, Offer
 
@@ -48,8 +49,14 @@ class Finding:
     caveat: str = ""
 
 
+def half_up(x: float, places: int = 0) -> float:
+    """Commercial rounding (20,275 -> 20,28; 37.346,5 -> 37.347), not Python's half-even."""
+    q = Decimal(1).scaleb(-places)
+    return float(Decimal(repr(x)).quantize(q, rounding=ROUND_HALF_UP))
+
+
 def _fmt(x: float) -> str:
-    return f"{x:,.0f} €".replace(",", ".")
+    return f"{half_up(x):,.0f} €".replace(",", ".")
 
 
 def salary_vs_region(offer_total: float, median: int | None, q25: int | None,

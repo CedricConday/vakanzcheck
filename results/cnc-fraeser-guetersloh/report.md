@@ -40,8 +40,8 @@ Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):
 | Einheit | Arbeitgeber | Anzeigen | Median | Spanne |
 |---|---|---|---|---|
 | €/Stunde | direkt | 2 | 20,75 | 19,50 – 22,00 |
-| €/Stunde | Zeitarbeit | 28 | 20,27 | 17,11 – 24,50 |
-| €/Jahr | direkt | 1 | 37.346 | 37.346 – 37.346 |
+| €/Stunde | Zeitarbeit | 28 | 20,28 | 17,11 – 24,50 |
+| €/Jahr | direkt | 1 | 37.347 | 37.347 – 37.347 |
 
 S2 vergleicht Stundenlöhne (mit 40 Std./Woche) mit dem Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. Sonderzahlungen, weil Jahresgehälter diese meist enthalten.
 

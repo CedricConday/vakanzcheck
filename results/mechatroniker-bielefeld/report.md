@@ -41,7 +41,7 @@ Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):
 |---|---|---|---|---|
 | €/Stunde | direkt | 6 | 21,66 | 20,00 – 24,00 |
 | €/Stunde | Zeitarbeit | 50 | 20,00 | 11,76 – 25,26 |
-| €/Jahr | direkt | 17 | 48.018 | 39.000 – 62.048 |
+| €/Jahr | direkt | 17 | 48.018 | 39.000 – 62.049 |
 
 S2 vergleicht Stundenlöhne (mit 35 Std./Woche) mit dem Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. Sonderzahlungen, weil Jahresgehälter diese meist enthalten.
 

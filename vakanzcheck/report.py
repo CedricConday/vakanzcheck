@@ -9,12 +9,12 @@ NAMES = {"S1": "Gehalt vs. Region", "S2": "Gehalt vs. Konkurrenzanzeigen", "W1":
 
 
 def eur(x) -> str:
-    return "–" if x is None else f"{x:,.0f} €".replace(",", ".")
+    return "–" if x is None else f"{rules.half_up(x):,.0f} €".replace(",", ".")
 
 
 def num(x: float) -> str:
     """German number format: two decimals below 100 (hourly wages), none above."""
-    text = f"{x:,.2f}" if x < 100 else f"{x:,.0f}"
+    text = f"{rules.half_up(x, 2):,.2f}" if x < 100 else f"{rules.half_up(x):,.0f}"
     return text.replace(",", "X").replace(".", ",").replace("X", ".")
 
 

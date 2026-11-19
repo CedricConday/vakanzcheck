@@ -12,6 +12,18 @@ def eur(x) -> str:
     return "–" if x is None else f"{x:,.0f} €".replace(",", ".")
 
 
+def num(x: float) -> str:
+    """German number format: two decimals below 100 (hourly wages), none above."""
+    text = f"{x:,.2f}" if x < 100 else f"{x:,.0f}"
+    return text.replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def cell(row: dict, key: str) -> str:
+    if key in (row.get("censored") or ()):
+        return "über BBG"
+    return eur(row.get(key))
+
+
 def pct(a: int, b: int) -> str:
     return "–" if not b else f"{100 * a / b:.0f} %"
 
@@ -39,7 +51,9 @@ def render(r: dict) -> str:
     L += [f"**Einschätzung: {ver['label']}**", ""]
     L += ["| Regel | Ergebnis | Begründung |", "|---|---|---|"]
     for f in ver["findings"]:
-        L.append(f"| {f['rule']} {NAMES[f['rule']]} | {MARK[f['grade']]} | {f['reason']} |")
+        grade = MARK[f["grade"]] + (" (unsicher)" if f.get("caveat") else "")
+        reason = f["reason"] + (f". **{f['caveat']}**" if f.get("caveat") else "")
+        L.append(f"| {f['rule']} {NAMES[f['rule']]} | {grade} | {reason} |")
     L += ["", "Die Regeln und ihre Schwellen stehen im README; sie sind gesetzt, nicht gemessen.",
           ""]
 
@@ -47,49 +61,66 @@ def render(r: dict) -> str:
     L += ["## Gehalt", ""]
     L += [(f"Angebot umgerechnet: {eur(o['monthly_total'])}/Monat inkl. Sonderzahlungen "
           f"(Vergleich mit dem Entgeltatlas), {eur(o['monthly_base'])}/Monat Grundgehalt "
-          "(Vergleich mit Anzeigen)."), ""]
+          "(Vergleich mit Stundenlöhnen in Anzeigen)."), ""]
     L += [(f"KldB {occ['kldb']}: {occ['kldb_label'] or 'Bezeichnung unbekannt'} "
           f"(Niveau {occ['level']}; Zuordnung: {occ['source']})."), ""]
     L += ["| Region | Branche | Q25 | Median | Q75 | Beschäftigte |", "|---|---|---|---|---|---|"]
     for block in (sal["regional"], sal["germany"]):
         ov = block["overall"]
         if ov:
-            L.append(f"| {ov['region']} | alle | {eur(ov['q25'])} | {eur(ov['median'])} | "
-                     f"{eur(ov['q75'])} | {ov['employees'] or '–'} |")
+            L.append(f"| {ov['region']} | alle | {cell(ov, 'q25')} | {cell(ov, 'median')} | "
+                     f"{cell(ov, 'q75')} | {ov['employees'] or '–'} |")
         if block is sal["germany"] and sal["region_id"] == 1:
             break
     for b in sal["regional"]["branches"]:
-        L.append(f"| {b['region']} | {b['branche']} | {eur(b['q25'])} | {eur(b['median'])} | "
-                 f"{eur(b['q75'])} | {b['employees'] or '–'} |")
+        L.append(f"| {b['region']} | {b['branche']} | {cell(b, 'q25')} | {cell(b, 'median')} | "
+                 f"{cell(b, 'q75')} | {b['employees'] or '–'} |")
     region_note = (" Die Region wurde aus dem Bundesland der Anzeigen im Umkreis bestimmt."
                    if sal["region_inferred"] else "")
-    L += ["", ("Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt "
+    if any(b.get("censored") for b in [sal["regional"]["overall"] or {},
+                                         sal["germany"]["overall"] or {},
+                                         *sal["regional"]["branches"]]):
+        L += ["", (f"„über BBG“: Wert liegt an oder über der Beitragsbemessungsgrenze "
+                   f"({eur(sal['ceiling'])}); der wahre Wert ist nicht bekannt.")]
+    if not sal["stichtag_confirmed"]:
+        L += ["", (f"**Achtung:** Die Beitragsbemessungsgrenze in der Antwort "
+                   f"({eur(sal['ceiling'])}) passt nicht zum Stichtag {sal['stichtag']}; "
+                   "die Daten sind vermutlich neuer. Stichtag in sources.py prüfen.")]
+    L += ["", (f"Quelle: BA Entgeltatlas, Stichtag {sal['stichtag']}, Bruttomonatsentgelt "
           "sozialversicherungspflichtig Vollzeitbeschäftigter inkl. Sonderzahlungen. "
           "Feinste Ebene ist das Bundesland (oder eine von zwölf Großstädten); "
           f"Kreise gibt es nicht.{region_note}"), ""]
 
     # (b) competition
-    sp = comp["stated_pay"]
+    sp, smp = comp["stated_pay"], comp["sample"]
     L += ["## Wettbewerb um Bewerber", ""]
     L += [(f"- **{comp['same_beruf']}** offene Stellen im selben Beruf im Umkreis, davon "
           f"{comp['same_beruf_zeitarbeit']} von Zeitarbeitsfirmen "
-          f"({pct(comp['same_beruf_zeitarbeit'], comp['same_beruf'])})."),
+          f"({pct(comp['same_beruf_zeitarbeit'], comp['same_beruf'])}, laut Zeitarbeit-Filter "
+          f"der Jobsuche; gezählt: {comp['count_source']})."),
           (f"- {comp['query_total']} Treffer für die Suche insgesamt, einschließlich "
           "verwandter Berufe."),
           (f"- {sp['stating']} von {sp['ads']} Anzeigen im selben Beruf nennen ein Gehalt "
-          f"({pct(sp['stating'], sp['ads'])}); "
-          f"{comp['shift_ads']} nennen Schicht-, Nacht- oder Wochenendarbeit.")]
-    if sp["monthly"]:
-        m = sp["monthly"]
-        L.append(f"- Genannte Gehälter, auf Monat umgerechnet (Stundenlöhne mit "
-                 f"{o['hours']:g} Std./Woche, Spannen als Mitte): Q25 {eur(m['q25'])}, "
-                 f"Median {eur(m['median'])}, Q75 {eur(m['q75'])} (n = {m['n']}).")
-        d = sp["monthly_direct"]
-        L.append(f"- Davon ohne Zeitarbeit: {sp['stating_direct']} Anzeigen"
-                 + (f", Median {eur(d['median'])}." if d else "."))
-    if comp["truncated"]:
-        L.append("- Mehr Treffer als abrufbar; Zählung aus der Facette der Jobsuche.")
+          f"({pct(sp['stating'], sp['ads'])}), davon {sp['stating_direct']} ohne Zeitarbeit."),
+          (f"- {comp['shift_flagged']} von {sp['ads']} sind in der Jobsuche mit dem "
+          "Arbeitszeitmerkmal Schicht/Nacht/Wochenende gekennzeichnet (Strukturfeld, nicht "
+          "aus dem Anzeigentext).")]
+    if smp["truncated"]:
+        L.append(f"- **Stichprobe:** {smp['query_total']} Treffer, abrufbar sind "
+                 f"{smp['items_read']}. Zeitarbeit-Kennzeichen, Gehälter, Schichtmerkmal und "
+                 "Arbeitgeber unten stammen nur aus diesen; die Stellenzahlen aus der Facette.")
     L.append("")
+    if sp["by_unit"]:
+        unit = {"hour": "€/Stunde", "month": "€/Monat", "year": "€/Jahr"}
+        L += ["Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):", "",
+              "| Einheit | Arbeitgeber | Anzeigen | Median | Spanne |", "|---|---|---|---|---|"]
+        for row in sp["by_unit"]:
+            who = "direkt" if row["direct"] else "Zeitarbeit"
+            L.append(f"| {unit[row['unit']]} | {who} | {row['n']} | {num(row['median'])} | "
+                     f"{num(row['min'])} – {num(row['max'])} |")
+        L += ["", (f"S2 vergleicht Stundenlöhne (mit {o['hours']:g} Std./Woche) mit dem "
+                   "Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. "
+                   "Sonderzahlungen, weil Jahresgehälter diese meist enthalten."), ""]
     if comp["top_employers"]:
         L += ["| Meiste Anzeigen | Stellen | Zeitarbeit |", "|---|---|---|"]
         for t in comp["top_employers"]:

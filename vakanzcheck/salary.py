@@ -1,12 +1,19 @@
-"""Put an offered salary and the salaries stated in job ads on the same monthly scale.
+"""Put an offered salary and the salaries stated in job ads on comparable scales.
 
-Two monthly figures are kept apart on purpose:
+The offer has two monthly figures, kept apart on purpose:
 
 - `total`: base pay plus one-off payments (13th salary, holiday and Christmas
   money) spread over twelve months. The Entgeltatlas median includes one-off
   payments, so this is the figure compared against it.
-- `base`: the regular monthly pay alone. Job ads state regular pay, so this is the
-  figure compared against them.
+- `base`: the regular monthly pay alone.
+
+Job ads state pay in two units in the Jobsuche v6 results: STUNDENLOHN and
+JAHRESGEHALT (MONATSGEHALT is handled but was not seen). They are not on the
+same footing. An hourly wage is regular pay and is compared with `base`. An
+annual salary usually includes the 13th salary and holiday money, so annual
+figures / 12 are compared with `total`. Mixing them on one monthly scale made
+annual-salary ads (mostly direct employers) look better paid than hourly-wage
+ads (mostly staffing agencies) by about a 13th salary.
 
 Hourly pay becomes monthly with the BA's own day basis: hours per week times
 365.25 / 7 / 12 weeks per month (about 4.35).
@@ -14,7 +21,6 @@ Hourly pay becomes monthly with the BA's own day basis: hours per week times
 
 from __future__ import annotations
 
-import statistics
 from dataclasses import dataclass
 
 WEEKS_PER_MONTH = 365.25 / 7 / 12
@@ -54,11 +60,23 @@ PLAUSIBLE = {"STUNDENLOHN": (10, 100), "MONATSGEHALT": (1000, 15000),
              "JAHRESGEHALT": (15000, 200000)}
 
 
-def ad_monthly(item: dict, hours: float) -> float | None:
-    """The regular monthly pay a Jobsuche posting states, or None if it states none.
+@dataclass(frozen=True)
+class AdPay:
+    unit: str  # "hour", "month" or "year", as the ad states it
+    value: float  # in that unit; a range counts as its midpoint
+    monthly: float  # hourly at the vacancy's weekly hours, annual / 12
+    scale: str  # "base" or "total": which offer figure this is compared with
 
-    A range counts as its midpoint. Hourly pay uses the vacancy's own weekly hours,
-    so ads and offer are compared at the same working time.
+    def above(self, offer: Offer) -> bool:
+        """True if the ad pays more than the offer, on the matching scale."""
+        return self.monthly > (offer.base if self.scale == "base" else offer.total)
+
+
+def ad_pay(item: dict, hours: float) -> AdPay | None:
+    """The pay a Jobsuche posting states, or None if it states none or an implausible value.
+
+    Hourly pay uses the vacancy's own weekly hours, so ad and offer are compared at
+    the same working time.
     """
     unit = item.get("verguetungsangabe")
     if unit not in PLAUSIBLE:
@@ -76,14 +94,7 @@ def ad_monthly(item: dict, hours: float) -> float | None:
     if not low <= value <= high:
         return None
     if unit == "STUNDENLOHN":
-        return value * hours * WEEKS_PER_MONTH
+        return AdPay("hour", value, value * hours * WEEKS_PER_MONTH, "base")
     if unit == "JAHRESGEHALT":
-        return value / 12
-    return value
-
-
-def quartiles(values: list[float]) -> dict | None:
-    if len(values) < 4:
-        return None
-    q1, q2, q3 = statistics.quantiles(values, n=4, method="inclusive")
-    return {"n": len(values), "q25": q1, "median": q2, "q75": q3}
+        return AdPay("year", value, value / 12, "total")
+    return AdPay("month", value, value, "base")

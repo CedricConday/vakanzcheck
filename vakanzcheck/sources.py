@@ -50,6 +50,13 @@ JOBSUCHE_LAND_TO_EGA = {
     "MECKLENBURG_VORPOMMERN": 16, "SACHSEN": 17, "SACHSEN_ANHALT": 18, "THUERINGEN": 19,
 }
 
+# The API does not return its reference date. The Entgeltatlas help page
+# (arbeitsagentur.de/hilfe-entgeltatlas, read 2026-11-19) gives 31.12.2025, and
+# the response's contribution ceiling (8.050 €, the 2025 value) agrees. When the
+# ceiling in a response differs, the data has moved on and the report says so.
+EGA_STICHTAG = "31.12.2025"
+EGA_CEILING = 8050
+
 LEVELS = {"1": "Helfer", "2": "Fachkraft", "3": "Spezialist", "4": "Experte"}
 
 
@@ -107,10 +114,11 @@ class SalaryRow:
     q75: int | None
     employees: int | None
     ceiling: int | None  # Beitragsbemessungsgrenze; values at or above it are censored
+    censored: tuple[str, ...] = ()  # fields at or above the ceiling, set to None
 
     @property
     def usable(self) -> bool:
-        return self.median is not None
+        return self.median is not None or "median" in self.censored
 
 
 def _value(v) -> int | None:
@@ -121,7 +129,8 @@ def salary_rows(http: Http, kldb: str, region_id: int) -> list[SalaryRow]:
     """All 'Gesamt' gender/age rows for one region: the overall row and one per branch.
 
     Negative numbers in the response mark suppressed cells (too few employees);
-    they become None.
+    they become None. So does any value at or above the contribution ceiling,
+    where the true figure is unknown; the row is then marked censored.
     """
     data = http.get(f"{ENTGELTATLAS}/pc/v1/entgelte/{kldb}", {"r": region_id}, ENTGELTATLAS_KEY)
     rows = []
@@ -129,14 +138,18 @@ def salary_rows(http: Http, kldb: str, region_id: int) -> list[SalaryRow]:
         if e["gender"]["id"] != 1 or e["ageCategory"]["id"] != 1:
             continue
         ceiling = e["region"].get("beitragsBemessungsGrenze")
-        med = _value(e.get("entgelt"))
-        if med is not None and ceiling and med >= ceiling:
-            med = None
+        names = {"entgelt": "median", "entgeltQ25": "q25", "entgeltQ75": "q75"}
+        vals = {k: _value(e.get(k)) for k in names}
+        censored = []
+        for k, x in vals.items():
+            if x is not None and ceiling and x >= ceiling:
+                vals[k] = None
+                censored.append(names[k])
         rows.append(SalaryRow(
             region_id=e["region"]["id"], region=e["region"]["bezeichnung"],
-            branche=e["branche"]["bezeichnung"], median=med,
-            q25=_value(e.get("entgeltQ25")), q75=_value(e.get("entgeltQ75")),
-            employees=_value(e.get("besetzung")), ceiling=ceiling))
+            branche=e["branche"]["bezeichnung"], median=vals["entgelt"],
+            q25=vals["entgeltQ25"], q75=vals["entgeltQ75"],
+            employees=_value(e.get("besetzung")), ceiling=ceiling, censored=tuple(censored)))
     return rows
 
 
@@ -146,7 +159,9 @@ def salary_rows(http: Http, kldb: str, region_id: int) -> list[SalaryRow]:
 class PostingSearch:
     query: dict
     total: int  # all hits for the query within the radius
-    facet: dict[str, int]  # postings per occupation (a posting can list several)
+    facet: dict[str, int]  # postings per occupation, top 20 (a posting can list several)
+    facet_full: dict[str, int]  # the same, up to 100 occupations
+    agency_facet: int | None  # postings the Jobsuche marks as staffing agency
     place: str | None
     items: list[dict]
     truncated: bool
@@ -170,10 +185,22 @@ def search_postings(http: Http, beruf: str, wo: str, radius_km: int, *,
         if not batch or len(items) >= body["maxErgebnisse"]:
             break
     total = first["maxErgebnisse"]
-    facet = ((first.get("facetten") or {}).get("topberuf") or {}).get("counts") or {}
+    facets = first.get("facetten") or {}
+
+    def counts(name):
+        return dict((facets.get(name) or {}).get("counts") or {})
+
+    agency = counts("zeitarbeit").get("true")
     place = (first.get("woOutput") or {}).get("bereinigterOrt")
-    return PostingSearch(query=params, total=total, facet=dict(facet), place=place, items=items,
-                         truncated=len(items) < total)
+    return PostingSearch(query=params, total=total, facet=counts("topberuf"),
+                         facet_full=counts("beruf"), agency_facet=agency, place=place,
+                         items=items, truncated=len(items) < total)
+
+
+def facet_count(search: PostingSearch, beruf: str) -> int | None:
+    """Postings listing `beruf`, from the facets (they can differ from an item count by one
+    or two). None if the occupation is not among the up to 100 the facet lists."""
+    return search.facet_full.get(beruf, search.facet.get(beruf))
 
 
 def lists_beruf(item: dict, beruf: str) -> bool:

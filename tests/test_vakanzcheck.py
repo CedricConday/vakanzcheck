@@ -5,8 +5,8 @@ from pathlib import Path
 import pytest
 
 from vakanzcheck import adcheck, check, report, rules, sources
-from vakanzcheck.fetch import Http, Replay, SourceError, shrink
-from vakanzcheck.salary import Offer, ad_monthly, quartiles
+from vakanzcheck.fetch import Http, Recorder, Replay, SourceError, shrink
+from vakanzcheck.salary import AdPay, Offer, ad_pay
 from vakanzcheck.subscription import CliError, Subscription
 
 FIXTURES = Path(__file__).parent / "fixtures"
@@ -39,8 +39,12 @@ def test_recorded_run_offline():
     assert ov["q25"] < ov["median"] < ov["q75"]
     c = r["competition"]
     assert c["same_beruf"] == c["same_beruf_direct"] + c["same_beruf_zeitarbeit"]
-    assert c["same_beruf"] <= c["query_total"] and not c["truncated"]
-    assert c["stated_pay"]["stating"] <= c["stated_pay"]["ads"] == c["same_beruf"]
+    assert c["same_beruf"] <= c["query_total"] and not c["sample"]["truncated"]
+    assert c["count_source"] == "Einzelabruf aller Anzeigen"
+    sp = c["stated_pay"]
+    assert sp["stating_direct"] <= sp["stating"] <= sp["ads"] == c["same_beruf"]
+    assert sum(row["n"] for row in sp["by_unit"]) == sp["stating"]
+    assert r["salary"]["stichtag_confirmed"]
     # 3600 € is below the NRW lower quartile for KldB 24232 in the recording.
     assert r["verdict"]["findings"][0]["grade"] == rules.RED
     assert r["verdict"]["label"] == "schwer besetzbar"
@@ -76,17 +80,26 @@ def test_offer_conversions():
         Offer(3600, "month", payments=11)
 
 
-def test_ad_salaries():
+def test_ad_salaries_keep_their_unit():
     h = 40
-    assert ad_monthly({"verguetungsangabe": "STUNDENLOHN", "festgehalt": 20.0}, h) \
-        == pytest.approx(20 * 40 * 365.25 / 7 / 12)
-    assert ad_monthly({"verguetungsangabe": "JAHRESGEHALT", "gehaltsspanneVon": 48000.0,
-                       "gehaltsspanneBis": 60000.0}, h) == 4500
-    assert ad_monthly({"verguetungsangabe": "KEINE_ANGABEN"}, h) is None
+    hourly = ad_pay({"verguetungsangabe": "STUNDENLOHN", "festgehalt": 20.0}, h)
+    assert hourly.unit == "hour" and hourly.scale == "base"
+    assert hourly.monthly == pytest.approx(20 * 40 * 365.25 / 7 / 12)
+    annual = ad_pay({"verguetungsangabe": "JAHRESGEHALT", "gehaltsspanneVon": 48000.0,
+                     "gehaltsspanneBis": 60000.0}, h)
+    assert (annual.unit, annual.value, annual.monthly, annual.scale) == ("year", 54000, 4500,
+                                                                         "total")
+    assert ad_pay({"verguetungsangabe": "KEINE_ANGABEN"}, h) is None
     # an "hourly" wage of 3500 is a monthly figure in the wrong field: dropped, not converted
-    assert ad_monthly({"verguetungsangabe": "STUNDENLOHN", "festgehalt": 3500.0}, h) is None
-    assert quartiles([1, 2, 3]) is None
-    assert quartiles([1, 2, 3, 4, 5])["median"] == 3
+    assert ad_pay({"verguetungsangabe": "STUNDENLOHN", "festgehalt": 3500.0}, h) is None
+
+
+def test_annual_ads_are_compared_with_pay_including_one_offs():
+    # 3.600 x 13 = 46.800 a year. An ad offering 46.000 a year pays less, although
+    # 46.000 / 12 = 3.833 is more than the 3.600 base.
+    offer = Offer(3600, "month", payments=13)
+    assert not AdPay("year", 46000, 46000 / 12, "total").above(offer)
+    assert AdPay("hour", 21.0, 21.0 * 40 * 365.25 / 7 / 12, "base").above(offer)
 
 
 def test_suppressed_and_censored_salary_cells_become_none():
@@ -94,13 +107,13 @@ def test_suppressed_and_censored_salary_cells_become_none():
            "region": {"id": 8, "bezeichnung": "Nordrhein-Westfalen",
                       "beitragsBemessungsGrenze": 8050}}
     data = [{**row, "entgelt": -1, "entgeltQ25": -1, "entgeltQ75": -1, "besetzung": -42},
-            {**row, "branche": {"bezeichnung": "X"}, "entgelt": 8050, "entgeltQ25": 7000,
-             "entgeltQ75": -1, "besetzung": 1200},
+            {**row, "branche": {"bezeichnung": "X"}, "entgelt": 6000, "entgeltQ25": 5000,
+             "entgeltQ75": 8050, "besetzung": 1200},
             {**row, "gender": {"id": 2}, "entgelt": 4000}]
     rows = sources.salary_rows(FakeHttp(lambda u, p: data), "26112", 8)
     assert len(rows) == 2
     assert rows[0].median is None and rows[0].employees is None and not rows[0].usable
-    assert rows[1].median is None and rows[1].q25 == 7000
+    assert rows[1].q75 is None and rows[1].censored == ("q75",) and rows[1].median == 6000
 
 
 # --- rules ----------------------------------------------------------------------------------
@@ -110,18 +123,37 @@ def test_salary_rule_bands():
     assert rules.salary_vs_region(3500, 4000, 3500, "NRW").grade == rules.AMBER
     assert rules.salary_vs_region(4000, 4000, 3500, "NRW").grade == rules.GREEN
     assert rules.salary_vs_region(4000, None, None, "NRW").grade == rules.NODATA
-    b = "Anzeigen"
-    assert rules.salary_vs_ads(3000, [1.0] * (rules.MIN_STATED - 1), b).grade == rules.NODATA
-    ads = [3000.0, 3000.0, 3300.0, 3600.0, 3600.0]  # Q25 3000, median 3300
-    assert rules.salary_vs_ads(2999, ads, b).grade == rules.RED
-    assert rules.salary_vs_ads(3000, ads, b).grade == rules.AMBER
-    assert rules.salary_vs_ads(3300, ads, b).grade == rules.GREEN
+    offer = Offer(3300, "month")
+
+    def ads(*monthly):
+        return [AdPay("month", m, m, "base") for m in monthly]
+
+    few = ads(*[4000] * (rules.MIN_STATED - 1))
+    assert rules.salary_vs_ads(offer, few, True, 0).grade == rules.NODATA
+    # share of ads paying more than the offer: 80 % rot, 60 % gelb, 40 % gruen
+    assert rules.salary_vs_ads(offer, ads(3400, 3400, 3400, 3400, 3300), True, 0).grade \
+        == rules.RED
+    assert rules.salary_vs_ads(offer, ads(3400, 3400, 3400, 3300, 3000), True, 0).grade \
+        == rules.AMBER
+    assert rules.salary_vs_ads(offer, ads(3400, 3400, 3300, 3300, 3000), True, 0).grade \
+        == rules.GREEN
 
 
-def test_ad_basis_prefers_direct_employers_when_enough_state_pay():
-    direct, every = [4000.0] * rules.MIN_STATED, [3000.0] * 20
-    assert rules.ad_basis(direct, every)[0] is direct
-    assert rules.ad_basis(direct[:-1], every)[0] is every
+def test_ad_basis_and_the_agency_caveat():
+    direct = [AdPay("hour", 22, 3800, "base")] * rules.MIN_STATED
+    every = direct + [AdPay("hour", 20, 3450, "base")] * 20
+    assert rules.ad_basis(direct, every) == (direct, True)
+    assert rules.ad_basis(direct[:-1], every) == (every, False)
+    offer = Offer(3300, "month")
+    weak = rules.salary_vs_ads(offer, every, False, 20)
+    assert weak.grade == rules.RED and weak.caveat.startswith("unsicher")
+    assert not rules.salary_vs_ads(offer, direct, True, 0).caveat
+    # a caveated S2 does not move the verdict
+    s1 = rules.Finding("S1", rules.GREEN, "")
+    w1 = rules.Finding("W1", rules.RED, "")
+    v = rules.verdict(s1, weak, w1)
+    assert v["label"] == "besetzbar mit Aufwand"
+    assert v["findings"][1]["grade"] == rules.RED  # still shown as measured
 
 
 def test_competition_and_verdict():
@@ -236,7 +268,9 @@ def test_shrink_keeps_only_read_fields_and_pseudonymises():
     def pseudonym(n):
         return names.setdefault(n, f"Arbeitgeber {len(names) + 1:03d} GmbH")
 
-    body = {"maxErgebnisse": 1, "facetten": {"topberuf": {"counts": {"A": 1}, "scores": {}}},
+    body = {"maxErgebnisse": 1, "facetten": {"topberuf": {"counts": {"A": 1}, "scores": {}},
+                                             "arbeitgeber": {"counts": {"Max Muster": 1}},
+                                             "zeitarbeit": {"counts": {"true": 1}}},
             "ergebnisliste": [{"firma": "Max Muster Elektro", "stellenangebotsTitel": "X",
                                "externeURL": "https://example.org", "chiffrenummer": "1",
                                "referenznummer": "r1", "alleBerufe": ["A"],
@@ -248,8 +282,50 @@ def test_shrink_keeps_only_read_fields_and_pseudonymises():
     assert "stellenangebotsTitel" not in item and "externeURL" not in item
     assert item["stellenlokationen"] == [{"adresse": {"region": "BAYERN"}}]
     assert "scores" not in small["facetten"]["topberuf"]
+    assert "arbeitgeber" not in small["facetten"]  # employer names live in this facet
+    assert small["facetten"]["zeitarbeit"] == {"counts": {"true": 1}}
+
+
+def test_recorder_returns_the_real_response_and_writes_the_shrunk_one(tmp_path, monkeypatch):
+    body = {"maxErgebnisse": 1, "ergebnisliste": [{"firma": "Echte Firma GmbH",
+                                                   "stellenangebotsTitel": "X"}]}
+    monkeypatch.setattr(Http, "get", lambda self, url, params, key: body)
+    rec = Recorder(tmp_path)
+    got = rec.get("https://x/jobsuche-service/pc/v6/jobs", {"page": 1}, "k")
+    assert got["ergebnisliste"][0]["firma"] == "Echte Firma GmbH"
+    written = json.loads(next(tmp_path.glob("*.json")).read_text())
+    assert written["ergebnisliste"][0] == {"firma": "Arbeitgeber 001 GmbH"}
 
 
 def test_employer_names_without_legal_form_are_hidden():
     assert check.display_employer("Muster Zerspanung GmbH & Co. KG").endswith("KG")
     assert check.display_employer("Max Muster") == check.MASKED
+
+
+def test_truncated_search_counts_from_facets_and_flags_the_sample():
+    beruf = "Mechatroniker/in"
+    salary = [{"gender": {"id": 1}, "ageCategory": {"id": 1}, "branche": {"bezeichnung": "Gesamt"},
+               "region": {"id": 8, "bezeichnung": "Nordrhein-Westfalen",
+                          "beitragsBemessungsGrenze": 8050},
+               "entgelt": 4000, "entgeltQ25": 3500, "entgeltQ75": 4600, "besetzung": 9000}]
+
+    def answer(url, params):
+        if "entgelte" in url:
+            return salary
+        direct = params.get("zeitarbeit") == "false"
+        n = 100 * params["page"]
+        items = [{"referenznummer": f"{'d' if direct else 'a'}{n + i}", "alleBerufe": [beruf],
+                  "firma": "X GmbH", "stellenlokationen": [
+                      {"adresse": {"region": "NORDRHEIN_WESTFALEN"}}]} for i in range(100)]
+        # beruf is outside the top-20 facet but inside the 100-entry one
+        return {"maxErgebnisse": 1500 if direct else 2500, "ergebnisliste": items,
+                "facetten": {"topberuf": {"counts": {"Andere/r": 2000}},
+                             "beruf": {"counts": {beruf: 900 if direct else 1800}}}}
+
+    r = check.run(check.Vacancy(beruf, "Bielefeld", 50, Offer(3700, "month"), kldb="26112"),
+                  FakeHttp(answer))
+    c = r["competition"]
+    assert (c["same_beruf"], c["same_beruf_direct"], c["same_beruf_zeitarbeit"]) == (1800, 900, 900)
+    assert c["count_source"] == "Facette der Jobsuche"
+    assert c["sample"] == {"truncated": True, "items_read": 1000, "query_total": 2500}
+    assert "Stichprobe" in report.render(r)

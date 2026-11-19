@@ -18,6 +18,24 @@
     "Zerspanungsmechaniker/in - Frästechnik": 3,
     "CNC-Fräser/in": 3
    }
+  },
+  "beruf": {
+   "counts": {
+    "CNC-Dreher/in": 2,
+    "CNC-Fräser/in": 3,
+    "Erodierer/in": 1,
+    "Werkzeugmechaniker/in": 1,
+    "Zerspanungsmechaniker/in": 2,
+    "Zerspanungsmechaniker/in - Automaten-Drehtechnik": 1,
+    "Zerspanungsmechaniker/in - Drehtechnik": 2,
+    "Zerspanungsmechaniker/in - Frästechnik": 3
+   }
+  },
+  "zeitarbeit": {
+   "counts": {
+    "false": 8,
+    "true": 32
+   }
   }
  },
  "ergebnisliste": [

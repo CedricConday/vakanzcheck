@@ -68,6 +68,11 @@ POSTING_FIELDS = (
 )
 
 
+# Facets vakanzcheck reads: occupation counts (top 20 and up to 100) and the
+# staffing-agency split.
+FACETS = ("topberuf", "beruf", "zeitarbeit")
+
+
 def shrink(url: str, body, pseudonym):
     """Reduce a response to what the code reads, for a small, shareable fixture."""
     if "/jobsuche-service/" in url and isinstance(body, dict):
@@ -81,10 +86,11 @@ def shrink(url: str, body, pseudonym):
                 y["stellenlokationen"] = [{"adresse": {"region": locs[0].get("adresse", {})
                                                        .get("region")}}]
             items.append(y)
-        top = (body.get("facetten") or {}).get("topberuf") or {}
+        facets = body.get("facetten") or {}
         return {"maxErgebnisse": body.get("maxErgebnisse"), "page": body.get("page"),
                 "size": body.get("size"), "woOutput": body.get("woOutput"),
-                "facetten": {"topberuf": {"counts": top.get("counts", {})}},
+                "facetten": {k: {"counts": (facets.get(k) or {}).get("counts", {})}
+                             for k in FACETS if k in facets},
                 "ergebnisliste": items}
     if "/bnet/" in url:
         if isinstance(body, list):
@@ -115,7 +121,7 @@ class Recorder(Http):
         small = shrink(url, body, self._pseudonym)
         path = self.dir / f"{request_key(url, params)}.json"
         path.write_text(json.dumps(small, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-        return small
+        return body  # the run itself sees the real response; only the file is shrunk
 
 
 class Replay(Http):

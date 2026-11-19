@@ -22,6 +22,30 @@
     "CNC-Dreher/in": 9,
     "Dreher/in": 3
    }
+  },
+  "beruf": {
+   "counts": {
+    "CNC-Dreher/in": 9,
+    "CNC-Fachkraft/NC-Anwendungsfachmann/-frau": 1,
+    "CNC-Fräser/in": 11,
+    "Dreher/in": 3,
+    "Erodierer/in": 1,
+    "Fachkraft - Metalltechnik - Zerspanungstechnik": 2,
+    "Maschinen- und Anlagenführer/in - Metall-, Kunststofftechnik": 2,
+    "Maschineneinrichter/in (Zerspanungstechnik)": 1,
+    "Metallbauer/in - Konstruktionstechnik": 1,
+    "Werkzeugmechaniker/in": 2,
+    "Zerspanungsmechaniker/in": 22,
+    "Zerspanungsmechaniker/in - Automaten-Drehtechnik": 2,
+    "Zerspanungsmechaniker/in - Drehtechnik": 13,
+    "Zerspanungsmechaniker/in - Frästechnik": 12
+   }
+  },
+  "zeitarbeit": {
+   "counts": {
+    "false": 8,
+    "true": 32
+   }
   }
  },
  "ergebnisliste": [

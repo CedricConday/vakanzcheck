@@ -7,14 +7,20 @@ argued with and changed; they are not findings.
 S1  Offer vs. regional pay (Entgeltatlas, Land level, incl. one-off payments)
     below the lower quartile -> rot; between lower quartile and median -> gelb;
     at or above the median -> gruen.
-S2  Offer vs. pay stated in competing ads for the same occupation in the radius
-    (regular monthly pay; needs at least MIN_STATED ads that state pay). Direct
-    employers' ads when MIN_STATED of them state pay, else all ads (ad_basis).
-    below their lower quartile -> rot; below their median -> gelb; else gruen.
+S2  Offer vs. pay stated in competing ads for the same occupation in the radius.
+    Each ad is compared on its own unit's footing (hourly wage vs. the offer's
+    base pay, annual salary vs. the offer's pay incl. one-off payments; see
+    salary.py), and S2 counts the share of ads that pay more than the offer:
+    at least 75 % -> rot; at least 50 % -> gelb; else gruen. That is the offer
+    below the ads' lower quartile, below their median, or at/above it.
+    Basis: direct employers' ads when MIN_STATED of them state pay, else all ads
+    (ad_basis). Fewer than MIN_STATED ads -> keine Daten. If the basis is
+    mostly staffing agencies, the grade is shown with a caveat and the verdict
+    treats S2 as keine Daten.
 W1  Competition: open postings for the same occupation in the radius
     at least HIGH_COMPETITION -> rot; at least MEDIUM_COMPETITION -> gelb; else gruen.
 
-Verdict
+Verdict (a rule carrying a caveat counts as keine Daten here)
     schwer besetzbar        S1 rot; or S1 gelb and W1 rot; or S2 rot and W1 rot
     besetzbar mit Aufwand   any other rot or gelb
     gut besetzbar           no rot and no gelb (a rule without data counts as neither)
@@ -25,7 +31,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 
-from .salary import quartiles
+from .salary import AdPay, Offer
 
 MIN_STATED = 5
 HIGH_COMPETITION = 100
@@ -39,6 +45,7 @@ class Finding:
     rule: str
     grade: str
     reason: str
+    caveat: str = ""
 
 
 def _fmt(x: float) -> str:
@@ -59,33 +66,41 @@ def salary_vs_region(offer_total: float, median: int | None, q25: int | None,
                                 f"({region}: Q25 {_fmt(q25)}, Median {_fmt(median)})")
 
 
-def ad_basis(direct: list[float], every: list[float]) -> tuple[list[float], str]:
-    """Which stated salaries S2 compares against.
+def ad_basis(direct: list[AdPay], every: list[AdPay]) -> tuple[list[AdPay], bool]:
+    """Which stated salaries S2 compares against, and whether that is the direct-only set.
 
     Direct employers' ads when at least MIN_STATED of them state pay, otherwise all
-    ads. Staffing agencies state pay far more often, mostly at their collective-
-    agreement rates, and would otherwise set the benchmark a direct employer is
-    measured against.
+    ads. Staffing agencies state pay far more often and would otherwise set the
+    benchmark a direct employer is measured against.
     """
     if len(direct) >= MIN_STATED:
-        return direct, "Anzeigen ohne Zeitarbeit"
-    return every, "Anzeigen (inkl. Zeitarbeit)"
+        return direct, True
+    return every, False
 
 
-def salary_vs_ads(offer_base: float, values: list[float], basis: str) -> Finding:
-    if len(values) < MIN_STATED:
-        return Finding("S2", NODATA, f"nur {len(values)} {basis} mit Gehaltsangabe "
+def salary_vs_ads(offer: Offer, pays: list[AdPay], direct_only: bool,
+                  agency_in_basis: int) -> Finding:
+    basis = "Anzeigen ohne Zeitarbeit" if direct_only else "Anzeigen (inkl. Zeitarbeit)"
+    n = len(pays)
+    if n < MIN_STATED:
+        return Finding("S2", NODATA, f"nur {n} {basis} mit Gehaltsangabe "
                                      f"(mindestens {MIN_STATED} nötig)")
-    stated = quartiles(values)
-    if offer_base < stated["q25"]:
-        grade, where = RED, "unter dem unteren Quartil"
-    elif offer_base < stated["median"]:
-        grade, where = AMBER, "unter dem Median"
+    above = sum(p.above(offer) for p in pays)
+    share = above / n
+    if share >= 0.75:
+        grade = RED
+    elif share >= 0.5:
+        grade = AMBER
     else:
-        grade, where = GREEN, "auf oder über dem Median"
-    return Finding("S2", grade, f"Grundgehalt {_fmt(offer_base)} liegt {where} der "
-                                f"{stated['n']} {basis} mit Gehaltsangabe "
-                                f"(Q25 {_fmt(stated['q25'])}, Median {_fmt(stated['median'])})")
+        grade = GREEN
+    reason = (f"{above} von {n} {basis} mit Gehaltsangabe zahlen mehr als das Angebot "
+              f"({100 * share:.0f} %; Stundenlöhne gegen Grundgehalt "
+              f"{_fmt(offer.base)}, Jahresgehälter gegen Gesamtbezüge {_fmt(offer.total)}/Monat)")
+    caveat = ""
+    if agency_in_basis * 2 > n:
+        caveat = (f"unsicher: {agency_in_basis} von {n} Vergleichsanzeigen sind Zeitarbeit; "
+                  "fließt nicht in die Einschätzung ein")
+    return Finding("S2", grade, reason, caveat)
 
 
 def competition(same_beruf: int, radius_km: int) -> Finding:
@@ -101,6 +116,8 @@ def competition(same_beruf: int, radius_km: int) -> Finding:
 
 
 def verdict(s1: Finding, s2: Finding, w1: Finding) -> dict:
+    findings = [asdict(f) for f in (s1, s2, w1)]
+    s1, s2, w1 = (f if not f.caveat else Finding(f.rule, NODATA, f.reason) for f in (s1, s2, w1))
     grades = {f.rule: f.grade for f in (s1, s2, w1)}
     if s1.grade == NODATA and s2.grade == NODATA:
         label = "nicht bewertbar"
@@ -111,4 +128,4 @@ def verdict(s1: Finding, s2: Finding, w1: Finding) -> dict:
         label = "besetzbar mit Aufwand"
     else:
         label = "gut besetzbar"
-    return {"label": label, "findings": [asdict(f) for f in (s1, s2, w1)]}
+    return {"label": label, "findings": findings}

@@ -5,11 +5,12 @@ from __future__ import annotations
 import collections
 import datetime as dt
 import re
+import statistics
 from dataclasses import asdict, dataclass
 
 from . import adcheck, rules, sources
 from .fetch import Http
-from .salary import Offer, ad_monthly, quartiles
+from .salary import AdPay, Offer, ad_pay
 
 # Employer names are shown only when they carry a company legal form. A sole
 # trader's business name is usually a person's name, so it is not printed.
@@ -34,6 +35,19 @@ class Vacancy:
     ad_text: str | None = None
 
 
+def pay_table(pays: list[tuple[AdPay, bool]]) -> list[dict]:
+    """Stated pay per unit and employer type, in the unit the ads use: like with like."""
+    out = []
+    for unit in ("hour", "month", "year"):
+        for direct in (True, False):
+            vals = [p.value for p, d in pays if p.unit == unit and d == direct]
+            if vals:
+                out.append({"unit": unit, "direct": direct, "n": len(vals),
+                            "median": statistics.median(vals),
+                            "min": min(vals), "max": max(vals)})
+    return out
+
+
 def _salary_block(rows: list[sources.SalaryRow]) -> dict:
     overall = next((r for r in rows if r.branche == "Gesamt"), None)
     branches = [asdict(r) for r in rows if r.branche != "Gesamt" and r.usable]
@@ -49,19 +63,37 @@ def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> di
     direct = sources.search_postings(http, v.beruf, v.wo, v.radius_km, zeitarbeit=False)
     same = [x for x in every.items if sources.lists_beruf(x, v.beruf)]
     direct_refs = {x.get("referenznummer") for x in direct.items}
-    count_every = len(same) if not every.truncated else every.facet.get(v.beruf, len(same))
-    count_direct = (sum(sources.lists_beruf(x, v.beruf) for x in direct.items)
-                    if not direct.truncated else direct.facet.get(v.beruf, 0))
+    truncated = every.truncated or direct.truncated
+    if not truncated:
+        count_every = len(same)
+        count_direct = sum(sources.lists_beruf(x, v.beruf) for x in direct.items)
+        count_source = "Einzelabruf aller Anzeigen"
+    else:
+        # More hits than can be paged. Counts come from the facets, which cover all
+        # hits; everything per posting (agency flag, pay, employers) comes from the
+        # first pages only and is marked as a sample.
+        count_every = sources.facet_count(every, v.beruf)
+        count_direct = sources.facet_count(direct, v.beruf)
+        count_source = "Facette der Jobsuche"
+        if count_every is None:
+            raise LookupError(f"{v.beruf!r} not among the occupations the Jobsuche facet lists "
+                              "for this search; narrow the radius")
+    sample = {"truncated": truncated, "items_read": len(every.items),
+              "query_total": every.total}
 
-    employers = collections.Counter(x.get("firma") for x in same if x.get("firma"))
     agency_names = {x.get("firma") for x in same if x.get("referenznummer") not in direct_refs}
-    top = [{"firma": display_employer(" ".join(f.split())), "stellen": n, "zeitarbeit": f in agency_names}
-           for f, n in employers.most_common(5)]
+    employers = collections.Counter(x.get("firma") for x in same if x.get("firma"))
+    top = [{"firma": display_employer(" ".join(f.split())), "stellen": n,
+            "zeitarbeit": f in agency_names} for f, n in employers.most_common(5)]
     related = [{"beruf": b, "stellen": n} for b, n in
                sorted(every.facet.items(), key=lambda kv: -kv[1]) if b != v.beruf][:5]
-    stated = [m for m in (ad_monthly(x, v.offer.hours) for x in same) if m is not None]
-    stated_direct = [m for m in (ad_monthly(x, v.offer.hours) for x in same
-                                 if x.get("referenznummer") in direct_refs) if m is not None]
+    pays = []  # (AdPay, is_direct)
+    for x in same:
+        pay = ad_pay(x, v.offer.hours)
+        if pay is not None:
+            pays.append((pay, x.get("referenznummer") in direct_refs))
+    stated_direct = [p for p, d in pays if d]
+    stated_all = [p for p, _ in pays]
     shift = sum(bool(x.get("arbeitszeitSchichtNachtWochenende")) for x in same)
 
     region_id = v.region_id or sources.region_from_postings(every.items)
@@ -72,10 +104,11 @@ def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> di
     sal_region, sal_de = _salary_block(regional), _salary_block(national)
     ov = sal_region["overall"] or {}
 
-    stated_q = quartiles(stated)
     s1 = rules.salary_vs_region(v.offer.total, ov.get("median"), ov.get("q25"),
                                 sources.EGA_REGIONS.get(region_id, str(region_id)))
-    s2 = rules.salary_vs_ads(v.offer.base, *rules.ad_basis(stated_direct, stated))
+    basis, direct_only = rules.ad_basis(stated_direct, stated_all)
+    s2 = rules.salary_vs_ads(v.offer, basis, direct_only,
+                             0 if direct_only else len(stated_all) - len(stated_direct))
     w1 = rules.competition(count_every, v.radius_km)
 
     ad = None
@@ -101,16 +134,19 @@ def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> di
         "salary": {"region_id": region_id,
                    "region": sources.EGA_REGIONS.get(region_id, str(region_id)),
                    "region_inferred": v.region_id is None,
+                   "stichtag": sources.EGA_STICHTAG, "ceiling": ov.get("ceiling"),
+                   "stichtag_confirmed": ov.get("ceiling") == sources.EGA_CEILING,
                    "regional": sal_region, "germany": sal_de},
         "competition": {
             "same_beruf": count_every, "same_beruf_direct": count_direct,
-            "same_beruf_zeitarbeit": max(count_every - count_direct, 0),
-            "query_total": every.total, "truncated": every.truncated or direct.truncated,
+            "same_beruf_zeitarbeit": max(count_every - (count_direct or 0), 0),
+            "count_source": count_source, "sample": sample,
+            "query_total": every.total,
             "related": related, "top_employers": top,
-            "stated_pay": {"ads": len(same), "stating": len(stated), "monthly": stated_q,
+            "stated_pay": {"ads": len(same), "stating": len(stated_all),
                            "stating_direct": len(stated_direct),
-                           "monthly_direct": quartiles(stated_direct)},
-            "shift_ads": shift,
+                           "by_unit": pay_table(pays)},
+            "shift_flagged": shift,
         },
         "verdict": rules.verdict(s1, s2, w1),
         "ad_check": ad,

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vakanzcheck"
+version = "0.1.0"
+description = "Vacancy feasibility check from public Bundesagentur für Arbeit data: offered salary against the regional Entgeltatlas distribution, competing postings in the radius from the Jobsuche, and explicit rules for the verdict."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [{name = "Cedric Conday"}]
+keywords = ["recruiting", "Bundesagentur für Arbeit", "Entgeltatlas", "Jobsuche", "salary benchmark"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/CedricConday/vakanzcheck"
+
+[project.scripts]
+vakanzcheck = "vakanzcheck.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["vakanzcheck*"]
+
+[tool.setuptools.package-data]
+vakanzcheck = ["data/*.csv"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

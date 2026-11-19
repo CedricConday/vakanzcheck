@@ -6,8 +6,8 @@ one-page report (Markdown and JSON) that answers three questions:
 
 1. Where does the offer sit in the pay distribution for this occupation in the
    region? (BA Entgeltatlas: quartiles and median)
-2. How many employers are looking for the same people within the radius, how
-   many of them are staffing agencies, and what pay do their ads state? (BA
+2. How many open postings compete for the same people within the radius, how
+   many of them are from staffing agencies, and what pay do they state? (BA
    Jobsuche)
 3. Does the ad text tell an applicant what they need to know without calling:
    pay, hours, shifts, on-call duty, travel, how to apply? (offline keyword
@@ -23,18 +23,29 @@ the reports comes from the live BA services on 2026-11-19
 
 | Vacancy | Offer | vs. NRW pay | vs. ads in radius | Same-occupation postings | Verdict |
 |---|---|---|---|---|---|
-| [Elektroniker/in für Sicherheitstechnik, Paderborn + 30 km](results/elektroniker-sicherheitstechnik-paderborn/report.md) | 3.300 €/month | below Q25 (3.457 €) | below Q25 of direct employers (3.540 €) | 119, 39 % agencies | schwer besetzbar |
-| [Mechatroniker/in, Bielefeld + 25 km](results/mechatroniker-bielefeld/report.md) | 23,50 €/h, 35 h, 2.500 €/year extra | between Q25 and median (4.171 €) | below median of direct employers (3.750 €) | 222, 41 % agencies | schwer besetzbar |
-| [CNC-Fräser/in, Gütersloh + 25 km](results/cnc-fraeser-guetersloh/report.md) | 4.100 €/month x 13 | above median (4.303 €) | above median of all ads (3.522 €) | 72, 74 % agencies | besetzbar mit Aufwand |
+| [Elektroniker/in für Sicherheitstechnik, Paderborn + 30 km](results/elektroniker-sicherheitstechnik-paderborn/report.md) | 3.300 €/month | below Q25 (3.457 €) | 13 of 14 direct-employer ads pay more | 119, 39 % agencies | schwer besetzbar |
+| [Mechatroniker/in, Bielefeld + 25 km](results/mechatroniker-bielefeld/report.md) | 23,50 €/h, 35 h, 2.500 €/year extra | between Q25 and median (4.171 €) | 12 of 23 direct-employer ads pay more | 222, 41 % agencies | schwer besetzbar |
+| [CNC-Fräser/in, Gütersloh + 25 km](results/cnc-fraeser-guetersloh/report.md) | 4.100 €/month x 13 | above median (4.303 €) | 5 of 31 ads pay more, but 28 of the 31 are agencies: shown as unsicher, not used in the verdict | 72, 74 % agencies | besetzbar mit Aufwand |
 
-Two things the runs showed that a salary benchmark alone does not:
+What the runs show about pay in ads, comparing like with like (each unit on its
+own, agency vs. direct employer):
 
-- Most ads that state pay are from staffing agencies, and their stated pay sits
-  well below the direct employers'. In Bielefeld the Mechatroniker median is
-  3.082 € across all 73 ads that state pay and 3.750 € across the 23 from direct
-  employers. Benchmarking against all ads would make a weak offer look fine.
-- Ad pay is regular monthly pay; the Entgeltatlas median includes one-off
-  payments. Both comparisons are made, each on its own basis.
+| Occupation, place | Hourly wage, agencies | Hourly wage, direct employers | Annual salary, direct employers |
+|---|---|---|---|
+| Elektroniker/in EG, Paderborn | 21,00 € (n = 28) | 22,50 € (n = 7) | 44.500 € (n = 7) |
+| Mechatroniker/in, Bielefeld | 20,00 € (n = 50) | 21,66 € (n = 6) | 48.018 € (n = 17) |
+| CNC-Fräser/in, Gütersloh | 20,27 € (n = 28) | 20,75 € (n = 2) | 37.346 € (n = 1) |
+
+- Agencies post most of the ads that state pay, and only as hourly wages; none
+  of them states an annual salary. Direct employers that state pay mostly give
+  an annual salary.
+- An earlier version of this README said agencies state pay "far below" direct
+  employers (Bielefeld: 3.082 vs. 3.750 €/month). That was mostly a units
+  effect: annual salaries / 12 include one-off payments, hourly wages do not.
+  Hourly wage against hourly wage, direct employers' medians are 0,50 to 1,66
+  €/h higher, on 2 to 7 direct ads per place. That is too few to claim a gap.
+- S2 therefore compares each ad on its own footing: hourly wages with the
+  offer's base pay, annual salaries with its pay including one-off payments.
 
 ## Data sources
 
@@ -87,15 +98,21 @@ occupation within the radius, paged in full (up to 1000). A posting counts when
 the occupation is among its listed occupations. The same search with
 `zeitarbeit=false` separates staffing agencies from direct employers; that is
 the Jobsuche's own filter, and it is not perfect (it let one agency through in a
-spot check). Ads that state pay are converted to monthly pay at the vacancy's
-weekly hours; a range counts as its midpoint, implausible values (an "hourly"
-wage of 3.500) are dropped.
+spot check). Ads that state pay keep their unit (the v6 results carry
+STUNDENLOHN or JAHRESGEHALT); a range counts as its midpoint, implausible values
+(an "hourly" wage of 3.500) are dropped. Hourly wages are compared at the
+vacancy's weekly hours.
+
+With more hits than can be paged, the posting counts come from the Jobsuche's
+100-entry occupation facet (which can differ from a count of the postings
+themselves by one or two), and the report marks everything read per posting
+(agency flag, pay, employers, the shift flag) as a sample of the first 1000.
 
 **Offer.** `--salary` with `--per month|hour|year`, `--hours` per week (default
 40), `--payments` salaries per year (13 for a 13th salary), `--extra` one-off
 payments per year. Hourly pay converts at hours x 365.25 / 7 / 12, the BA's day
-basis. Base pay is compared with ads, base plus one-off payments with the
-Entgeltatlas.
+basis. Base pay is compared with hourly wages in ads; base plus one-off payments
+with annual salaries in ads and with the Entgeltatlas.
 
 **Verdict.** Three rules, cut-offs in [vakanzcheck/rules.py](vakanzcheck/rules.py).
 They are choices made for this tool, not findings; change them there.
@@ -103,13 +120,16 @@ They are choices made for this tool, not findings; change them there.
 | Rule | rot | gelb | grün |
 |---|---|---|---|
 | S1 offer vs. regional pay | below Q25 | Q25 to median | median or above |
-| S2 offer vs. ad pay (direct employers if at least 5 state pay, else all ads; no grade below 5) | below their Q25 | below their median | median or above |
+| S2 share of ads paying more than the offer (direct employers if at least 5 state pay, else all ads; no grade below 5) | 75 % or more | 50 to 74 % | under 50 % |
 | W1 same-occupation postings in radius | 100 or more | 30 to 99 | under 30 |
 
 - **schwer besetzbar**: S1 rot; or S1 gelb and W1 rot; or S2 rot and W1 rot
 - **besetzbar mit Aufwand**: any other rot or gelb
 - **gut besetzbar**: no rot, no gelb
 - **nicht bewertbar**: neither salary rule has data
+
+If S2 falls back to all ads and most of them are from agencies, its grade is
+shown as unsicher and the verdict treats S2 as having no data.
 
 **Ad text.** An eleven-item checklist of what an applicant in a skilled trade
 needs to decide without calling (pay, collective agreement, weekly hours,
@@ -162,7 +182,13 @@ files with no network. The tests run offline on one recorded run in
 - Postings are a stock on one day, not a flow; a vacancy open for months counts
   the same as one posted yesterday.
 - Hourly ad pay is converted at the vacancy's own weekly hours, because the
-  ads' hours are not in the search results.
+  ads' hours are not in the search results. Whether an annual salary includes
+  a 13th salary is assumed, not known.
+- The shift count in the report is a structured Jobsuche field
+  (Schicht/Nacht/Wochenende), not read from the ad text.
+- Values at or above the contribution ceiling are shown as "über BBG", not as
+  numbers. The reference date (31.12.2025) is a constant checked against the
+  ceiling in each response; the report warns when they disagree.
 - Employer names are shown only when they carry a company legal form; a sole
   trader's business name is usually a person's name.
 - Not covered: the number of jobseekers for the occupation, vacancy durations,

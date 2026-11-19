@@ -16,7 +16,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-USER_AGENT = "vakanzcheck/0.1 (+https://github.com/CedricConday/vakanzcheck)"
+USER_AGENT = "vakanzcheck/0.1"
 
 
 class SourceError(RuntimeError):

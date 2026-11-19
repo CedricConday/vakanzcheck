@@ -75,7 +75,7 @@ def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> di
         count_every = sources.facet_count(every, v.beruf)
         count_direct = sources.facet_count(direct, v.beruf)
         count_source = "Facette der Jobsuche"
-        if count_every is None:
+        if count_every is None or count_direct is None:
             raise LookupError(f"{v.beruf!r} not among the occupations the Jobsuche facet lists "
                               "for this search; narrow the radius")
     sample = {"truncated": truncated, "items_read": len(every.items),

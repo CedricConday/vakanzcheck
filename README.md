@@ -34,7 +34,7 @@ own, agency vs. direct employer):
 |---|---|---|---|
 | Elektroniker/in EG, Paderborn | 21,00 € (n = 28) | 22,50 € (n = 7) | 44.500 € (n = 7) |
 | Mechatroniker/in, Bielefeld | 20,00 € (n = 50) | 21,66 € (n = 6) | 48.018 € (n = 17) |
-| CNC-Fräser/in, Gütersloh | 20,27 € (n = 28) | 20,75 € (n = 2) | 37.346 € (n = 1) |
+| CNC-Fräser/in, Gütersloh | 20,28 € (n = 28) | 20,75 € (n = 2) | 37.347 € (n = 1) |
 
 - Agencies post most of the ads that state pay, and only as hourly wages; none
   of them states an annual salary. Direct employers that state pay mostly give
@@ -42,7 +42,7 @@ own, agency vs. direct employer):
 - An earlier version of this README said agencies state pay "far below" direct
   employers (Bielefeld: 3.082 vs. 3.750 €/month). That was mostly a units
   effect: annual salaries / 12 include one-off payments, hourly wages do not.
-  Hourly wage against hourly wage, direct employers' medians are 0,50 to 1,66
+  Hourly wage against hourly wage, direct employers' medians are 0,48 to 1,66
   €/h higher, on 2 to 7 direct ads per place. That is too few to claim a gap.
 - S2 therefore compares each ad on its own footing: hourly wages with the
   offer's base pay, annual salaries with its pay including one-off payments.

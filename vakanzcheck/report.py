@@ -108,7 +108,10 @@ def render(r: dict) -> str:
     if smp["truncated"]:
         L.append(f"- **Stichprobe:** {smp['query_total']} Treffer, abrufbar sind "
                  f"{smp['items_read']}. Zeitarbeit-Kennzeichen, Gehälter, Schichtmerkmal und "
-                 "Arbeitgeber unten stammen nur aus diesen; die Stellenzahlen aus der Facette.")
+                 "Arbeitgeber unten stammen nur aus diesen; die Stellenzahlen aus der Facette. "
+                 "Eine Anzeige eines direkten Arbeitgebers außerhalb der abrufbaren direkten "
+                 "Treffer kann dabei als Zeitarbeit gelten; bei so vielen Treffern den Radius "
+                 "verkleinern.")
     L.append("")
     if sp["by_unit"]:
         unit = {"hour": "€/Stunde", "month": "€/Monat", "year": "€/Jahr"}

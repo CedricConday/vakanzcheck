@@ -1,0 +1,338 @@
+{
+ "tool": "vakanzcheck 0.1.0",
+ "date": "2026-11-19",
+ "vacancy": {
+  "title": "CNC-Fräser/in",
+  "beruf": "CNC-Fräser/in",
+  "wo": "Gütersloh",
+  "place": "Gütersloh",
+  "radius_km": 25,
+  "offer": {
+   "amount": 4100.0,
+   "per": "month",
+   "hours": 40.0,
+   "payments": 13.0,
+   "extra": 0.0,
+   "monthly_base": 4100,
+   "monthly_total": 4442
+  },
+  "ad_text": "CNC-Fräser (m/w/d) – Gütersloh\n\nWir sind ein Lohnfertiger für Präzisionsteile aus Stahl und Aluminium.\n\nIhre Aufgaben:\n- Rüsten und Bedienen von 5-Achs-Fräszentren (Heidenhain, DMG MORI)\n- Programmieren an der Maschine\n- Qualitätskontrolle Ihrer Teile\n\nIhr Profil:\n- Ausbildung als Zerspanungsmechaniker Fachrichtung Frästechnik oder vergleichbar\n- Mehrjährige Berufserfahrung\n- Bereitschaft zur Schichtarbeit\n\nWir bieten:\n- Leistungsgerechte Bezahlung\n- Sicheren Arbeitsplatz\n- Kostenlose Getränke\n\nBitte senden Sie Ihre Bewerbung an unsere Personalabteilung.\n"
+ },
+ "occupation": {
+  "kldb": "24232",
+  "kldb_label": "Berufe in der spanenden Metallbearbeitung - fachlich ausgerichtete Tätigkeiten",
+  "level": "Fachkraft",
+  "source": "given"
+ },
+ "salary": {
+  "region_id": 8,
+  "region": "Nordrhein-Westfalen",
+  "region_inferred": true,
+  "regional": {
+   "overall": {
+    "region_id": 8,
+    "region": "Nordrhein-Westfalen",
+    "branche": "Gesamt",
+    "median": 4303,
+    "q25": 3717,
+    "q75": 4922,
+    "employees": 30485,
+    "ceiling": 8050
+   },
+   "branches": [
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "produzierendes Gewerbe ohne Bau",
+     "median": 4333,
+     "q25": 3756,
+     "q75": 4945,
+     "employees": 28474,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "Handel, Verkehr, Lagerei und Gastgewerbe",
+     "median": 3867,
+     "q25": 3417,
+     "q75": 4404,
+     "employees": 888,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "Erbringung wirtschaftl. Dienstleistungen",
+     "median": 3470,
+     "q25": 3020,
+     "q75": 4323,
+     "employees": 693,
+     "ceiling": 8050
+    }
+   ]
+  },
+  "germany": {
+   "overall": {
+    "region_id": 1,
+    "region": "Deutschland",
+    "branche": "Gesamt",
+    "median": 4195,
+    "q25": 3509,
+    "q75": 4952,
+    "employees": 128960,
+    "ceiling": 8050
+   },
+   "branches": [
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "produzierendes Gewerbe ohne Bau",
+     "median": 4222,
+     "q25": 3537,
+     "q75": 4978,
+     "employees": 121788,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Baugewerbe",
+     "median": 3933,
+     "q25": 3357,
+     "q75": 4550,
+     "employees": 861,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Handel, Verkehr, Lagerei und Gastgewerbe",
+     "median": 3848,
+     "q25": 3331,
+     "q75": 4464,
+     "employees": 2408,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Erbringung wirtschaftl. Dienstleistungen",
+     "median": 3477,
+     "q25": 2919,
+     "q75": 4258,
+     "employees": 3105,
+     "ceiling": 8050
+    }
+   ]
+  }
+ },
+ "competition": {
+  "same_beruf": 72,
+  "same_beruf_direct": 19,
+  "same_beruf_zeitarbeit": 53,
+  "query_total": 82,
+  "truncated": false,
+  "related": [
+   {
+    "beruf": "Zerspanungsmechaniker/in - Frästechnik",
+    "stellen": 31
+   },
+   {
+    "beruf": "CNC-Dreher/in",
+    "stellen": 23
+   },
+   {
+    "beruf": "Zerspanungsmechaniker/in",
+    "stellen": 21
+   },
+   {
+    "beruf": "CNC-Fachkraft/NC-Anwendungsfachmann/-frau",
+    "stellen": 12
+   },
+   {
+    "beruf": "Fachkraft - Metalltechnik - Zerspanungstechnik",
+    "stellen": 7
+   }
+  ],
+  "top_employers": [
+   {
+    "firma": "Personal Service PSH Bielefeld GmbH",
+    "stellen": 8,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "tandem Personallogistik und D ienstleistungen Bielefeld GmbH",
+    "stellen": 6,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "BS Schubert GmbH",
+    "stellen": 3,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "Nexxt Talent GmbH",
+    "stellen": 2,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "Alleima Engineering GmbH",
+    "stellen": 2,
+    "zeitarbeit": false
+   }
+  ],
+  "stated_pay": {
+   "ads": 72,
+   "stating": 31,
+   "monthly": {
+    "n": 31,
+    "q25": 3308.5562499999996,
+    "median": 3522.053571428571,
+    "q75": 3786.859821428571
+   },
+   "stating_direct": 3,
+   "monthly_direct": null
+  },
+  "shift_ads": 15
+ },
+ "verdict": {
+  "label": "besetzbar mit Aufwand",
+  "findings": [
+   {
+    "rule": "S1",
+    "grade": "gruen",
+    "reason": "Angebot 4.442 € liegt auf oder über dem Median (Nordrhein-Westfalen: Q25 3.717 €, Median 4.303 €)"
+   },
+   {
+    "rule": "S2",
+    "grade": "gruen",
+    "reason": "Grundgehalt 4.100 € liegt auf oder über dem Median der 31 Anzeigen (inkl. Zeitarbeit) mit Gehaltsangabe (Q25 3.309 €, Median 3.522 €)"
+   },
+   {
+    "rule": "W1",
+    "grade": "gelb",
+    "reason": "72 offene Stellen im selben Beruf im Umkreis von 25 km (gelb ab 30, rot ab 100)"
+   }
+  ]
+ },
+ "ad_check": {
+  "backend": "subscription",
+  "label": "Modellurteil (Claude), keine Daten",
+  "meta": {
+   "requested_model": "claude-opus-5-5",
+   "served_by": [
+    "claude-opus-5-5"
+   ],
+   "cost_usd": 0.0263586
+  },
+  "checks": [
+   {
+    "id": "gehalt",
+    "frage": "Gehalt oder Stundenlohn als Betrag oder Spanne genannt",
+    "status": "fehlt",
+    "zitat": "Leistungsgerechte Bezahlung",
+    "hinweis": "Es steht kein Betrag und keine Spanne in der Anzeige.",
+    "quote_verified": true
+   },
+   {
+    "id": "tarif",
+    "frage": "Tarifbindung oder Tarifvertrag genannt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "",
+    "quote_verified": null
+   },
+   {
+    "id": "arbeitszeit",
+    "frage": "Wochenarbeitszeit in Stunden genannt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "",
+    "quote_verified": null
+   },
+   {
+    "id": "schicht",
+    "frage": "Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein)",
+    "status": "unklar",
+    "zitat": "Bereitschaft zur Schichtarbeit",
+    "hinweis": "Offen ist, ob wirklich in Schichten gearbeitet wird und ob Nacht- oder Wochenendarbeit dazugehört.",
+    "quote_verified": true
+   },
+   {
+    "id": "bereitschaft",
+    "frage": "Rufbereitschaft oder Notdienst geklärt (ja oder nein)",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "",
+    "quote_verified": null
+   },
+   {
+    "id": "einsatzort",
+    "frage": "Einsatzort, Montageanteil oder Reisetätigkeit genannt",
+    "status": "genannt",
+    "zitat": "CNC-Fräser (m/w/d) – Gütersloh",
+    "hinweis": "",
+    "quote_verified": true
+   },
+   {
+    "id": "fahrzeug",
+    "frage": "Firmen- oder Servicefahrzeug geklärt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "",
+    "quote_verified": null
+   },
+   {
+    "id": "urlaub",
+    "frage": "Urlaubstage genannt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "",
+    "quote_verified": null
+   },
+   {
+    "id": "befristung",
+    "frage": "Befristet oder unbefristet genannt",
+    "status": "unklar",
+    "zitat": "Sicheren Arbeitsplatz",
+    "hinweis": "Die Anzeige sagt nicht ausdrücklich, ob die Stelle befristet oder unbefristet ist.",
+    "quote_verified": true
+   },
+   {
+    "id": "bewerbung",
+    "frage": "Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp)",
+    "status": "fehlt",
+    "zitat": "Bitte senden Sie Ihre Bewerbung an unsere Personalabteilung.",
+    "hinweis": "Es gibt weder Kontaktdaten noch einen vereinfachten Bewerbungsweg.",
+    "quote_verified": true
+   },
+   {
+    "id": "anforderungen",
+    "frage": "Muss- und Kann-Anforderungen unterscheidbar",
+    "status": "fehlt",
+    "zitat": "Ausbildung als Zerspanungsmechaniker Fachrichtung Frästechnik oder vergleichbar",
+    "hinweis": "Alle Anforderungen stehen ohne Unterscheidung zwischen Muss und Kann nebeneinander.",
+    "quote_verified": true
+   }
+  ]
+ },
+ "requests": [
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=CNC-Fr%C3%A4ser%2Fin&wo=G%C3%BCtersloh&umkreis=25&angebotsart=1&size=100&page=1",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=CNC-Fr%C3%A4ser%2Fin&wo=G%C3%BCtersloh&umkreis=25&angebotsart=1&size=100&zeitarbeit=false&page=1",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/entgeltatlas/pc/v1/entgelte/24232?r=8",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/entgeltatlas/pc/v1/entgelte/24232?r=1",
+   "status": 200
+  }
+ ]
+}

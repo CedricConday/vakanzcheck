@@ -1,0 +1,385 @@
+{
+ "tool": "vakanzcheck 0.1.0",
+ "date": "2026-11-19",
+ "vacancy": {
+  "title": "Mechatroniker/in Instandhaltung",
+  "beruf": "Mechatroniker/in",
+  "wo": "Bielefeld",
+  "place": "Bielefeld",
+  "radius_km": 25,
+  "offer": {
+   "amount": 23.5,
+   "per": "hour",
+   "hours": 35.0,
+   "payments": 12.0,
+   "extra": 2500.0,
+   "monthly_base": 3576,
+   "monthly_total": 3785
+  },
+  "ad_text": "Mechatroniker (m/w/d) Instandhaltung – Bielefeld\n\nFür unser Werk in Bielefeld suchen wir eine Verstärkung für das Instandhaltungsteam. Wir fertigen mit 180 Beschäftigten Antriebskomponenten für den Maschinenbau.\n\nDas erwartet dich:\n- Wartung und Instandsetzung unserer Fertigungsanlagen, mechanisch und elektrisch\n- Fehlersuche an SPS-gesteuerten Anlagen (Siemens S7)\n- Mitarbeit an Umbauten und Verbesserungen\n\nDas bringst du mit:\n- Muss: abgeschlossene Ausbildung als Mechatroniker, Elektroniker für Betriebstechnik oder Industriemechaniker\n- Muss: Bereitschaft zur Arbeit im 2-Schicht-System (Früh/Spät, Montag bis Freitag)\n- Kann: erste Erfahrung mit TIA Portal\n\nDas bieten wir:\n- 21,50 € pro Stunde, dazu Urlaubs- und Weihnachtsgeld\n- 35-Stunden-Woche, 30 Tage Urlaub\n- Unbefristete Festanstellung\n- Rufbereitschaft am Wochenende nur nach Absprache und gesondert vergütet\n\nBewerben geht schnell: Lebenslauf genügt, gern auch per WhatsApp an die Nummer auf unserer Karriereseite.\n"
+ },
+ "occupation": {
+  "kldb": "26112",
+  "kldb_label": "Berufe in der Mechatronik - fachlich ausgerichtete Tätigkeiten",
+  "level": "Fachkraft",
+  "source": "BERUFENET id 2868"
+ },
+ "salary": {
+  "region_id": 8,
+  "region": "Nordrhein-Westfalen",
+  "region_inferred": true,
+  "regional": {
+   "overall": {
+    "region_id": 8,
+    "region": "Nordrhein-Westfalen",
+    "branche": "Gesamt",
+    "median": 4171,
+    "q25": 3483,
+    "q75": 4951,
+    "employees": 9520,
+    "ceiling": 8050
+   },
+   "branches": [
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "produzierendes Gewerbe ohne Bau",
+     "median": 4480,
+     "q25": 3882,
+     "q75": 5258,
+     "employees": 5478,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "Handel, Verkehr, Lagerei und Gastgewerbe",
+     "median": 3512,
+     "q25": 2999,
+     "q75": 4224,
+     "employees": 2927,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "Erbringung wirtschaftl. Dienstleistungen",
+     "median": 4036,
+     "q25": 3383,
+     "q75": 4838,
+     "employees": 679,
+     "ceiling": 8050
+    }
+   ]
+  },
+  "germany": {
+   "overall": {
+    "region_id": 1,
+    "region": "Deutschland",
+    "branche": "Gesamt",
+    "median": 4105,
+    "q25": 3407,
+    "q75": 4922,
+    "employees": 47700,
+    "ceiling": 8050
+   },
+   "branches": [
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "produzierendes Gewerbe ohne Bau",
+     "median": 4425,
+     "q25": 3775,
+     "q75": 5213,
+     "employees": 28703,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Baugewerbe",
+     "median": 3928,
+     "q25": 3378,
+     "q75": 4628,
+     "employees": 1277,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Handel, Verkehr, Lagerei und Gastgewerbe",
+     "median": 3425,
+     "q25": 2919,
+     "q75": 4087,
+     "employees": 13187,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Erbringung wirtschaftl. Dienstleistungen",
+     "median": 3967,
+     "q25": 3300,
+     "q75": 4805,
+     "employees": 3129,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Öff. Verw., Schul-, Gesundh.-, Soz.wesen",
+     "median": 4244,
+     "q25": 3892,
+     "q75": 4788,
+     "employees": 651,
+     "ceiling": 8050
+    }
+   ]
+  }
+ },
+ "competition": {
+  "same_beruf": 222,
+  "same_beruf_direct": 132,
+  "same_beruf_zeitarbeit": 90,
+  "query_total": 438,
+  "truncated": false,
+  "related": [
+   {
+    "beruf": "Elektroniker/in - Betriebstechnik",
+    "stellen": 68
+   },
+   {
+    "beruf": "Industriemechaniker/in",
+    "stellen": 65
+   },
+   {
+    "beruf": "Kraftfahrzeugmechatroniker/in - Personenkraftwagentechnik",
+    "stellen": 57
+   },
+   {
+    "beruf": "Kraftfahrzeugmechaniker/in",
+    "stellen": 46
+   },
+   {
+    "beruf": "Mechatroniker/in - Kältetechnik",
+    "stellen": 35
+   }
+  ],
+  "top_employers": [
+   {
+    "firma": "persona service AG & Co. KG Niederlassung Bielefeld",
+    "stellen": 5,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "Neo Temp GmbH",
+    "stellen": 5,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "Starrag Technology GmbH",
+    "stellen": 5,
+    "zeitarbeit": false
+   },
+   {
+    "firma": "A & P Industriemontage GmbH & Co. KG",
+    "stellen": 5,
+    "zeitarbeit": false
+   },
+   {
+    "firma": "INDUVARO GmbH Niederlassung Paderborn",
+    "stellen": 4,
+    "zeitarbeit": true
+   }
+  ],
+  "stated_pay": {
+   "ads": 222,
+   "stating": 73,
+   "monthly": {
+    "n": 73,
+    "q25": 2955.4812500000003,
+    "median": 3081.796875,
+    "q75": 3576.40625
+   },
+   "stating_direct": 23,
+   "monthly_direct": {
+    "n": 23,
+    "q25": 3482.942708333333,
+    "median": 3750.0,
+    "q75": 4272.25
+   }
+  },
+  "shift_ads": 34
+ },
+ "verdict": {
+  "label": "schwer besetzbar",
+  "findings": [
+   {
+    "rule": "S1",
+    "grade": "gelb",
+    "reason": "Angebot 3.785 € liegt zwischen unterem Quartil und Median (Nordrhein-Westfalen: Q25 3.483 €, Median 4.171 €)"
+   },
+   {
+    "rule": "S2",
+    "grade": "gelb",
+    "reason": "Grundgehalt 3.576 € liegt unter dem Median der 23 Anzeigen ohne Zeitarbeit mit Gehaltsangabe (Q25 3.483 €, Median 3.750 €)"
+   },
+   {
+    "rule": "W1",
+    "grade": "rot",
+    "reason": "222 offene Stellen im selben Beruf im Umkreis von 25 km (gelb ab 30, rot ab 100)"
+   }
+  ]
+ },
+ "ad_check": {
+  "backend": "subscription",
+  "label": "Modellurteil (Claude), keine Daten",
+  "meta": {
+   "requested_model": "claude-opus-5-5",
+   "served_by": [
+    "claude-opus-5-5"
+   ],
+   "cost_usd": 0.0356058
+  },
+  "checks": [
+   {
+    "id": "gehalt",
+    "frage": "Gehalt oder Stundenlohn als Betrag oder Spanne genannt",
+    "status": "genannt",
+    "zitat": "21,50 € pro Stunde, dazu Urlaubs- und Weihnachtsgeld",
+    "hinweis": "",
+    "quote_verified": true
+   },
+   {
+    "id": "tarif",
+    "frage": "Tarifbindung oder Tarifvertrag genannt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "Tarifbindung oder Tarifvertrag wird nicht erwähnt.",
+    "quote_verified": null
+   },
+   {
+    "id": "arbeitszeit",
+    "frage": "Wochenarbeitszeit in Stunden genannt",
+    "status": "genannt",
+    "zitat": "35-Stunden-Woche",
+    "hinweis": "",
+    "quote_verified": true
+   },
+   {
+    "id": "schicht",
+    "frage": "Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein)",
+    "status": "genannt",
+    "zitat": "Bereitschaft zur Arbeit im 2-Schicht-System (Früh/Spät, Montag bis Freitag)",
+    "hinweis": "Zwei Schichten ohne Nacht- und Wochenendschicht.",
+    "quote_verified": true
+   },
+   {
+    "id": "bereitschaft",
+    "frage": "Rufbereitschaft oder Notdienst geklärt (ja oder nein)",
+    "status": "unklar",
+    "zitat": "Rufbereitschaft am Wochenende nur nach Absprache und gesondert vergütet",
+    "hinweis": "Offen, ob und wie oft Rufbereitschaft tatsächlich anfällt.",
+    "quote_verified": true
+   },
+   {
+    "id": "einsatzort",
+    "frage": "Einsatzort, Montageanteil oder Reisetätigkeit genannt",
+    "status": "genannt",
+    "zitat": "Für unser Werk in Bielefeld suchen wir eine Verstärkung für das Instandhaltungsteam.",
+    "hinweis": "",
+    "quote_verified": true
+   },
+   {
+    "id": "fahrzeug",
+    "frage": "Firmen- oder Servicefahrzeug geklärt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "Zum Fahrzeug steht nichts, bei einer Stelle im Werk ist das aber wohl nicht wichtig.",
+    "quote_verified": null
+   },
+   {
+    "id": "urlaub",
+    "frage": "Urlaubstage genannt",
+    "status": "genannt",
+    "zitat": "30 Tage Urlaub",
+    "hinweis": "",
+    "quote_verified": true
+   },
+   {
+    "id": "befristung",
+    "frage": "Befristet oder unbefristet genannt",
+    "status": "genannt",
+    "zitat": "Unbefristete Festanstellung",
+    "hinweis": "",
+    "quote_verified": true
+   },
+   {
+    "id": "bewerbung",
+    "frage": "Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp)",
+    "status": "genannt",
+    "zitat": "Lebenslauf genügt, gern auch per WhatsApp an die Nummer auf unserer Karriereseite.",
+    "hinweis": "Die WhatsApp-Nummer steht nicht in der Anzeige selbst.",
+    "quote_verified": true
+   },
+   {
+    "id": "anforderungen",
+    "frage": "Muss- und Kann-Anforderungen unterscheidbar",
+    "status": "genannt",
+    "zitat": "Muss: abgeschlossene Ausbildung als Mechatroniker, Elektroniker für Betriebstechnik oder Industriemechaniker",
+    "hinweis": "Muss- und Kann-Anforderungen sind ausdrücklich gekennzeichnet.",
+    "quote_verified": true
+   }
+  ]
+ },
+ "requests": [
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/bnet/pc/v1/berufe?suchwoerter=Mechatroniker%2Fin&page=0",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/bnet/pc/v1/berufe/2868",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Mechatroniker%2Fin&wo=Bielefeld&umkreis=25&angebotsart=1&size=100&page=1",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Mechatroniker%2Fin&wo=Bielefeld&umkreis=25&angebotsart=1&size=100&page=2",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Mechatroniker%2Fin&wo=Bielefeld&umkreis=25&angebotsart=1&size=100&page=3",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Mechatroniker%2Fin&wo=Bielefeld&umkreis=25&angebotsart=1&size=100&page=4",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Mechatroniker%2Fin&wo=Bielefeld&umkreis=25&angebotsart=1&size=100&page=5",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Mechatroniker%2Fin&wo=Bielefeld&umkreis=25&angebotsart=1&size=100&zeitarbeit=false&page=1",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Mechatroniker%2Fin&wo=Bielefeld&umkreis=25&angebotsart=1&size=100&zeitarbeit=false&page=2",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Mechatroniker%2Fin&wo=Bielefeld&umkreis=25&angebotsart=1&size=100&zeitarbeit=false&page=3",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/entgeltatlas/pc/v1/entgelte/26112?r=8",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/entgeltatlas/pc/v1/entgelte/26112?r=1",
+   "status": 200
+  }
+ ]
+}

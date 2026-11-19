@@ -1,0 +1,415 @@
+{
+ "tool": "vakanzcheck 0.1.0",
+ "date": "2026-11-19",
+ "vacancy": {
+  "title": "Elektroniker/in für Sicherheitstechnik",
+  "beruf": "Elektroniker/in - Energie- und Gebäudetechnik",
+  "wo": "Paderborn",
+  "place": "Paderborn",
+  "radius_km": 30,
+  "offer": {
+   "amount": 3300.0,
+   "per": "month",
+   "hours": 40.0,
+   "payments": 12.0,
+   "extra": 0.0,
+   "monthly_base": 3300,
+   "monthly_total": 3300
+  },
+  "ad_text": "Elektroniker (m/w/d) für Sicherheitstechnik – Paderborn\n\nWir sind ein inhabergeführter Fachbetrieb für Sicherheitstechnik mit rund 40 Mitarbeitenden und betreuen Gewerbe- und Privatkunden in ganz Ostwestfalen-Lippe.\n\nDeine Aufgaben:\n- Installation, Inbetriebnahme und Wartung von Einbruchmelde-, Brandmelde- und Videoanlagen\n- Störungsbehebung beim Kunden vor Ort\n- Teilnahme an der Rufbereitschaft\n\nDein Profil:\n- Abgeschlossene Ausbildung als Elektroniker, Informationselektroniker oder vergleichbar\n- Erfahrung mit Gefahrenmeldeanlagen wünschenswert\n- Führerschein Klasse B\n- Zuverlässigkeit und Teamgeist\n\nWir bieten:\n- Eine attraktive Vergütung\n- Einen unbefristeten Arbeitsvertrag\n- Ein modernes Servicefahrzeug, auch zur privaten Nutzung\n- Ein familiäres Betriebsklima und regelmäßige Schulungen\n\nInteresse? Dann sende uns deine vollständigen Bewerbungsunterlagen mit Anschreiben, Lebenslauf und Zeugnissen per E-Mail.\n"
+ },
+ "occupation": {
+  "kldb": "26212",
+  "kldb_label": "Berufe in der Bauelektrik - fachlich ausgerichtete Tätigkeiten",
+  "level": "Fachkraft",
+  "source": "BERUFENET id 15636"
+ },
+ "salary": {
+  "region_id": 8,
+  "region": "Nordrhein-Westfalen",
+  "region_inferred": true,
+  "regional": {
+   "overall": {
+    "region_id": 8,
+    "region": "Nordrhein-Westfalen",
+    "branche": "Gesamt",
+    "median": 4050,
+    "q25": 3457,
+    "q75": 4939,
+    "employees": 36274,
+    "ceiling": 8050
+   },
+   "branches": [
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "produzierendes Gewerbe ohne Bau",
+     "median": 4906,
+     "q25": 4020,
+     "q75": 6038,
+     "employees": 9596,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "Baugewerbe",
+     "median": 3755,
+     "q25": 3301,
+     "q75": 4306,
+     "employees": 18860,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "Handel, Verkehr, Lagerei und Gastgewerbe",
+     "median": 4263,
+     "q25": 3587,
+     "q75": 5178,
+     "employees": 2167,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "Erbringung wirtschaftl. Dienstleistungen",
+     "median": 3808,
+     "q25": 3157,
+     "q75": 4751,
+     "employees": 2930,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 8,
+     "region": "Nordrhein-Westfalen",
+     "branche": "Öff. Verw., Schul-, Gesundh.-, Soz.wesen",
+     "median": 4747,
+     "q25": 4257,
+     "q75": 5388,
+     "employees": 1840,
+     "ceiling": 8050
+    }
+   ]
+  },
+  "germany": {
+   "overall": {
+    "region_id": 1,
+    "region": "Deutschland",
+    "branche": "Gesamt",
+    "median": 3935,
+    "q25": 3335,
+    "q75": 4738,
+    "employees": 169830,
+    "ceiling": 8050
+   },
+   "branches": [
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "produzierendes Gewerbe ohne Bau",
+     "median": 4587,
+     "q25": 3798,
+     "q75": 5621,
+     "employees": 45328,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Baugewerbe",
+     "median": 3683,
+     "q25": 3209,
+     "q75": 4276,
+     "employees": 92000,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Handel, Verkehr, Lagerei und Gastgewerbe",
+     "median": 4023,
+     "q25": 3394,
+     "q75": 4770,
+     "employees": 8381,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Information und Kommunikation",
+     "median": 4025,
+     "q25": 3417,
+     "q75": 5098,
+     "employees": 1416,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Grundstücks- und Wohnungswesen",
+     "median": 3919,
+     "q25": 3386,
+     "q75": 4534,
+     "employees": 1076,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Erbringung wirtschaftl. Dienstleistungen",
+     "median": 3639,
+     "q25": 3035,
+     "q75": 4467,
+     "employees": 12231,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Öff. Verw., Schul-, Gesundh.-, Soz.wesen",
+     "median": 4630,
+     "q25": 4182,
+     "q75": 5269,
+     "employees": 7520,
+     "ceiling": 8050
+    },
+    {
+     "region_id": 1,
+     "region": "Deutschland",
+     "branche": "Sonstige Dienstleistungen",
+     "median": 3982,
+     "q25": 3377,
+     "q75": 4780,
+     "employees": 1572,
+     "ceiling": 8050
+    }
+   ]
+  }
+ },
+ "competition": {
+  "same_beruf": 119,
+  "same_beruf_direct": 73,
+  "same_beruf_zeitarbeit": 46,
+  "query_total": 138,
+  "truncated": false,
+  "related": [
+   {
+    "beruf": "Elektroinstallateur/in",
+    "stellen": 36
+   },
+   {
+    "beruf": "Elektroniker/in - Betriebstechnik",
+    "stellen": 32
+   },
+   {
+    "beruf": "Mechatroniker/in",
+    "stellen": 14
+   },
+   {
+    "beruf": "Elektroniker/in - Gebäude- und Infrastruktursysteme",
+    "stellen": 12
+   },
+   {
+    "beruf": "Elektroniker/in - Automatisierungstechnik",
+    "stellen": 10
+   }
+  ],
+  "top_employers": [
+   {
+    "firma": "personalmeyer GmbH & Co. KG",
+    "stellen": 10,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "Elektro Janewers GmbH & Co. KG",
+    "stellen": 3,
+    "zeitarbeit": false
+   },
+   {
+    "firma": "Einzelunternehmen (Name nicht angezeigt)",
+    "stellen": 3,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "F. Schäfer Fachpersonal GmbH Co. KG",
+    "stellen": 3,
+    "zeitarbeit": true
+   },
+   {
+    "firma": "Fritz Husemann GmbH & Co. KG",
+    "stellen": 3,
+    "zeitarbeit": false
+   }
+  ],
+  "stated_pay": {
+   "ads": 119,
+   "stating": 42,
+   "monthly": {
+    "n": 42,
+    "q25": 3413.3482142857138,
+    "median": 3652.5,
+    "q75": 3913.392857142857
+   },
+   "stating_direct": 14,
+   "monthly_direct": {
+    "n": 14,
+    "q25": 3539.7986607142857,
+    "median": 3913.392857142857,
+    "q75": 4334.077380952381
+   }
+  },
+  "shift_ads": 5
+ },
+ "verdict": {
+  "label": "schwer besetzbar",
+  "findings": [
+   {
+    "rule": "S1",
+    "grade": "rot",
+    "reason": "Angebot 3.300 € liegt unter dem unteren Quartil (Nordrhein-Westfalen: Q25 3.457 €, Median 4.050 €)"
+   },
+   {
+    "rule": "S2",
+    "grade": "rot",
+    "reason": "Grundgehalt 3.300 € liegt unter dem unteren Quartil der 14 Anzeigen ohne Zeitarbeit mit Gehaltsangabe (Q25 3.540 €, Median 3.913 €)"
+   },
+   {
+    "rule": "W1",
+    "grade": "rot",
+    "reason": "119 offene Stellen im selben Beruf im Umkreis von 30 km (gelb ab 30, rot ab 100)"
+   }
+  ]
+ },
+ "ad_check": {
+  "backend": "subscription",
+  "label": "Modellurteil (Claude), keine Daten",
+  "meta": {
+   "requested_model": "claude-opus-5-5",
+   "served_by": [
+    "claude-opus-5-5"
+   ],
+   "cost_usd": 0.0241668
+  },
+  "checks": [
+   {
+    "id": "gehalt",
+    "frage": "Gehalt oder Stundenlohn als Betrag oder Spanne genannt",
+    "status": "fehlt",
+    "zitat": "Eine attraktive Vergütung",
+    "hinweis": "Es steht kein Betrag und keine Spanne in der Anzeige.",
+    "quote_verified": true
+   },
+   {
+    "id": "tarif",
+    "frage": "Tarifbindung oder Tarifvertrag genannt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "",
+    "quote_verified": null
+   },
+   {
+    "id": "arbeitszeit",
+    "frage": "Wochenarbeitszeit in Stunden genannt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "",
+    "quote_verified": null
+   },
+   {
+    "id": "schicht",
+    "frage": "Schicht-, Nacht- oder Wochenendarbeit geklärt (ja oder nein)",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "Zu Schicht-, Nacht- oder Wochenendarbeit steht nichts, nur zur Rufbereitschaft.",
+    "quote_verified": null
+   },
+   {
+    "id": "bereitschaft",
+    "frage": "Rufbereitschaft oder Notdienst geklärt (ja oder nein)",
+    "status": "genannt",
+    "zitat": "Teilnahme an der Rufbereitschaft",
+    "hinweis": "Wie oft und wie die Rufbereitschaft vergütet wird, steht nicht in der Anzeige.",
+    "quote_verified": true
+   },
+   {
+    "id": "einsatzort",
+    "frage": "Einsatzort, Montageanteil oder Reisetätigkeit genannt",
+    "status": "genannt",
+    "zitat": "betreuen Gewerbe- und Privatkunden in ganz Ostwestfalen-Lippe",
+    "hinweis": "Der Standort ist Paderborn, die Einsätze sind beim Kunden vor Ort in OWL.",
+    "quote_verified": true
+   },
+   {
+    "id": "fahrzeug",
+    "frage": "Firmen- oder Servicefahrzeug geklärt",
+    "status": "genannt",
+    "zitat": "Ein modernes Servicefahrzeug, auch zur privaten Nutzung",
+    "hinweis": "",
+    "quote_verified": true
+   },
+   {
+    "id": "urlaub",
+    "frage": "Urlaubstage genannt",
+    "status": "fehlt",
+    "zitat": "",
+    "hinweis": "",
+    "quote_verified": null
+   },
+   {
+    "id": "befristung",
+    "frage": "Befristet oder unbefristet genannt",
+    "status": "genannt",
+    "zitat": "Einen unbefristeten Arbeitsvertrag",
+    "hinweis": "",
+    "quote_verified": true
+   },
+   {
+    "id": "bewerbung",
+    "frage": "Einfacher Bewerbungsweg genannt (ohne Anschreiben, Telefon, WhatsApp)",
+    "status": "fehlt",
+    "zitat": "sende uns deine vollständigen Bewerbungsunterlagen mit Anschreiben, Lebenslauf und Zeugnissen per E-Mail",
+    "hinweis": "Ein Anschreiben wird verlangt, und es gibt keinen Weg per Telefon oder WhatsApp.",
+    "quote_verified": true
+   },
+   {
+    "id": "anforderungen",
+    "frage": "Muss- und Kann-Anforderungen unterscheidbar",
+    "status": "genannt",
+    "zitat": "Erfahrung mit Gefahrenmeldeanlagen wünschenswert",
+    "hinweis": "Die Kann-Anforderung ist mit „wünschenswert“ gekennzeichnet, die übrigen Punkte sind Muss-Anforderungen.",
+    "quote_verified": true
+   }
+  ]
+ },
+ "requests": [
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/bnet/pc/v1/berufe?suchwoerter=Elektroniker%2Fin+-+Energie-+und+Geb%C3%A4udetechnik&page=0",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/bnet/pc/v1/berufe/15636",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Elektroniker%2Fin+-+Energie-+und+Geb%C3%A4udetechnik&wo=Paderborn&umkreis=30&angebotsart=1&size=100&page=1",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Elektroniker%2Fin+-+Energie-+und+Geb%C3%A4udetechnik&wo=Paderborn&umkreis=30&angebotsart=1&size=100&page=2",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v6/jobs?was=Elektroniker%2Fin+-+Energie-+und+Geb%C3%A4udetechnik&wo=Paderborn&umkreis=30&angebotsart=1&size=100&zeitarbeit=false&page=1",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/entgeltatlas/pc/v1/entgelte/26212?r=8",
+   "status": 200
+  },
+  {
+   "url": "https://rest.arbeitsagentur.de/infosysbub/entgeltatlas/pc/v1/entgelte/26212?r=1",
+   "status": 200
+  }
+ ]
+}

@@ -55,7 +55,7 @@ def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> di
 
     employers = collections.Counter(x.get("firma") for x in same if x.get("firma"))
     agency_names = {x.get("firma") for x in same if x.get("referenznummer") not in direct_refs}
-    top = [{"firma": display_employer(f), "stellen": n, "zeitarbeit": f in agency_names}
+    top = [{"firma": display_employer(" ".join(f.split())), "stellen": n, "zeitarbeit": f in agency_names}
            for f, n in employers.most_common(5)]
     related = [{"beruf": b, "stellen": n} for b, n in
                sorted(every.facet.items(), key=lambda kv: -kv[1]) if b != v.beruf][:5]
@@ -75,7 +75,7 @@ def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> di
     stated_q = quartiles(stated)
     s1 = rules.salary_vs_region(v.offer.total, ov.get("median"), ov.get("q25"),
                                 sources.EGA_REGIONS.get(region_id, str(region_id)))
-    s2 = rules.salary_vs_ads(v.offer.base, stated_q)
+    s2 = rules.salary_vs_ads(v.offer.base, *rules.ad_basis(stated_direct, stated))
     w1 = rules.competition(count_every, v.radius_km)
 
     ad = None

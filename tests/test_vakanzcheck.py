@@ -110,12 +110,18 @@ def test_salary_rule_bands():
     assert rules.salary_vs_region(3500, 4000, 3500, "NRW").grade == rules.AMBER
     assert rules.salary_vs_region(4000, 4000, 3500, "NRW").grade == rules.GREEN
     assert rules.salary_vs_region(4000, None, None, "NRW").grade == rules.NODATA
-    few = {"n": rules.MIN_STATED - 1, "q25": 1, "median": 2, "q75": 3}
-    assert rules.salary_vs_ads(3000, few).grade == rules.NODATA
-    enough = {**few, "n": rules.MIN_STATED, "q25": 3000, "median": 3300}
-    assert rules.salary_vs_ads(2999, enough).grade == rules.RED
-    assert rules.salary_vs_ads(3000, enough).grade == rules.AMBER
-    assert rules.salary_vs_ads(3300, enough).grade == rules.GREEN
+    b = "Anzeigen"
+    assert rules.salary_vs_ads(3000, [1.0] * (rules.MIN_STATED - 1), b).grade == rules.NODATA
+    ads = [3000.0, 3000.0, 3300.0, 3600.0, 3600.0]  # Q25 3000, median 3300
+    assert rules.salary_vs_ads(2999, ads, b).grade == rules.RED
+    assert rules.salary_vs_ads(3000, ads, b).grade == rules.AMBER
+    assert rules.salary_vs_ads(3300, ads, b).grade == rules.GREEN
+
+
+def test_ad_basis_prefers_direct_employers_when_enough_state_pay():
+    direct, every = [4000.0] * rules.MIN_STATED, [3000.0] * 20
+    assert rules.ad_basis(direct, every)[0] is direct
+    assert rules.ad_basis(direct[:-1], every)[0] is every
 
 
 def test_competition_and_verdict():

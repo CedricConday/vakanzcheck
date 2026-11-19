@@ -8,7 +8,8 @@ S1  Offer vs. regional pay (Entgeltatlas, Land level, incl. one-off payments)
     below the lower quartile -> rot; between lower quartile and median -> gelb;
     at or above the median -> gruen.
 S2  Offer vs. pay stated in competing ads for the same occupation in the radius
-    (regular monthly pay; needs at least MIN_STATED ads that state pay)
+    (regular monthly pay; needs at least MIN_STATED ads that state pay). Direct
+    employers' ads when MIN_STATED of them state pay, else all ads (ad_basis).
     below their lower quartile -> rot; below their median -> gelb; else gruen.
 W1  Competition: open postings for the same occupation in the radius
     at least HIGH_COMPETITION -> rot; at least MEDIUM_COMPETITION -> gelb; else gruen.
@@ -23,6 +24,8 @@ Verdict
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+
+from .salary import quartiles
 
 MIN_STATED = 5
 HIGH_COMPETITION = 100
@@ -56,11 +59,24 @@ def salary_vs_region(offer_total: float, median: int | None, q25: int | None,
                                 f"({region}: Q25 {_fmt(q25)}, Median {_fmt(median)})")
 
 
-def salary_vs_ads(offer_base: float, stated: dict | None) -> Finding:
-    if not stated or stated["n"] < MIN_STATED:
-        n = stated["n"] if stated else 0
-        return Finding("S2", NODATA, f"nur {n} Konkurrenzanzeigen mit Gehaltsangabe "
+def ad_basis(direct: list[float], every: list[float]) -> tuple[list[float], str]:
+    """Which stated salaries S2 compares against.
+
+    Direct employers' ads when at least MIN_STATED of them state pay, otherwise all
+    ads. Staffing agencies state pay far more often, mostly at their collective-
+    agreement rates, and would otherwise set the benchmark a direct employer is
+    measured against.
+    """
+    if len(direct) >= MIN_STATED:
+        return direct, "Anzeigen ohne Zeitarbeit"
+    return every, "Anzeigen (inkl. Zeitarbeit)"
+
+
+def salary_vs_ads(offer_base: float, values: list[float], basis: str) -> Finding:
+    if len(values) < MIN_STATED:
+        return Finding("S2", NODATA, f"nur {len(values)} {basis} mit Gehaltsangabe "
                                      f"(mindestens {MIN_STATED} nötig)")
+    stated = quartiles(values)
     if offer_base < stated["q25"]:
         grade, where = RED, "unter dem unteren Quartil"
     elif offer_base < stated["median"]:
@@ -68,8 +84,8 @@ def salary_vs_ads(offer_base: float, stated: dict | None) -> Finding:
     else:
         grade, where = GREEN, "auf oder über dem Median"
     return Finding("S2", grade, f"Grundgehalt {_fmt(offer_base)} liegt {where} der "
-                                f"{stated['n']} Anzeigen mit Gehaltsangabe "
-                                f"(Median {_fmt(stated['median'])})")
+                                f"{stated['n']} {basis} mit Gehaltsangabe "
+                                f"(Q25 {_fmt(stated['q25'])}, Median {_fmt(stated['median'])})")
 
 
 def competition(same_beruf: int, radius_km: int) -> Finding:

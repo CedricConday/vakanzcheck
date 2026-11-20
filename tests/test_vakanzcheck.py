@@ -1,10 +1,11 @@
+import http.client
 import json
 import stat
 from pathlib import Path
 
 import pytest
 
-from vakanzcheck import adcheck, check, report, rules, sources
+from vakanzcheck import adcheck, check, cli, report, rules, sources
 from vakanzcheck.fetch import Http, Recorder, Replay, SourceError, shrink
 from vakanzcheck.salary import AdPay, Offer, ad_pay
 from vakanzcheck.subscription import CliError, Subscription
@@ -355,3 +356,26 @@ def test_unknown_place_is_an_error():
                       region_id=8)
     with pytest.raises(LookupError, match="does not know the place 'Xyzzyqq'"):
         check.run(v, http)
+
+
+@pytest.mark.parametrize("extra, message", [
+    (["--kldb", "2423"], "five digits"),
+    (["--payments", "11"], "payments at least 12"),
+])
+def test_bad_arguments_give_a_message_not_a_traceback(extra, message, capsys):
+    argv = ["--beruf", "CNC-Fräser/in", "--wo", "Gütersloh", "--salary", "4100", *extra]
+    assert cli.main(argv) == 2
+    err = capsys.readouterr().err
+    assert err.startswith("vakanzcheck: ") and message in err and "Traceback" not in err
+
+
+@pytest.mark.parametrize("error", [
+    TimeoutError("timed out"), ConnectionResetError("reset by peer"),
+    http.client.IncompleteRead(b"{"), http.client.RemoteDisconnected("closed"),
+])
+def test_network_failures_become_source_errors(error, monkeypatch):
+    def fail(*args, **kw):
+        raise error
+    monkeypatch.setattr("urllib.request.urlopen", fail)
+    with pytest.raises(SourceError, match="https://x/y"):
+        Http(pause=0).get("https://x/y", {}, "k")

@@ -61,11 +61,16 @@ def main(argv: list[str] | None = None) -> int:
     if a.backend == "subscription" and a.ad:
         from .subscription import Subscription
         ask = Subscription()
-    v = check.Vacancy(
-        beruf=a.beruf, wo=a.wo, radius_km=a.radius, kldb=a.kldb, region_id=a.ega_region,
-        title=a.title,
-        offer=Offer(a.salary, a.per, hours=a.hours, payments=a.payments, extra=a.extra),
-        ad_text=a.ad.read_text(encoding="utf-8") if a.ad else None)
+    try:
+        v = check.Vacancy(
+            beruf=a.beruf, wo=a.wo, radius_km=a.radius,
+            kldb=sources.normalise_kldb(a.kldb) if a.kldb else None,
+            region_id=a.ega_region, title=a.title,
+            offer=Offer(a.salary, a.per, hours=a.hours, payments=a.payments, extra=a.extra),
+            ad_text=a.ad.read_text(encoding="utf-8") if a.ad else None)
+    except (ValueError, OSError) as e:  # bad --kldb or offer figures, unreadable --ad
+        print(f"vakanzcheck: {e}", file=sys.stderr)
+        return 2
     try:
         result = check.run(v, http, ask)
     except (SourceError, LookupError) as e:

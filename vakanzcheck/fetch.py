@@ -9,6 +9,7 @@ any request that was not recorded, so tests never touch the network by accident.
 from __future__ import annotations
 
 import hashlib
+import http.client
 import json
 import time
 import urllib.error
@@ -48,6 +49,10 @@ class Http:
             raise SourceError(f"HTTP {e.code} from {full}") from e
         except urllib.error.URLError as e:
             raise SourceError(f"{full} unreachable: {e.reason}") from e
+        except (TimeoutError, OSError, http.client.HTTPException) as e:
+            # A timeout or a dropped connection while reading the body arrives here,
+            # not as URLError.
+            raise SourceError(f"{full} failed: {type(e).__name__}: {e}") from e
         finally:
             time.sleep(self.pause)
         self.log.append({"url": full, "status": status})

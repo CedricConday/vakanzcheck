@@ -280,9 +280,11 @@ def test_shrink_keeps_only_read_fields_and_pseudonymises():
                                "referenznummer": "r1", "alleBerufe": ["A"],
                                "stellenlokationen": [{"adresse": {"region": "BAYERN",
                                                                   "strasse": "Weg 1"}}]}]}
-    small = shrink("https://x/jobsuche-service/pc/v6/jobs", body, pseudonym)
+    small = shrink("https://x/jobsuche-service/pc/v6/jobs", body, pseudonym,
+                   lambda r: {"r1": "Stelle-00001"}[r])
     item = small["ergebnisliste"][0]
     assert item["firma"] == "Arbeitgeber 001 GmbH"
+    assert item["referenznummer"] == "Stelle-00001"
     assert "stellenangebotsTitel" not in item and "externeURL" not in item
     assert item["stellenlokationen"] == [{"adresse": {"region": "BAYERN"}}]
     assert "scores" not in small["facetten"]["topberuf"]
@@ -292,13 +294,16 @@ def test_shrink_keeps_only_read_fields_and_pseudonymises():
 
 def test_recorder_returns_the_real_response_and_writes_the_shrunk_one(tmp_path, monkeypatch):
     body = {"maxErgebnisse": 1, "ergebnisliste": [{"firma": "Echte Firma GmbH",
+                                                   "referenznummer": "10000-1234567890-S",
                                                    "stellenangebotsTitel": "X"}]}
     monkeypatch.setattr(Http, "get", lambda self, url, params, key: body)
     rec = Recorder(tmp_path)
     got = rec.get("https://x/jobsuche-service/pc/v6/jobs", {"page": 1}, "k")
+    rec.get("https://x/jobsuche-service/pc/v6/jobs", {"page": 1, "zeitarbeit": "false"}, "k")
     assert got["ergebnisliste"][0]["firma"] == "Echte Firma GmbH"
-    written = json.loads(next(tmp_path.glob("*.json")).read_text())
-    assert written["ergebnisliste"][0] == {"firma": "Arbeitgeber 001 GmbH"}
+    for path in tmp_path.glob("*.json"):  # same posting, same pseudonym in both files
+        assert json.loads(path.read_text())["ergebnisliste"][0] == {
+            "firma": "Arbeitgeber 001 GmbH", "referenznummer": "Stelle-00001"}
 
 
 def test_employer_names_without_legal_form_are_hidden():
@@ -484,3 +489,9 @@ def test_kldb_without_entgeltatlas_rows_is_an_error():
                       region_id=8)
     with pytest.raises(LookupError, match="no figures for KldB 26112"):
         check.run(v, FakeHttp(answer))
+
+
+def test_committed_fixtures_hold_no_real_reference_numbers():
+    for path in (FIXTURES / "guetersloh").glob("jobs-*.json"):
+        for x in json.loads(path.read_text("utf-8"))["ergebnisliste"]:
+            assert x["referenznummer"].startswith("Stelle-"), path.name

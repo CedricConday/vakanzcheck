@@ -66,6 +66,8 @@ class Http:
 
 # Posting fields vakanzcheck reads. Everything else, including the ad title and
 # any link or cipher number, is dropped before a response is written to disk.
+# The BA reference number is kept only as a pseudonym: the real one is public and
+# leads straight to the posting and its employer.
 POSTING_FIELDS = (
     "referenznummer", "hauptberuf", "alleBerufe", "firma", "entfernung",
     "verguetungsangabe", "artDerVerguetung", "gehaltsspanneVon", "gehaltsspanneBis",
@@ -78,14 +80,21 @@ POSTING_FIELDS = (
 FACETS = ("topberuf", "beruf", "zeitarbeit")
 
 
-def shrink(url: str, body, pseudonym):
-    """Reduce a response to what the code reads, for a small, shareable fixture."""
+def shrink(url: str, body, pseudonym, reference):
+    """Reduce a response to what the code reads, for a small, shareable fixture.
+
+    `pseudonym` replaces employer names, `reference` the BA reference numbers; both
+    must map the same input to the same output across a recording, because the
+    agency split matches postings between two searches by reference number.
+    """
     if "/jobsuche-service/" in url and isinstance(body, dict):
         items = []
         for x in body.get("ergebnisliste") or []:
             y = {k: x[k] for k in POSTING_FIELDS if k in x}
             if "firma" in y:
                 y["firma"] = pseudonym(y["firma"])
+            if "referenznummer" in y:
+                y["referenznummer"] = reference(y["referenznummer"])
             locs = x.get("stellenlokationen") or []
             if locs:
                 y["stellenlokationen"] = [{"adresse": {"region": locs[0].get("adresse", {})
@@ -115,15 +124,19 @@ class Recorder(Http):
         self.dir = Path(directory)
         self.dir.mkdir(parents=True, exist_ok=True)
         self._names: dict[str, str] = {}
+        self._refs: dict[str, str] = {}
 
     def _pseudonym(self, name: str) -> str:
         if name not in self._names:
             self._names[name] = f"Arbeitgeber {len(self._names) + 1:03d} GmbH"
         return self._names[name]
 
+    def _reference(self, ref: str) -> str:
+        return self._refs.setdefault(ref, f"Stelle-{len(self._refs) + 1:05d}")
+
     def get(self, url: str, params: dict, api_key: str):
         body = super().get(url, params, api_key)
-        small = shrink(url, body, self._pseudonym)
+        small = shrink(url, body, self._pseudonym, self._reference)
         path = self.dir / f"{request_key(url, params)}.json"
         path.write_text(json.dumps(small, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         return body  # the run itself sees the real response; only the file is shrunk

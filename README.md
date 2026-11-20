@@ -112,7 +112,7 @@ the occupation is among its listed occupations. The same search with
 `zeitarbeit=false` splits the ads into those the Jobsuche flags as Zeitarbeit
 and those it does not. "Direct" in the code and "ohne Zeitarbeit" in the reports
 mean only the second set, and it is not the same as direct employers: the flag
-misses some personnel-service firms. Re-checked live on 20.11.2026, the
+misses some personnel-service firms. Re-checked live on 2026-11-20, the
 Bielefeld demo still gives 12 of 23, and at least 4 of those 23 unflagged ads
 that state pay come from personnel-service firms (5 if an "HR Solutions" firm
 counts). Leaving them out moves S2 below 50 %, from gelb to grün; the verdict

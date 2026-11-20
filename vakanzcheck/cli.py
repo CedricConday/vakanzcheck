@@ -22,6 +22,16 @@ def _region(value: str) -> int:
     raise argparse.ArgumentTypeError(f"unknown Entgeltatlas region {value!r}")
 
 
+def _radius(value: str) -> int:
+    try:
+        km = int(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"radius must be whole km, not {value!r}") from None
+    if not 1 <= km <= 200:
+        raise argparse.ArgumentTypeError(f"radius must be 1 to 200 km, not {km}")
+    return km
+
+
 def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower().replace("ü", "ue").replace("ö", "oe")
                   .replace("ä", "ae").replace("ß", "ss")).strip("-")
@@ -34,7 +44,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--kldb", help="five-digit KldB 2010 code; looked up in BERUFENET if omitted")
     p.add_argument("--title", help="the vacancy's own job title, for the report header")
     p.add_argument("--wo", required=True, help="place or postcode")
-    p.add_argument("--radius", type=int, default=25, help="km (default 25)")
+    p.add_argument("--radius", type=_radius, default=25, help="km, 1 to 200 (default 25)")
     p.add_argument("--salary", type=float, required=True, help="offered gross pay")
     p.add_argument("--per", choices=["month", "hour", "year"], default="month")
     p.add_argument("--hours", type=float, default=40.0, help="hours per week (default 40)")

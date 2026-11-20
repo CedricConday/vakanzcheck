@@ -456,3 +456,12 @@ def test_implausible_offer_stops_before_any_request(monkeypatch, capsys):
     argv = ["--beruf", "Mechatroniker/in", "--wo", "Bielefeld", "--salary", "nan"]
     assert cli.main(argv) == 2
     assert "finite" in capsys.readouterr().err
+
+
+@pytest.mark.parametrize("radius", ["0", "-5", "201", "ten"])
+def test_radius_out_of_range_is_a_usage_error(radius, capsys):
+    argv = ["--beruf", "Mechatroniker/in", "--wo", "Bielefeld", "--salary", "4000",
+            "--radius", radius]
+    with pytest.raises(SystemExit) as e:
+        cli.main(argv)
+    assert e.value.code == 2 and "radius" in capsys.readouterr().err

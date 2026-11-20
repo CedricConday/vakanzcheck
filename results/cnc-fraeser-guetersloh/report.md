@@ -16,7 +16,7 @@ Die Regeln und ihre Schwellen stehen im README; sie sind gesetzt, nicht gemessen
 
 Angebot umgerechnet: 4.442 €/Monat inkl. Sonderzahlungen (Vergleich mit dem Entgeltatlas), 4.100 €/Monat Grundgehalt (Vergleich mit Stundenlöhnen in Anzeigen).
 
-KldB 24232: Berufe in der spanenden Metallbearbeitung - fachlich ausgerichtete Tätigkeiten (Niveau Fachkraft; Zuordnung: given).
+KldB 24232: Berufe in der spanenden Metallbearbeitung - fachlich ausgerichtete Tätigkeiten (Niveau Fachkraft; Zuordnung: per --kldb angegeben).
 
 | Region | Branche | Q25 | Median | Q75 | Beschäftigte |
 |---|---|---|---|---|---|

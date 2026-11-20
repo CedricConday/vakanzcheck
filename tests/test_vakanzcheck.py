@@ -58,6 +58,7 @@ def test_recorded_run_offline():
 def test_given_kldb_skips_lookup_and_explicit_region_is_kept():
     r = check.run(recorded_vacancy(kldb="24232", region_id=8), Replay(FIXTURES / "guetersloh"))
     assert r["occupation"]["source"] == "given"
+    assert "Zuordnung: per --kldb angegeben" in report.render(r)
     assert not r["salary"]["region_inferred"]
     assert r["ad_check"] is None
 

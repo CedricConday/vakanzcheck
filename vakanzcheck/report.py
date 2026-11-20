@@ -62,8 +62,9 @@ def render(r: dict) -> str:
     L += [(f"Angebot umgerechnet: {eur(o['monthly_total'])}/Monat inkl. Sonderzahlungen "
           f"(Vergleich mit dem Entgeltatlas), {eur(o['monthly_base'])}/Monat Grundgehalt "
           "(Vergleich mit Stundenlöhnen in Anzeigen)."), ""]
+    source = "per --kldb angegeben" if occ["source"] == "given" else occ["source"]
     L += [(f"KldB {occ['kldb']}: {occ['kldb_label'] or 'Bezeichnung unbekannt'} "
-          f"(Niveau {occ['level']}; Zuordnung: {occ['source']})."), ""]
+          f"(Niveau {occ['level']}; Zuordnung: {source})."), ""]
     L += ["| Region | Branche | Q25 | Median | Q75 | Beschäftigte |", "|---|---|---|---|---|---|"]
     for block in (sal["regional"], sal["germany"]):
         ov = block["overall"]

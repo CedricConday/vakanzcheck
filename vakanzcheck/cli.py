@@ -39,7 +39,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--per", choices=["month", "hour", "year"], default="month")
     p.add_argument("--hours", type=float, default=40.0, help="hours per week (default 40)")
     p.add_argument("--payments", type=float, default=12.0,
-                   help="monthly salaries per year, e.g. 13 (default 12)")
+                   help="monthly salaries per year, e.g. 13 (default 12; not with --per year)")
     p.add_argument("--extra", type=float, default=0.0,
                    help="further one-off payments per year in € (holiday/Christmas money)")
     p.add_argument("--ega-region", type=_region,

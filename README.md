@@ -109,10 +109,11 @@ themselves by one or two), and the report marks everything read per posting
 (agency flag, pay, employers, the shift flag) as a sample of the first 1000.
 
 **Offer.** `--salary` with `--per month|hour|year`, `--hours` per week (default
-40), `--payments` salaries per year (13 for a 13th salary), `--extra` one-off
-payments per year. Hourly pay converts at hours x 365.25 / 7 / 12, the BA's day
-basis. Base pay is compared with hourly wages in ads; base plus one-off payments
-with annual salaries in ads and with the Entgeltatlas.
+40), `--payments` salaries per year (13 for a 13th salary; refused with
+`--per year`, which already includes it), `--extra` one-off payments per year.
+Hourly pay converts at hours x 365.25 / 7 / 12, the BA's day basis. Base pay is
+compared with hourly wages in ads; base plus one-off payments with annual
+salaries in ads and with the Entgeltatlas.
 
 **Verdict.** Three rules, cut-offs in [vakanzcheck/rules.py](vakanzcheck/rules.py).
 They are choices made for this tool, not findings; change them there.

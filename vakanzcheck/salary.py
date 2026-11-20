@@ -39,6 +39,9 @@ class Offer:
             raise ValueError(f"per must be month, hour or year, not {self.per!r}")
         if self.amount <= 0 or self.hours <= 0 or self.payments < 12 or self.extra < 0:
             raise ValueError("amount and hours must be positive, payments at least 12, extra >= 0")
+        if self.per == "year" and self.payments != 12:
+            raise ValueError("payments apply to monthly or hourly pay; an annual salary already "
+                             "includes a 13th salary, so leave payments at 12")
 
     @property
     def base(self) -> float:

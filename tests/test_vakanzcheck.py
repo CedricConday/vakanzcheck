@@ -79,6 +79,8 @@ def test_offer_conversions():
         Offer(3600, "week")
     with pytest.raises(ValueError):
         Offer(3600, "month", payments=11)
+    with pytest.raises(ValueError, match="annual salary"):
+        Offer(48000, "year", payments=13)
 
 
 def test_ad_salaries_keep_their_unit():

@@ -1,6 +1,6 @@
 """Ask Claude through the `claude` CLI on a Claude subscription, with no API key.
 
-The same approach as screengate: one `claude -p` per call, with a fresh session,
+The same approach as screengate (see README, Related): one `claude -p` per call, with a fresh session,
 no tools, no MCP servers, no settings files, an empty working directory and the
 caller's system prompt in place of Claude Code's, so nothing but the prompt
 reaches the model. Structured output comes back through --json-schema.

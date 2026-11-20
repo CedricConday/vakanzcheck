@@ -345,12 +345,64 @@ def _jobs(items, facet, place="Gütersloh"):
             "facetten": {"topberuf": {"counts": facet}, "beruf": {"counts": facet}}}
 
 
+def _occupation_market(local_items, local_facet, national_facet):
+    """Jobsuche fake: the radius search and the nationwide one (no `wo`)."""
+    salary = [{"gender": {"id": 1}, "ageCategory": {"id": 1}, "branche": {"bezeichnung": "Gesamt"},
+               "region": {"id": 8, "bezeichnung": "Nordrhein-Westfalen",
+                          "beitragsBemessungsGrenze": 8050},
+               "entgelt": 4000, "entgeltQ25": 3500, "entgeltQ75": 4600, "besetzung": 9000}]
+
+    def answer(url, params):
+        if "entgelte" in url:
+            return salary
+        if "wo" not in params:
+            return {"maxErgebnisse": sum(national_facet.values()), "ergebnisliste": [],
+                    "facetten": {"beruf": {"counts": national_facet}}}
+        return _jobs(local_items, local_facet)
+    return FakeHttp(answer)
+
+
 def test_misspelt_occupation_is_an_error_with_suggestions():
     items = [{"referenznummer": f"r{i}", "alleBerufe": ["CNC-Fräser/in"]} for i in range(3)]
-    http = FakeHttp(lambda url, params: _jobs(items, {"CNC-Fräser/in": 3, "Dreher/in": 1}))
+    http = _occupation_market(items, {"CNC-Fräser/in": 3, "Dreher/in": 1},
+                              {"CNC-Fräser/in": 900})
     v = check.Vacancy("CNC-Fraeser", "Gütersloh", 25, Offer(4500, "month"), kldb="24232")
     with pytest.raises(LookupError, match=r"Did you mean: CNC-Fräser/in\?"):
         check.run(v, http)
+
+
+@pytest.mark.parametrize("old_form_postings", [0, 4])
+def test_short_form_suggests_the_slash_in_name(old_form_postings):
+    # Some postings still list the old form "Mechatroniker" next to "Mechatroniker/in".
+    items = ([{"referenznummer": f"o{i}", "alleBerufe": ["Mechatroniker"]}
+              for i in range(old_form_postings)]
+             + [{"referenznummer": f"r{i}", "alleBerufe": ["Mechatroniker/in"]}
+                for i in range(30)])
+    facet = {"Mechatroniker/in": 30, **({"Mechatroniker": old_form_postings}
+                                        if old_form_postings else {})}
+    http = _occupation_market(items, facet,
+                              {"Mechatroniker/in": 5000, "Industriemechaniker/in": 4000})
+    v = check.Vacancy("Mechatroniker", "Bielefeld", 25, Offer(4000, "month"), kldb="26112")
+    with pytest.raises(LookupError, match=r"Did you mean: Mechatroniker/in\?"):
+        check.run(v, http)
+
+
+def test_made_up_occupation_is_an_error():
+    http = _occupation_market([{"referenznummer": "r1", "alleBerufe": ["Bäcker/in"]}],
+                              {"Bäcker/in": 1}, {})
+    v = check.Vacancy("Quantenbäcker/in", "Bielefeld", 25, Offer(4000, "month"), kldb="26112",
+                      region_id=8)
+    with pytest.raises(LookupError, match="cannot be told apart"):
+        check.run(v, http)
+
+
+def test_real_occupation_without_local_postings_still_runs():
+    http = _occupation_market([{"referenznummer": "r1", "alleBerufe": ["Bäcker/in"]}],
+                              {"Bäcker/in": 1}, {"Glasbläser/in": 40})
+    v = check.Vacancy("Glasbläser/in", "Bielefeld", 25, Offer(4000, "month"), kldb="93332",
+                      region_id=8)
+    r = check.run(v, http)
+    assert r["competition"]["same_beruf"] == 0
 
 
 def test_unknown_place_is_an_error():

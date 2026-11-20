@@ -95,7 +95,12 @@ What changed against older documentation, and what to watch for:
 code comes from BERUFENET, by exact name only: "Elektroniker" alone matches a
 dozen occupations in different KldB groups, so a near match is listed and the
 tool asks for `--kldb`. Some Jobsuche occupations ("CNC-Fräser/in") are not in
-BERUFENET and need `--kldb` (24232).
+BERUFENET and need `--kldb` (24232). Postings are matched to `--beruf` by exact
+name too. When none in the radius lists it, one search across Germany decides:
+if postings elsewhere list the name, the run goes on with zero local postings;
+if not, or if a near name ("Mechatroniker/in" for "Mechatroniker") is listed
+more often, the run stops with suggestions instead of reading a typo as an empty
+market.
 
 **Competition.** Every open employment posting (`angebotsart=1`) for the
 occupation within the radius, paged in full (up to 1000). A posting counts when

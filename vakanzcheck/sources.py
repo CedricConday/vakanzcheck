@@ -221,13 +221,62 @@ def _plain(name: str) -> str:
     return name.strip()
 
 
-def close_berufe(beruf: str, search: PostingSearch, n: int = 3) -> list[str]:
-    """Occupation names in the search's facets that `beruf` is probably a misspelling of."""
-    names = {**search.facet, **search.facet_full}
-    if beruf in names:
-        return []
-    plain = {_plain(b): b for b in names}
+def close_berufe(beruf: str, names, n: int = 3) -> list[str]:
+    """Occupation names `beruf` is probably a misspelling of, or the short form of
+    ("Mechatroniker" for "Mechatroniker/in"): umlauts and the /in suffix are folded."""
+    plain = {_plain(b): b for b in names if b != beruf}
     return [plain[p] for p in difflib.get_close_matches(_plain(beruf), plain, n, cutoff=0.8)]
+
+
+def check_beruf_form(beruf: str, search: PostingSearch, listed: int) -> None:
+    """Raise LookupError if the hits list a variant of `beruf` that differs only in
+    umlauts or the /in suffix and is listed by more postings.
+
+    Some postings still carry an old form ("Mechatroniker", 4 in Bielefeld on
+    2026-11-20) next to the current one ("Mechatroniker/in", 227); counting only
+    the old form would read as almost no competition.
+    """
+    names = {**search.facet, **search.facet_full}
+    own = max(names.get(beruf, 0), listed)  # the facet can omit a rare name
+    better = [b for b, n in names.items()
+              if b != beruf and _plain(b) == _plain(beruf) and n > own]
+    if better:
+        raise LookupError(f"{beruf!r} is listed by {own} postings here, {better[0]!r} by "
+                          f"{names[better[0]]}; --beruf must be the Jobsuche occupation name "
+                          f"exactly. Did you mean: {', '.join(better)}?")
+
+
+def nationwide_berufe(http: Http, beruf: str) -> dict[str, int]:
+    """Occupation facet of a search for `beruf` across Germany (no place, one item).
+
+    A real Jobsuche occupation name shows up in this facet whenever any posting in
+    Germany lists it; that is how a name with no postings near the place is told
+    apart from a name the Jobsuche does not use.
+    """
+    body = http.get(f"{JOBSUCHE}/pc/v6/jobs",
+                    {"was": beruf, "angebotsart": 1, "size": 1, "page": 1}, JOBSUCHE_KEY)
+    if not isinstance(body, dict) or "maxErgebnisse" not in body:
+        raise SourceError(f"unexpected Jobsuche response: {str(body)[:200]}")
+    facets = body.get("facetten") or {}
+    return {**((facets.get("topberuf") or {}).get("counts") or {}),
+            **((facets.get("beruf") or {}).get("counts") or {})}
+
+
+def check_beruf_known(http: Http, beruf: str, local: PostingSearch) -> None:
+    """Raise LookupError unless `beruf` is an occupation name the Jobsuche uses.
+
+    Called when no posting in the radius lists `beruf`. Matching is by exact name,
+    so a misspelt or made-up name would otherwise read as "no competition".
+    """
+    names = nationwide_berufe(http, beruf)
+    if beruf in names:
+        return  # a real occupation that simply has no postings in this radius
+    close = close_berufe(beruf, {**local.facet, **local.facet_full, **names})
+    hint = (f" Did you mean: {', '.join(close)}?" if close else
+            " No posting in Germany lists it, so a misspelt name cannot be told apart from "
+            "an occupation without any postings.")
+    raise LookupError(f"no posting lists the occupation {beruf!r}; --beruf must be the "
+                      f"Jobsuche occupation name exactly.{hint}")
 
 
 def region_from_postings(items: list[dict]) -> int | None:

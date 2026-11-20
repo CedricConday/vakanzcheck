@@ -37,15 +37,15 @@ Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversiche
 
 Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):
 
-| Einheit | Arbeitgeber | Anzeigen | Median | Spanne |
+| Einheit | Zeitarbeit-Kennzeichen | Anzeigen | Median | Spanne |
 |---|---|---|---|---|
-| €/Stunde | direkt | 2 | 20,75 | 19,50 – 22,00 |
-| €/Stunde | Zeitarbeit | 28 | 20,28 | 17,11 – 24,50 |
-| €/Jahr | direkt | 1 | 37.347 | 37.347 – 37.347 |
+| €/Stunde | nein | 2 | 20,75 | 19,50 – 22,00 |
+| €/Stunde | ja | 28 | 20,28 | 17,11 – 24,50 |
+| €/Jahr | nein | 1 | 37.347 | 37.347 – 37.347 |
 
 S2 vergleicht Stundenlöhne (mit 40 Std./Woche) mit dem Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. Sonderzahlungen, weil Jahresgehälter diese meist enthalten.
 
-| Meiste Anzeigen | Stellen | Zeitarbeit |
+| Meiste Anzeigen | Stellen | Zeitarbeit-Kennzeichen |
 |---|---|---|
 | Personal Service PSH Bielefeld GmbH | 8 | ja |
 | tandem Personallogistik und D ienstleistungen Bielefeld GmbH | 6 | ja |

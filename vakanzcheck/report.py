@@ -110,23 +110,23 @@ def render(r: dict) -> str:
         L.append(f"- **Stichprobe:** {smp['query_total']} Treffer, abrufbar sind "
                  f"{smp['items_read']}. Zeitarbeit-Kennzeichen, Gehälter, Schichtmerkmal und "
                  "Arbeitgeber unten stammen nur aus diesen; die Stellenzahlen aus der Facette. "
-                 "Eine Anzeige eines direkten Arbeitgebers außerhalb der abrufbaren direkten "
-                 "Treffer kann dabei als Zeitarbeit gelten; bei so vielen Treffern den Radius "
-                 "verkleinern.")
+                 "Eine Anzeige ohne Zeitarbeit-Kennzeichen, die nicht unter den abrufbaren "
+                 "Treffern ohne Kennzeichen ist, kann dabei als Zeitarbeit gelten; bei so "
+                 "vielen Treffern den Radius verkleinern.")
     L.append("")
     if sp["by_unit"]:
         unit = {"hour": "€/Stunde", "month": "€/Monat", "year": "€/Jahr"}
         L += ["Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):", "",
-              "| Einheit | Arbeitgeber | Anzeigen | Median | Spanne |", "|---|---|---|---|---|"]
+              "| Einheit | Zeitarbeit-Kennzeichen | Anzeigen | Median | Spanne |", "|---|---|---|---|---|"]
         for row in sp["by_unit"]:
-            who = "direkt" if row["direct"] else "Zeitarbeit"
+            who = "nein" if row["direct"] else "ja"
             L.append(f"| {unit[row['unit']]} | {who} | {row['n']} | {num(row['median'])} | "
                      f"{num(row['min'])} – {num(row['max'])} |")
         L += ["", (f"S2 vergleicht Stundenlöhne (mit {o['hours']:g} Std./Woche) mit dem "
                    "Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. "
                    "Sonderzahlungen, weil Jahresgehälter diese meist enthalten."), ""]
     if comp["top_employers"]:
-        L += ["| Meiste Anzeigen | Stellen | Zeitarbeit |", "|---|---|---|"]
+        L += ["| Meiste Anzeigen | Stellen | Zeitarbeit-Kennzeichen |", "|---|---|---|"]
         for t in comp["top_employers"]:
             L.append(f"| {t['firma']} | {t['stellen']} | {'ja' if t['zeitarbeit'] else 'nein'} |")
         L.append("")

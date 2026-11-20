@@ -13,9 +13,11 @@ S2  Offer vs. pay stated in competing ads for the same occupation in the radius.
     salary.py), and S2 counts the share of ads that pay more than the offer:
     at least 75 % -> rot; at least 50 % -> gelb; else gruen. That is the offer
     below the ads' lower quartile, below their median, or at/above it.
-    Basis: direct employers' ads when MIN_STATED of them state pay, else all ads
-    (ad_basis). Fewer than MIN_STATED ads -> keine Daten. If the basis is
-    mostly staffing agencies, the grade is shown with a caveat and the verdict
+    Basis: ads without the Jobsuche's Zeitarbeit flag ("direct" here) when
+    MIN_STATED of them state pay, else all ads (ad_basis). The flag misses some
+    personnel-service firms, so "direct" means unflagged, not direct employer.
+    Fewer than MIN_STATED ads -> keine Daten. If the basis is mostly flagged
+    Zeitarbeit, the grade is shown with a caveat and the verdict
     treats S2 as keine Daten.
 W1  Competition: open postings for the same occupation in the radius
     at least HIGH_COMPETITION -> rot; at least MEDIUM_COMPETITION -> gelb; else gruen.

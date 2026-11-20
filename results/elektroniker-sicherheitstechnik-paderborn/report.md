@@ -39,15 +39,15 @@ Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversiche
 
 Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):
 
-| Einheit | Arbeitgeber | Anzeigen | Median | Spanne |
+| Einheit | Zeitarbeit-Kennzeichen | Anzeigen | Median | Spanne |
 |---|---|---|---|---|
-| €/Stunde | direkt | 7 | 22,50 | 17,48 – 25,50 |
-| €/Stunde | Zeitarbeit | 28 | 21,00 | 18,00 – 26,00 |
-| €/Jahr | direkt | 7 | 44.500 | 40.000 – 63.570 |
+| €/Stunde | nein | 7 | 22,50 | 17,48 – 25,50 |
+| €/Stunde | ja | 28 | 21,00 | 18,00 – 26,00 |
+| €/Jahr | nein | 7 | 44.500 | 40.000 – 63.570 |
 
 S2 vergleicht Stundenlöhne (mit 40 Std./Woche) mit dem Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. Sonderzahlungen, weil Jahresgehälter diese meist enthalten.
 
-| Meiste Anzeigen | Stellen | Zeitarbeit |
+| Meiste Anzeigen | Stellen | Zeitarbeit-Kennzeichen |
 |---|---|---|
 | personalmeyer GmbH & Co. KG | 10 | ja |
 | Elektro Janewers GmbH & Co. KG | 3 | nein |

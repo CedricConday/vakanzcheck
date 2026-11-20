@@ -37,15 +37,15 @@ Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversiche
 
 Genannte Gehälter in der Einheit der Anzeige (Spannen als Mitte):
 
-| Einheit | Arbeitgeber | Anzeigen | Median | Spanne |
+| Einheit | Zeitarbeit-Kennzeichen | Anzeigen | Median | Spanne |
 |---|---|---|---|---|
-| €/Stunde | direkt | 6 | 21,66 | 20,00 – 24,00 |
-| €/Stunde | Zeitarbeit | 50 | 20,00 | 11,76 – 25,26 |
-| €/Jahr | direkt | 17 | 48.018 | 39.000 – 62.049 |
+| €/Stunde | nein | 6 | 21,66 | 20,00 – 24,00 |
+| €/Stunde | ja | 50 | 20,00 | 11,76 – 25,26 |
+| €/Jahr | nein | 17 | 48.018 | 39.000 – 62.049 |
 
 S2 vergleicht Stundenlöhne (mit 35 Std./Woche) mit dem Grundgehalt und Jahresgehälter mit den Gesamtbezügen inkl. Sonderzahlungen, weil Jahresgehälter diese meist enthalten.
 
-| Meiste Anzeigen | Stellen | Zeitarbeit |
+| Meiste Anzeigen | Stellen | Zeitarbeit-Kennzeichen |
 |---|---|---|
 | persona service AG & Co. KG Niederlassung Bielefeld | 5 | ja |
 | Neo Temp GmbH | 5 | ja |

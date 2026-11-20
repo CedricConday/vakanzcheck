@@ -181,6 +181,10 @@ vakanzcheck ... --ad anzeige.txt --backend subscription
 
 # occupation not in BERUFENET, region set by hand
 vakanzcheck --beruf "CNC-Fräser/in" --kldb 24232 --wo 33330 --ega-region 8 --salary 4100
+
+# offline, from the recorded responses the tests use (no network)
+vakanzcheck --beruf "Zerspanungsmechaniker/in" --wo Gütersloh --radius 10 \
+  --salary 3600 --replay tests/fixtures/guetersloh
 ```
 
 Each run writes `report.md` and `report.json` (every figure, the rule results,

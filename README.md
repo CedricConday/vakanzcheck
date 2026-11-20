@@ -125,6 +125,9 @@ themselves by one or two), and the report marks everything read per posting
 **Offer.** `--salary` with `--per month|hour|year`, `--hours` per week (default
 40), `--payments` salaries per year (13 for a 13th salary; refused with
 `--per year`, which already includes it), `--extra` one-off payments per year.
+An offer outside the ranges used for ads (10 to 100 €/h, 1.000 to 15.000
+€/month, 15.000 to 200.000 €/year), over 60 hours, over 14 salaries or over
+20.000 € extra is refused before any request is made.
 Hourly pay converts at hours x 365.25 / 7 / 12, the BA's day basis. Base pay is
 compared with hourly wages in ads; base plus one-off payments with annual
 salaries in ads and with the Entgeltatlas.

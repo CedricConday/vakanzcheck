@@ -434,3 +434,25 @@ def test_network_failures_become_source_errors(error, monkeypatch):
     monkeypatch.setattr("urllib.request.urlopen", fail)
     with pytest.raises(SourceError, match="https://x/y"):
         Http(pause=0).get("https://x/y", {}, "k")
+
+
+@pytest.mark.parametrize("kw", [
+    {"amount": float("nan"), "per": "month"}, {"amount": float("inf"), "per": "month"},
+    {"amount": 4000, "per": "month", "hours": float("nan")},
+    {"amount": 450000, "per": "month"}, {"amount": 4000, "per": "hour"},
+    {"amount": 25, "per": "month"}, {"amount": 4000, "per": "month", "hours": 80},
+    {"amount": 4000, "per": "month", "payments": 15},
+    {"amount": 4000, "per": "month", "extra": 250000},
+])
+def test_implausible_offers_are_refused(kw):
+    with pytest.raises(ValueError):
+        Offer(**kw)
+
+
+def test_implausible_offer_stops_before_any_request(monkeypatch, capsys):
+    def no_network(*args, **kw):
+        raise AssertionError("network used")
+    monkeypatch.setattr("urllib.request.urlopen", no_network)
+    argv = ["--beruf", "Mechatroniker/in", "--wo", "Bielefeld", "--salary", "nan"]
+    assert cli.main(argv) == 2
+    assert "finite" in capsys.readouterr().err

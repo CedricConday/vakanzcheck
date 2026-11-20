@@ -21,9 +21,19 @@ Hourly pay becomes monthly with the BA's own day basis: hours per week times
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 
 WEEKS_PER_MONTH = 365.25 / 7 / 12
+
+
+# Bounds on an offer beyond the per-unit salary ranges (PLAUSIBLE, below): the
+# Arbeitszeitgesetz allows 48 hours a week on average, 60 at most; more than 14
+# salaries or more than 20.000 € in further one-off payments is a typo.
+MAX_HOURS = 60
+MAX_PAYMENTS = 14
+MAX_EXTRA = 20000
+UNIT_FIELD = {"hour": "STUNDENLOHN", "month": "MONATSGEHALT", "year": "JAHRESGEHALT"}
 
 
 @dataclass(frozen=True)
@@ -37,8 +47,19 @@ class Offer:
     def __post_init__(self):
         if self.per not in ("month", "hour", "year"):
             raise ValueError(f"per must be month, hour or year, not {self.per!r}")
-        if self.amount <= 0 or self.hours <= 0 or self.payments < 12 or self.extra < 0:
-            raise ValueError("amount and hours must be positive, payments at least 12, extra >= 0")
+        for name in ("amount", "hours", "payments", "extra"):
+            if not math.isfinite(getattr(self, name)):
+                raise ValueError(f"{name} must be a finite number, not {getattr(self, name)}")
+        low, high = PLAUSIBLE[UNIT_FIELD[self.per]]
+        if not low <= self.amount <= high:
+            raise ValueError(f"salary {self.amount:g} per {self.per} is outside the plausible "
+                             f"range {low:g} to {high:g}; check the amount and --per")
+        if not 0 < self.hours <= MAX_HOURS:
+            raise ValueError(f"hours per week must be above 0 and at most {MAX_HOURS}")
+        if not 12 <= self.payments <= MAX_PAYMENTS:
+            raise ValueError(f"payments at least 12 and at most {MAX_PAYMENTS} salaries a year")
+        if not 0 <= self.extra <= MAX_EXTRA:
+            raise ValueError(f"extra must be between 0 and {MAX_EXTRA} € a year")
         if self.per == "year" and self.payments != 12:
             raise ValueError("payments apply to monthly or hourly pay; an annual salary already "
                              "includes a 13th salary, so leave payments at 12")

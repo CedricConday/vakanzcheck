@@ -57,6 +57,8 @@ def _salary_block(rows: list[sources.SalaryRow]) -> dict:
 def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> dict:
     occ = (sources.Occupation(v.beruf, sources.normalise_kldb(v.kldb), "given")
            if v.kldb else sources.resolve_kldb(http, v.beruf))
+    if sources.kldb_label(occ.kldb) is None:
+        raise LookupError(f"{occ.kldb} is not a five-digit KldB 2010 code")
     level = sources.LEVELS.get(occ.kldb[-1], "?")
 
     every = sources.search_postings(http, v.beruf, v.wo, v.radius_km)
@@ -103,6 +105,9 @@ def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> di
     if region_id is None:
         raise LookupError("cannot infer the Land from the postings; pass --ega-region")
     regional = sources.salary_rows(http, occ.kldb, region_id)
+    if not regional:
+        raise LookupError(f"the Entgeltatlas has no figures for KldB {occ.kldb} in "
+                          f"{sources.EGA_REGIONS.get(region_id, region_id)}; check --kldb")
     national = sources.salary_rows(http, occ.kldb, 1) if region_id != 1 else regional
     sal_region, sal_de = _salary_block(regional), _salary_block(national)
     ov = sal_region["overall"] or {}

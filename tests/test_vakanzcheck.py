@@ -465,3 +465,22 @@ def test_radius_out_of_range_is_a_usage_error(radius, capsys):
     with pytest.raises(SystemExit) as e:
         cli.main(argv)
     assert e.value.code == 2 and "radius" in capsys.readouterr().err
+
+
+def test_kldb_code_outside_the_classification_stops_before_any_request():
+    def no_network(url, params):
+        raise AssertionError("network used")
+    v = check.Vacancy("Mechatroniker/in", "Bielefeld", 25, Offer(4000, "month"), kldb="12345")
+    with pytest.raises(LookupError, match="not a five-digit KldB 2010 code"):
+        check.run(v, FakeHttp(no_network))
+
+
+def test_kldb_without_entgeltatlas_rows_is_an_error():
+    items = [{"referenznummer": "r1", "alleBerufe": ["Mechatroniker/in"]}]
+
+    def answer(url, params):
+        return [] if "entgelte" in url else _jobs(items, {"Mechatroniker/in": 1})
+    v = check.Vacancy("Mechatroniker/in", "Bielefeld", 25, Offer(4000, "month"), kldb="26112",
+                      region_id=8)
+    with pytest.raises(LookupError, match="no figures for KldB 26112"):
+        check.run(v, FakeHttp(answer))

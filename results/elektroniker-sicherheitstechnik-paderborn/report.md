@@ -49,11 +49,11 @@ S2 vergleicht Stundenlöhne (mit 40 Std./Woche) mit dem Grundgehalt und Jahresge
 
 | Meiste Anzeigen | Stellen | Zeitarbeit-Kennzeichen |
 |---|---|---|
-| personalmeyer GmbH & Co. KG | 10 | ja |
-| Elektro Janewers GmbH & Co. KG | 3 | nein |
+| Arbeitgeber 001 GmbH | 10 | ja |
+| Arbeitgeber 002 GmbH | 3 | nein |
 | Einzelunternehmen (Name nicht angezeigt) | 3 | ja |
-| F. Schäfer Fachpersonal GmbH Co. KG | 3 | ja |
-| Fritz Husemann GmbH & Co. KG | 3 | nein |
+| Arbeitgeber 003 GmbH | 3 | ja |
+| Arbeitgeber 004 GmbH | 3 | nein |
 
 Verwandte Berufe in denselben Treffern: Elektroinstallateur/in (36), Elektroniker/in - Betriebstechnik (32), Mechatroniker/in (14), Elektroniker/in - Gebäude- und Infrastruktursysteme (12), Elektroniker/in - Automatisierungstechnik (10).
 

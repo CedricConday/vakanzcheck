@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # The three demo vacancies in results/. Vacancies and ad texts are invented;
 # every number in the reports comes from the live BA services on the run date.
+# The committed reports have employer names replaced by pseudonyms afterwards;
+# a run here prints the real names.
 # The ad check uses Claude through `claude -p` (one call per vacancy); drop
 # --backend subscription to use the offline keyword check instead.
 set -euo pipefail

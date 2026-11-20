@@ -47,11 +47,11 @@ S2 vergleicht Stundenlöhne (mit 35 Std./Woche) mit dem Grundgehalt und Jahresge
 
 | Meiste Anzeigen | Stellen | Zeitarbeit-Kennzeichen |
 |---|---|---|
-| persona service AG & Co. KG Niederlassung Bielefeld | 5 | ja |
-| Neo Temp GmbH | 5 | ja |
-| Starrag Technology GmbH | 5 | nein |
-| A & P Industriemontage GmbH & Co. KG | 5 | nein |
-| INDUVARO GmbH Niederlassung Paderborn | 4 | ja |
+| Arbeitgeber 001 GmbH | 5 | ja |
+| Arbeitgeber 002 GmbH | 5 | ja |
+| Arbeitgeber 003 GmbH | 5 | nein |
+| Arbeitgeber 004 GmbH | 5 | nein |
+| Arbeitgeber 005 GmbH | 4 | ja |
 
 Verwandte Berufe in denselben Treffern: Elektroniker/in - Betriebstechnik (68), Industriemechaniker/in (65), Kraftfahrzeugmechatroniker/in - Personenkraftwagentechnik (57), Kraftfahrzeugmechaniker/in (46), Mechatroniker/in - Kältetechnik (35).
 

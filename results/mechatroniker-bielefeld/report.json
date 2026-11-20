@@ -185,27 +185,27 @@
   ],
   "top_employers": [
    {
-    "firma": "persona service AG & Co. KG Niederlassung Bielefeld",
+    "firma": "Arbeitgeber 001 GmbH",
     "stellen": 5,
     "zeitarbeit": true
    },
    {
-    "firma": "Neo Temp GmbH",
+    "firma": "Arbeitgeber 002 GmbH",
     "stellen": 5,
     "zeitarbeit": true
    },
    {
-    "firma": "Starrag Technology GmbH",
+    "firma": "Arbeitgeber 003 GmbH",
     "stellen": 5,
     "zeitarbeit": false
    },
    {
-    "firma": "A & P Industriemontage GmbH & Co. KG",
+    "firma": "Arbeitgeber 004 GmbH",
     "stellen": 5,
     "zeitarbeit": false
    },
    {
-    "firma": "INDUVARO GmbH Niederlassung Paderborn",
+    "firma": "Arbeitgeber 005 GmbH",
     "stellen": 4,
     "zeitarbeit": true
    }

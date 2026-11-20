@@ -47,11 +47,11 @@ S2 vergleicht Stundenlöhne (mit 40 Std./Woche) mit dem Grundgehalt und Jahresge
 
 | Meiste Anzeigen | Stellen | Zeitarbeit-Kennzeichen |
 |---|---|---|
-| Personal Service PSH Bielefeld GmbH | 8 | ja |
-| tandem Personallogistik und D ienstleistungen Bielefeld GmbH | 6 | ja |
-| BS Schubert GmbH | 3 | ja |
-| Nexxt Talent GmbH | 2 | ja |
-| Alleima Engineering GmbH | 2 | nein |
+| Arbeitgeber 001 GmbH | 8 | ja |
+| Arbeitgeber 002 GmbH | 6 | ja |
+| Arbeitgeber 003 GmbH | 3 | ja |
+| Arbeitgeber 004 GmbH | 2 | ja |
+| Arbeitgeber 005 GmbH | 2 | nein |
 
 Verwandte Berufe in denselben Treffern: Zerspanungsmechaniker/in - Frästechnik (31), CNC-Dreher/in (23), Zerspanungsmechaniker/in (21), CNC-Fachkraft/NC-Anwendungsfachmann/-frau (12), Fachkraft - Metalltechnik - Zerspanungstechnik (7).
 

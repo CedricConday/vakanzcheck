@@ -174,27 +174,27 @@
   ],
   "top_employers": [
    {
-    "firma": "Personal Service PSH Bielefeld GmbH",
+    "firma": "Arbeitgeber 001 GmbH",
     "stellen": 8,
     "zeitarbeit": true
    },
    {
-    "firma": "tandem Personallogistik und D ienstleistungen Bielefeld GmbH",
+    "firma": "Arbeitgeber 002 GmbH",
     "stellen": 6,
     "zeitarbeit": true
    },
    {
-    "firma": "BS Schubert GmbH",
+    "firma": "Arbeitgeber 003 GmbH",
     "stellen": 3,
     "zeitarbeit": true
    },
    {
-    "firma": "Nexxt Talent GmbH",
+    "firma": "Arbeitgeber 004 GmbH",
     "stellen": 2,
     "zeitarbeit": true
    },
    {
-    "firma": "Alleima Engineering GmbH",
+    "firma": "Arbeitgeber 005 GmbH",
     "stellen": 2,
     "zeitarbeit": false
    }

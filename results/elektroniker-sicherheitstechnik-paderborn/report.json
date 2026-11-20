@@ -240,12 +240,12 @@
   ],
   "top_employers": [
    {
-    "firma": "personalmeyer GmbH & Co. KG",
+    "firma": "Arbeitgeber 001 GmbH",
     "stellen": 10,
     "zeitarbeit": true
    },
    {
-    "firma": "Elektro Janewers GmbH & Co. KG",
+    "firma": "Arbeitgeber 002 GmbH",
     "stellen": 3,
     "zeitarbeit": false
    },
@@ -255,12 +255,12 @@
     "zeitarbeit": true
    },
    {
-    "firma": "F. Schäfer Fachpersonal GmbH Co. KG",
+    "firma": "Arbeitgeber 003 GmbH",
     "stellen": 3,
     "zeitarbeit": true
    },
    {
-    "firma": "Fritz Husemann GmbH & Co. KG",
+    "firma": "Arbeitgeber 004 GmbH",
     "stellen": 3,
     "zeitarbeit": false
    }

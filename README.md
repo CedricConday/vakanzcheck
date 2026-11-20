@@ -19,7 +19,10 @@ A verdict follows from three written-down rules, not from a model.
 
 Vacancies, offers and ad texts are invented ([demo/](demo/)). Every number in
 the reports comes from the live BA services on 2026-11-19
-([demo/run.sh](demo/run.sh) reproduces them).
+([demo/run.sh](demo/run.sh) reproduces them). Employer names in the committed
+reports are replaced by pseudonyms ("Arbeitgeber 001 GmbH"), as in the test
+fixtures, because the Zeitarbeit ja/nein printed next to each one comes from
+an imperfect flag; a fresh run prints the real names.
 
 | Vacancy | Offer | vs. NRW pay | vs. ads in radius | Same-occupation postings | Verdict |
 |---|---|---|---|---|---|

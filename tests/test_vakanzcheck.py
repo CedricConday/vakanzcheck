@@ -319,6 +319,7 @@ def test_truncated_search_counts_from_facets_and_flags_the_sample():
                       {"adresse": {"region": "NORDRHEIN_WESTFALEN"}}]} for i in range(100)]
         # beruf is outside the top-20 facet but inside the 100-entry one
         return {"maxErgebnisse": 1500 if direct else 2500, "ergebnisliste": items,
+                "woOutput": {"bereinigterOrt": "Bielefeld", "suchmodus": "UMKREISSUCHE"},
                 "facetten": {"topberuf": {"counts": {"Andere/r": 2000}},
                              "beruf": {"counts": {beruf: 900 if direct else 1800}}}}
 
@@ -329,3 +330,28 @@ def test_truncated_search_counts_from_facets_and_flags_the_sample():
     assert c["count_source"] == "Facette der Jobsuche"
     assert c["sample"] == {"truncated": True, "items_read": 1000, "query_total": 2500}
     assert "Stichprobe" in report.render(r)
+
+
+# --- input that must fail loudly, not read as "no competition" -------------------------------
+
+def _jobs(items, facet, place="Gütersloh"):
+    wo = ({"bereinigterOrt": place, "suchmodus": "UMKREISSUCHE"} if place
+          else {"suchmodus": "UNGUELTIG"})
+    return {"maxErgebnisse": len(items), "ergebnisliste": items, "woOutput": wo,
+            "facetten": {"topberuf": {"counts": facet}, "beruf": {"counts": facet}}}
+
+
+def test_misspelt_occupation_is_an_error_with_suggestions():
+    items = [{"referenznummer": f"r{i}", "alleBerufe": ["CNC-Fräser/in"]} for i in range(3)]
+    http = FakeHttp(lambda url, params: _jobs(items, {"CNC-Fräser/in": 3, "Dreher/in": 1}))
+    v = check.Vacancy("CNC-Fraeser", "Gütersloh", 25, Offer(4500, "month"), kldb="24232")
+    with pytest.raises(LookupError, match=r"Did you mean: CNC-Fräser/in\?"):
+        check.run(v, http)
+
+
+def test_unknown_place_is_an_error():
+    http = FakeHttp(lambda url, params: _jobs([], {}, place=None))
+    v = check.Vacancy("Mechatroniker/in", "Xyzzyqq", 25, Offer(3700, "month"), kldb="26112",
+                      region_id=8)
+    with pytest.raises(LookupError, match="does not know the place 'Xyzzyqq'"):
+        check.run(v, http)

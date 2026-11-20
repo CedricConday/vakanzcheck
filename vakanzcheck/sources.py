@@ -16,6 +16,7 @@ live on 2026-11-19:
 from __future__ import annotations
 
 import csv
+import difflib
 import re
 import statistics
 from dataclasses import dataclass, field
@@ -191,7 +192,13 @@ def search_postings(http: Http, beruf: str, wo: str, radius_km: int, *,
         return dict((facets.get(name) or {}).get("counts") or {})
 
     agency = counts("zeitarbeit").get("true")
-    place = (first.get("woOutput") or {}).get("bereinigterOrt")
+    wo_out = first.get("woOutput") or {}
+    place = wo_out.get("bereinigterOrt")
+    if wo_out.get("suchmodus") == "UNGUELTIG" or not place:
+        # The Jobsuche answers an unknown place with zero hits, not an error; read as
+        # "no competition" that would make any offer look easy to fill.
+        raise LookupError(f"the Jobsuche does not know the place {wo!r}; check the spelling "
+                          "or pass a postcode")
     return PostingSearch(query=params, total=total, facet=counts("topberuf"),
                          facet_full=counts("beruf"), agency_facet=agency, place=place,
                          items=items, truncated=len(items) < total)
@@ -205,6 +212,22 @@ def facet_count(search: PostingSearch, beruf: str) -> int | None:
 
 def lists_beruf(item: dict, beruf: str) -> bool:
     return beruf in (item.get("alleBerufe") or [item.get("hauptberuf")])
+
+
+def _plain(name: str) -> str:
+    name = name.casefold().replace("/-in", "").replace("/in", "")
+    for a, b in (("ä", "ae"), ("ö", "oe"), ("ü", "ue"), ("ß", "ss")):
+        name = name.replace(a, b)
+    return name.strip()
+
+
+def close_berufe(beruf: str, search: PostingSearch, n: int = 3) -> list[str]:
+    """Occupation names in the search's facets that `beruf` is probably a misspelling of."""
+    names = {**search.facet, **search.facet_full}
+    if beruf in names:
+        return []
+    plain = {_plain(b): b for b in names}
+    return [plain[p] for p in difflib.get_close_matches(_plain(beruf), plain, n, cutoff=0.8)]
 
 
 def region_from_postings(items: list[dict]) -> int | None:

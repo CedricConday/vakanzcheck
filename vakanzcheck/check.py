@@ -62,6 +62,13 @@ def run(v: Vacancy, http: Http, ask=None, *, today: dt.date | None = None) -> di
     every = sources.search_postings(http, v.beruf, v.wo, v.radius_km)
     direct = sources.search_postings(http, v.beruf, v.wo, v.radius_km, zeitarbeit=False)
     same = [x for x in every.items if sources.lists_beruf(x, v.beruf)]
+    if not same:
+        # Matching is by exact name. A misspelt name matches nothing and would read
+        # as "no competition"; when the hits list a near name, stop and offer it.
+        close = sources.close_berufe(v.beruf, every)
+        if close:
+            raise LookupError(f"no posting lists the occupation {v.beruf!r}; --beruf must be "
+                              f"the Jobsuche name exactly. Did you mean: {', '.join(close)}?")
     direct_refs = {x.get("referenznummer") for x in direct.items}
     truncated = every.truncated or direct.truncated
     if not truncated:

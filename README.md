@@ -40,7 +40,7 @@ own, ads flagged Zeitarbeit vs. ads without the flag):
   only hourly wages; none gives an annual salary. Among unflagged ads that
   state pay, annual salaries outnumber hourly wages only in Bielefeld (17 to
   6; Paderborn 7 to 7, Gütersloh 1 to 2).
-- Hourly wage against hourly wage, the unflagged ads' medians are 0,48 to
+- Hourly wage against hourly wage, the unflagged ads' medians are 0,47 to
   1,66 €/h higher than the flagged ones, on 2 to 7 unflagged ads per place.
   That is too few to claim a gap.
 - Annual salaries / 12 include one-off payments and hourly wages do not, so

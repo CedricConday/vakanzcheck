@@ -213,6 +213,13 @@ files with no network. The tests run offline on one recorded run in
 - The Zeitarbeit split is the Jobsuche's flag. Personnel-service firms it
   does not flag count as employers; telling them apart by name is not
   attempted.
+- Postings are not de-duplicated. The same job posted twice (by one employer
+  under two reference numbers, or by an employer and an agency) counts twice in
+  W1 and in S2's share; in the Bielefeld demo one employer appears more than
+  once among the 23 unflagged ads that state pay.
+- The plausibility floor for hourly pay in ads is 10 €/h, below the statutory
+  minimum wage (13,90 €/h in 2026). Ads stating less are kept, not dropped as
+  errors: the Bielefeld demo's lowest agency wage is 11,76 €/h.
 - The shift count in the report is a structured Jobsuche field
   (Schicht/Nacht/Wochenende), not read from the ad text.
 - Values at or above the contribution ceiling are shown as "über BBG", not as

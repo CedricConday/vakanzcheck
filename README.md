@@ -76,7 +76,7 @@ What changed against older documentation, and what to watch for:
   as missing). Sources: the
   [Entgeltatlas help page](https://www.arbeitsagentur.de/hilfe-entgeltatlas) and
   the [BA methodology notes](https://statistik.arbeitsagentur.de/DE/Statischer-Content/Grundlagen/Methodik-Qualitaet/Methodische-Hinweise/BST-MethHinweise/Entgelt-meth-Hinweise.html).
-- The finest Entgeltatlas region is the Land, plus twelve large cities. There
+- The finest Entgeltatlas region is the Land, plus eleven large cities. There
   is no Kreis level, so Paderborn, Bielefeld and Gütersloh all compare against
   NRW. The Land is taken from the postings near the centre; `--ega-region`
   overrides it.

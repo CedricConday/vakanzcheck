@@ -28,7 +28,7 @@ KldB 26212: Berufe in der Bauelektrik - fachlich ausgerichtete Tätigkeiten (Niv
 | Nordrhein-Westfalen | Erbringung wirtschaftl. Dienstleistungen | 3.157 € | 3.808 € | 4.751 € | 2930 |
 | Nordrhein-Westfalen | Öff. Verw., Schul-, Gesundh.-, Soz.wesen | 4.257 € | 4.747 € | 5.388 € | 1840 |
 
-Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversicherungspflichtig Vollzeitbeschäftigter inkl. Sonderzahlungen. Feinste Ebene ist das Bundesland (oder eine von zwölf Großstädten); Kreise gibt es nicht. Die Region wurde aus dem Bundesland der Anzeigen im Umkreis bestimmt.
+Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversicherungspflichtig Vollzeitbeschäftigter inkl. Sonderzahlungen. Feinste Ebene ist das Bundesland (oder eine von elf Großstädten); Kreise gibt es nicht. Die Region wurde aus dem Bundesland der Anzeigen im Umkreis bestimmt.
 
 ## Wettbewerb um Bewerber
 

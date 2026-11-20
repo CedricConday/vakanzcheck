@@ -88,7 +88,7 @@ def render(r: dict) -> str:
                    "die Daten sind vermutlich neuer. Stichtag in sources.py prüfen.")]
     L += ["", (f"Quelle: BA Entgeltatlas, Stichtag {sal['stichtag']}, Bruttomonatsentgelt "
           "sozialversicherungspflichtig Vollzeitbeschäftigter inkl. Sonderzahlungen. "
-          "Feinste Ebene ist das Bundesland (oder eine von zwölf Großstädten); "
+          "Feinste Ebene ist das Bundesland (oder eine von elf Großstädten); "
           f"Kreise gibt es nicht.{region_note}"), ""]
 
     # (b) competition

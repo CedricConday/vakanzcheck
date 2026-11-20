@@ -26,7 +26,7 @@ KldB 26112: Berufe in der Mechatronik - fachlich ausgerichtete Tätigkeiten (Niv
 | Nordrhein-Westfalen | Handel, Verkehr, Lagerei und Gastgewerbe | 2.999 € | 3.512 € | 4.224 € | 2927 |
 | Nordrhein-Westfalen | Erbringung wirtschaftl. Dienstleistungen | 3.383 € | 4.036 € | 4.838 € | 679 |
 
-Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversicherungspflichtig Vollzeitbeschäftigter inkl. Sonderzahlungen. Feinste Ebene ist das Bundesland (oder eine von zwölf Großstädten); Kreise gibt es nicht. Die Region wurde aus dem Bundesland der Anzeigen im Umkreis bestimmt.
+Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversicherungspflichtig Vollzeitbeschäftigter inkl. Sonderzahlungen. Feinste Ebene ist das Bundesland (oder eine von elf Großstädten); Kreise gibt es nicht. Die Region wurde aus dem Bundesland der Anzeigen im Umkreis bestimmt.
 
 ## Wettbewerb um Bewerber
 

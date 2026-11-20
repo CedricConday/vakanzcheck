@@ -26,7 +26,7 @@ KldB 24232: Berufe in der spanenden Metallbearbeitung - fachlich ausgerichtete T
 | Nordrhein-Westfalen | Handel, Verkehr, Lagerei und Gastgewerbe | 3.417 € | 3.867 € | 4.404 € | 888 |
 | Nordrhein-Westfalen | Erbringung wirtschaftl. Dienstleistungen | 3.020 € | 3.470 € | 4.323 € | 693 |
 
-Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversicherungspflichtig Vollzeitbeschäftigter inkl. Sonderzahlungen. Feinste Ebene ist das Bundesland (oder eine von zwölf Großstädten); Kreise gibt es nicht. Die Region wurde aus dem Bundesland der Anzeigen im Umkreis bestimmt.
+Quelle: BA Entgeltatlas, Stichtag 31.12.2025, Bruttomonatsentgelt sozialversicherungspflichtig Vollzeitbeschäftigter inkl. Sonderzahlungen. Feinste Ebene ist das Bundesland (oder eine von elf Großstädten); Kreise gibt es nicht. Die Region wurde aus dem Bundesland der Anzeigen im Umkreis bestimmt.
 
 ## Wettbewerb um Bewerber
 

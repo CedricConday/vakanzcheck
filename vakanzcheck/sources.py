@@ -32,7 +32,7 @@ ENTGELTATLAS_KEY = "infosysbub-ega"
 BERUFENET_KEY = "infosysbub-berufenet"
 
 # Entgeltatlas region ids (GET /pc/v1/regionen). Below the Länder there are only
-# twelve large cities; there is no Kreis level.
+# eleven large cities (ids 20-30); there is no Kreis level.
 EGA_REGIONS = {
     1: "Deutschland", 2: "Ostdeutschland", 3: "Westdeutschland", 4: "Schleswig-Holstein",
     5: "Hamburg", 6: "Niedersachsen", 7: "Bremen", 8: "Nordrhein-Westfalen", 9: "Hessen",

@@ -273,8 +273,7 @@
    "requested_model": "claude-opus-5-5",
    "served_by": [
     "claude-opus-5-5"
-   ],
-   "cost_usd": 0.0396362
+   ]
   },
   "checks": [
    {

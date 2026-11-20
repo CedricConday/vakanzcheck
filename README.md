@@ -36,9 +36,10 @@ own, ads flagged Zeitarbeit vs. ads without the flag):
 | Mechatroniker/in, Bielefeld | 20,00 € (n = 50) | 21,66 € (n = 6) | 48.018 € (n = 17) |
 | CNC-Fräser/in, Gütersloh | 20,28 € (n = 28) | 20,75 € (n = 2) | 37.347 € (n = 1) |
 
-- Agencies post most of the ads that state pay, and only as hourly wages; none
-  of them states an annual salary. Direct employers that state pay mostly give
-  an annual salary.
+- Ads flagged Zeitarbeit are most of the ads that state pay, and they state
+  only hourly wages; none gives an annual salary. Among unflagged ads that
+  state pay, annual salaries outnumber hourly wages only in Bielefeld (17 to
+  6; Paderborn 7 to 7, Gütersloh 1 to 2).
 - An earlier version of this README said agencies state pay "far below" direct
   employers (Bielefeld: 3.082 vs. 3.750 €/month). That was mostly a units
   effect: annual salaries / 12 include one-off payments, hourly wages do not.

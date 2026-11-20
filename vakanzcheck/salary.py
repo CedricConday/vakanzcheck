@@ -12,8 +12,8 @@ JAHRESGEHALT (MONATSGEHALT is handled but was not seen). They are not on the
 same footing. An hourly wage is regular pay and is compared with `base`. An
 annual salary usually includes the 13th salary and holiday money, so annual
 figures / 12 are compared with `total`. Mixing them on one monthly scale made
-annual-salary ads (mostly direct employers) look better paid than hourly-wage
-ads (mostly staffing agencies) by about a 13th salary.
+annual-salary ads (none flagged Zeitarbeit in the demo runs) look better paid
+than hourly-wage ads (mostly flagged Zeitarbeit) by about a 13th salary.
 
 Hourly pay becomes monthly with the BA's own day basis: hours per week times
 365.25 / 7 / 12 weeks per month (about 4.35).

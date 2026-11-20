@@ -17,9 +17,13 @@ A verdict follows from three written-down rules, not from a model.
 
 ## Demo: three vacancies in Ostwestfalen-Lippe
 
-Vacancies, offers and ad texts are invented ([demo/](demo/)). Every number in
-the reports comes from the live BA services on 2026-11-19
-([demo/run.sh](demo/run.sh) reproduces them). Employer names in the committed
+Vacancies, offers and ad texts are invented ([demo/](demo/)). The committed
+reports are a snapshot: every number in them comes from the live BA services on
+2026-11-19. [demo/run.sh](demo/run.sh) reruns the three checks against the live
+services, so its counts drift with the day's postings (Bielefeld on 2026-11-20:
+228 postings, 78 ads stating pay, against 222 and 73 in the snapshot), and its
+ad check needs the `claude` CLI (drop `--backend subscription` for the offline
+keyword check). Employer names in the committed
 reports are replaced by pseudonyms ("Arbeitgeber 001 GmbH"), as in the test
 fixtures, because the Zeitarbeit ja/nein printed next to each one comes from
 an imperfect flag; a fresh run prints the real names.
